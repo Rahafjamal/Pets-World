@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:final_project/Screens/Signin_screen.dart';
 import 'package:final_project/Screens/gmail.dart';
 import 'package:final_project/main.dart';
 import 'package:flutter/material.dart';
@@ -57,7 +58,7 @@ class _Login_screenState extends State<Login_screen> {
       backgroundColor: Color(0xffffffff),
       body: Container(
         child: Padding(
-            padding: const EdgeInsets.only(top: 100),
+            padding: const EdgeInsets.only(top: 125),
             child: Column(
               children: <Widget>[
                 const SizedBox(
@@ -158,7 +159,7 @@ class _Login_screenState extends State<Login_screen> {
                               onPressed: () {
                                 Navigator.push(context, MaterialPageRoute(
                                   builder: (context) {
-                                    return MyApp();
+                                    return SignUpPage();
                                   },
                                 ));
                               },
