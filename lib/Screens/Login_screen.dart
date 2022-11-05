@@ -17,6 +17,25 @@ class _Login_screenState extends State<Login_screen> {
   TextEditingController passwordController = TextEditingController();
   CollectionReference user = FirebaseFirestore.instance.collection('user');
 
+  Future<void> addUser() async {
+    var login = FirebaseAuth.instance;
+    UserCredential userCredential =
+        await login.signInWithPopup(GoogleAuthProvider());
+    // check if user document is exist
+    var userDoc = await user.doc(userCredential.user!.uid).get();
+    if (!userDoc.exists) {
+      // if not exist create new user document
+      await user.doc(userCredential.user!.uid).set({
+        'email': userCredential.user!.email,
+        'isAdmin': false,
+      });
+    }
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Firestore()),
+    );
+  }
+
   Future<void> Login() async {
     try {
       var login = FirebaseAuth.instance;
@@ -152,10 +171,7 @@ class _Login_screenState extends State<Login_screen> {
                             padding: EdgeInsets.only(right: 60),
                             child: IconButton(
                               onPressed: () {
-                                Navigator.push(context,
-                                    MaterialPageRoute(builder: (context) {
-                                  return LoginWithGmail();
-                                }));
+                                addUser();
                               },
                               icon: ImageIcon(
                                 AssetImage('images/13.png'),
