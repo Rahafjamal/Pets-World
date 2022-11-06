@@ -1,5 +1,7 @@
+import 'package:final_project/Screens/BetScreen.dart';
 import 'package:final_project/Screens/CatScreen.dart';
 import 'package:final_project/Screens/DogScreen.dart';
+import 'package:final_project/Screens/FishScreen.dart';
 import 'package:intro_slider/intro_slider.dart';
 
 import 'Screens/Splash_screen.dart';
@@ -21,12 +23,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      useInheritedMediaQuery: true,
+    useInheritedMediaQuery: true,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
       theme: ThemeData.light(),
       darkTheme: ThemeData.dark(),
-      home: DogScreen(),
+      home: BetScreen(),
     );
   }
 }
