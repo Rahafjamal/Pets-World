@@ -39,9 +39,9 @@ class _CatScreenState extends State<CatScreen> {
               ),
               child: Column(
                 children: [
-                  Text( "name : " + Data[index]["name"], style: TextStyle(color: Colors.white), ),
-                  Text( "length : " + Data[index]["length"], style: TextStyle(color: Colors.white), ),
-                  Text( "family_friendly : " + Data[index]["family_friendly"], style: TextStyle(color: Colors.white), ),
+                  Text( "name : " + Data[index]["name"].toString(), style: TextStyle(color: Colors.white), ),
+                  Text( "length : " + Data[index]["length"].toString(), style: TextStyle(color: Colors.white), ),
+                  // Text( "family_friendly : " + Data[index]["family_friendly"]., style: TextStyle(color: Colors.white), ),
                   // Text('length $Data[index]["length"]'),
                   // Text(Data[index]["origin"]),
                   // Text(Data[index]["family_friendly"]),
