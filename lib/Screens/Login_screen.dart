@@ -58,7 +58,7 @@ class _Login_screenState extends State<Login_screen> {
       backgroundColor: Color(0xffffffff),
       body: Container(
         child: Padding(
-            padding: const EdgeInsets.only(top: 125),
+            padding: const EdgeInsets.only(top: 100),
             child: Column(
               children: <Widget>[
                 const SizedBox(
@@ -220,7 +220,9 @@ class _Login_screenState extends State<Login_screen> {
                   height: 10,
                 ),
                 Container(
-                  padding: const EdgeInsets.only(top: 10, right: 15, left: 15),
+                  width: double.infinity,
+                  height: 325,
+                  padding: const EdgeInsets.only(top: 10, right: 40, left: 40),
                   alignment: Alignment.center,
                   child: const Image(
                     image: AssetImage("images/2.jpg"),
