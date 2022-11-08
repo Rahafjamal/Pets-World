@@ -41,12 +41,14 @@ class FishApi {
 
 class BetFinderApi {
   Future<List<dynamic>> get() async {
-    Uri myurl = Uri.parse("https://api.petfinder.com/v2/types");
+    Uri myurl =
+        Uri.parse("https://api.petfinder.com/v2/animals?type=horse&page=1");
     http.Response myresponse = await http.get(myurl, headers: {
       "Authorization":
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlWjV0YlZTQ0Vja2RCVXNGWW9STmFPNWZDd2F0NWdhVUZTamgxTTducHk5R0YwNFk4diIsImp0aSI6IjdiNmEwNDAwNGMyZGI5ODIwOThiODI5ODNhZTkyZmRhNGI1YjUxYWJkMzNkM2FmNmQ0MDgzODlhYzA3YTVkZjExYjQ3YjAzNTAwNTA2ZTEyIiwiaWF0IjoxNjY3NzYwNjQ1LCJuYmYiOjE2Njc3NjA2NDUsImV4cCI6MTY2Nzc2NDI0NSwic3ViIjoiIiwic2NvcGVzIjpbXX0.Tkmfk660SMoD-pQqcnDnsM9eX_mG8Kx0c-HfjaOXVuuccLFfqhLwmRp75tjS0ZytqcFAWloAPPGOqPr7QkTsUEET0gSgDGTk3-j57-fvPkMsBfmxdJRzfGsZ54-OeXC-t7hOULGePY6noqR6t7buqwm23zOqmtgv_ofAoO-Xukv_U1ycTt1IwpdJn11Jhvqu-w7jPndN9aKRtIVa_RwUF3LBisI0LEL6nf3hdkwJPcBkKVx1ynl_G3jBwq8vbQNI16YJfTCgnt-Il7Z_AGCzXd5RBwcRertvol0vdBoYZX0L_yc_LzU2OCeoMCV3AfoaS1vn3QehZ-bTKlI2vrRMxQ"
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJlWjV0YlZTQ0Vja2RCVXNGWW9STmFPNWZDd2F0NWdhVUZTamgxTTducHk5R0YwNFk4diIsImp0aSI6IjczNDQ2NmIwNjExMzJjZjQxNzM0OGE0OTdkYjhkYjQ3YjFhMmJiYjM0YjBiZjQ4ZWVlNDgwMmEyMzE0NjgxNDRjNWIwMjNiODc3OWUxNmRkIiwiaWF0IjoxNjY3ODQ3NjgzLCJuYmYiOjE2Njc4NDc2ODMsImV4cCI6MTY2Nzg1MTI4Mywic3ViIjoiIiwic2NvcGVzIjpbXX0.Ni2cCf7a4Aehm2upATCt-WMwANcDQScjkcm8FDWcSDt_Ru5D8aJZZJnZ0CFlYQI4AMwXcvu_gwL5o5KuYqTMK0_rSF4D2_ywv7GRve8qmMfQG5BHC5Fnf29l2nc-0iQNEdBQGXcY58cwevz0cjhkcnzKKMh0V7L9b54asTc-I_CoPMw7NcNdW4VTeNOdJzbEaSH5TxyivAI9AI9NoTq3nHBg3IYMxhx1vTqA-j29Vf55h7xQ3EGk1RJ5GOkmTOiRU1koOYoKxZrqDJyxhIltF5VDy41zT3Tnchg77A0ixO9lIlqfjnInackErG3fCCdJXu8d2IXD_FOsGEVd44-z-w"
     });
-    List<dynamic> MyData = jsonDecode(myresponse.body)['types'];
+    List<dynamic> MyData = jsonDecode(myresponse.body)['animals'];
+
     return (MyData);
   }
 }
