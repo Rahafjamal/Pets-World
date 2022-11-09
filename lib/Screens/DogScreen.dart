@@ -206,6 +206,10 @@ class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
                                 ),
                               );
                             })),
+                    Container(),
+                    Container(),
+                    Container(),
+                    Container(),
                   ],
                 )),
           ])

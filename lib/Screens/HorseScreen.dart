@@ -206,6 +206,10 @@ class _HorseScreenState extends State<HorseScreen>
                                 ),
                               );
                             })),
+                    Container(),
+                    Container(),
+                    Container(),
+                    Container(),
                   ],
                 )),
           ])

@@ -212,6 +212,10 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                                 ),
                               );
                             })),
+                    Container(),
+                    Container(),
+                    Container(),
+                    Container(),
                   ],
                 )),
           ])
