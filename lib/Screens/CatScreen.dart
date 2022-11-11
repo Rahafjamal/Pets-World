@@ -11,12 +11,16 @@ import '../main.dart';
 
 class CatScreen extends StatefulWidget {
   const CatScreen({super.key});
+  static final String title = 'Card Example';
 
   @override
   State<CatScreen> createState() => _CatScreenState();
 }
 
 class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
+  List persons = ["1 ", "2 ", "2-6 "];
+  String myselcteditem = "1 ";
+
   List Data = [];
   @override
   void initState() {
@@ -58,10 +62,10 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 5, top: 5),
                     child: Image.asset(
                       "images/cool.png",
-                      scale: 4,
+                      scale: 3,
                     ),
                   ),
                   Column(
@@ -112,7 +116,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
             ),
             TabBar(
               controller: _tabController,
-              tabs: const [
+              tabs: [
                 Text(
                   "Tybs",
                   style: const TextStyle(
@@ -145,14 +149,26 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                     color: Colors.black,
                   ),
                 ),
-                Text(
-                  "Tybs",
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
+                DropdownButton(
+                    value: myselcteditem,
+                    items: persons
+                        .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(
+                              "$e",
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.brown[700],
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  fontFamily: 'DancingScript'),
+                            )))
+                        .toList(),
+                    onChanged: ((val) {
+                      setState(() {
+                        myselcteditem = val.toString();
+                      });
+                    })),
               ],
             ),
             const SizedBox(
@@ -165,53 +181,64 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                 child: TabBarView(
                   controller: _tabController,
                   children: [
-                    Container(
-                        width: double.infinity,
-                        child: CarouselSlider.builder(
-                            options: CarouselOptions(
-                              aspectRatio: 2.0,
-                              enlargeCenterPage: true,
-                              autoPlay: true,
-                            ),
-                            itemCount: Data.length,
-                            itemBuilder: (context, index, realIndex) {
-                              return Container(
-                                width: double.infinity,
-                                child: Container(
-                                  margin: EdgeInsets.all(5.0),
-                                  child: ClipRRect(
-                                      borderRadius: BorderRadius.all(
-                                          Radius.circular(5.0)),
-                                      child: Stack(
-                                        children: <Widget>[
-                                          Image.network(
-                                              Data[index]["image_link"],
-                                              height: 700,
-                                              fit: BoxFit.fill,
-                                              width: double.infinity),
-                                          Positioned(
-                                            bottom: 0.0,
-                                            left: 0.0,
-                                            right: 0.0,
-                                            child: Container(
-                                              decoration: BoxDecoration(
-                                                gradient: LinearGradient(
-                                                  colors: [
-                                                    Color.fromARGB(
-                                                        200, 0, 0, 0),
-                                                    Color.fromARGB(0, 0, 0, 0)
-                                                  ],
-                                                  begin: Alignment.bottomCenter,
-                                                  end: Alignment.topCenter,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      )),
+                    Column(
+                      children: [
+                        Card(
+                          child: Padding(
+                            padding: EdgeInsets.all(12),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'If life were predictable it would cease to be life, and be without flavor.',
+                                  style: TextStyle(fontSize: 24),
                                 ),
-                              );
-                            })),
+                                const SizedBox(height: 12),
+                                Text(
+                                  'Eleanor Roosevelt',
+                                  style: TextStyle(
+                                      fontSize: 24,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 15),
+                        Container(
+                            width: double.infinity,
+                            child: CarouselSlider.builder(
+                                options: CarouselOptions(
+                                  aspectRatio: 2.0,
+                                  enlargeCenterPage: true,
+                                  autoPlay: true,
+                                ),
+                                itemCount: Data.length,
+                                itemBuilder: (context, index, realIndex) {
+                                  return Card(
+                                    clipBehavior: Clip.antiAlias,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(24),
+                                    ),
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Ink.image(
+                                          image: NetworkImage(
+                                            Data[index]["image_link"],
+                                          ),
+                                          child: InkWell(
+                                            onTap: () {},
+                                          ),
+                                          height: 240,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ],
+                                    ),
+                                  );
+                                })),
+                      ],
+                    ),
                     Container(),
                     Container(),
                     Container(),

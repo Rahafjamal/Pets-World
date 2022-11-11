@@ -54,7 +54,7 @@ class _HorseScreenState extends State<HorseScreen>
                     padding: const EdgeInsets.only(left: 15),
                     child: Image.asset(
                       "images/cool.png",
-                      scale: 4,
+                      scale: 3,
                     ),
                   ),
                   Column(

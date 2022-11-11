@@ -1,28 +1,28 @@
 import 'package:flutter/material.dart';
 
 class ContainerLeft extends StatelessWidget {
-  ContainerLeft({this.tilte, this.imagepath, required this.OnTapping});
+  ContainerLeft({this.imagepath, required this.OnTapping});
 
   String? imagepath;
-  String? tilte;
+
   Function() OnTapping;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: OnTapping,
       child: Container(
-        width: 150,
-        height: 75,
+        width: 100,
+        height: 100,
         padding: const EdgeInsets.all(20),
         decoration: const BoxDecoration(
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
-                spreadRadius: 5,
-                blurRadius: 7,
+                spreadRadius: 0.1,
+                blurRadius: 0.1,
               )
             ],
-            color: Color(0xffd7e5ff),
+            color: Color(0xfffab7c9),
             borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(25),
                 bottomLeft: Radius.circular(25),
@@ -31,21 +31,12 @@ class ContainerLeft extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              "$imagepath",
-              scale: 2,
+            Center(
+              child: Image.asset(
+                "$imagepath",
+                scale: 2,
+              ),
             ),
-            const SizedBox(
-              width: 10,
-            ),
-            Text(
-              "$tilte",
-              style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w600,
-                  letterSpacing: 1,
-                  color: Colors.black),
-            )
           ],
         ),
       ),
