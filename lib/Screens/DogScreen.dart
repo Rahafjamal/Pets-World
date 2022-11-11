@@ -52,10 +52,10 @@ class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 15, top: 5),
                     child: Image.asset(
                       "images/cool.png",
-                      scale: 4,
+                      scale: 3,
                     ),
                   ),
                   Column(

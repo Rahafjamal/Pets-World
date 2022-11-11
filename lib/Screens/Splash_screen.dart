@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:final_project/Screens/Login_screen.dart';
-import 'package:final_project/main.dart';
+import 'package:final_project/Screens/firestore.dart';
+
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
-import 'package:intro_slider/intro_slider.dart';
+
 import '../widgets/slide_item.dart';
 import '../model/slide.dart';
 import '../widgets/slide_dots.dart';
@@ -74,7 +74,7 @@ class _Splash_screenState extends State<Splash_screen> {
                       alignment: AlignmentDirectional.topStart,
                       children: <Widget>[
                         Container(
-                          margin: const EdgeInsets.only(bottom: 35),
+                          margin: const EdgeInsets.only(bottom: 10),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -92,8 +92,56 @@ class _Splash_screenState extends State<Splash_screen> {
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(left: 275),
+                child: TextButton(
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Color(0xff2b5eaf),
+                    ),
+                    textAlign: TextAlign.right,
+                  ),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return Firestore();
+                      },
+                    ));
+                  },
+                ),
+              ),
               SizedBox(
-                height: 20,
+                height: 10,
+              ),
+              Container(
+                padding: const EdgeInsets.only(left: 10, right: 10),
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      padding: EdgeInsets.only(
+                          top: 10, bottom: 5, right: 15, left: 15),
+                      backgroundColor: Color(0xffd7e5ff),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                    ),
+                    child: const Text(
+                      '        Log  in        ',
+                      style: TextStyle(
+                          color: Color(0xff5674cc),
+                          fontSize: 25,
+                          fontFamily: "Tajawal-Light",
+                          letterSpacing: 1,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return Login_screen();
+                        },
+                      ));
+                    }),
               ),
             ],
           ),

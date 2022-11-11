@@ -17,6 +17,9 @@ class CatScreen extends StatefulWidget {
 }
 
 class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
+  List persons = ["1 ", "2 ", "2-6 "];
+  String myselcteditem = "1 person";
+
   List Data = [];
   @override
   void initState() {
@@ -58,10 +61,10 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 15),
+                    padding: const EdgeInsets.only(left: 5, top: 5),
                     child: Image.asset(
                       "images/cool.png",
-                      scale: 4,
+                      scale: 3,
                     ),
                   ),
                   Column(
@@ -112,7 +115,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
             ),
             TabBar(
               controller: _tabController,
-              tabs: const [
+              tabs: [
                 Text(
                   "Tybs",
                   style: const TextStyle(
@@ -145,14 +148,26 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                     color: Colors.black,
                   ),
                 ),
-                Text(
-                  "Tybs",
-                  style: const TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                  ),
-                ),
+                DropdownButton(
+                    value: myselcteditem,
+                    items: persons
+                        .map((e) => DropdownMenuItem(
+                            value: e,
+                            child: Text(
+                              "$e",
+                              style: TextStyle(
+                                  fontSize: 10,
+                                  color: Colors.brown[700],
+                                  fontWeight: FontWeight.bold,
+                                  fontStyle: FontStyle.italic,
+                                  fontFamily: 'DancingScript'),
+                            )))
+                        .toList(),
+                    onChanged: ((val) {
+                      setState(() {
+                        myselcteditem = val.toString();
+                      });
+                    })),
               ],
             ),
             const SizedBox(

@@ -1,7 +1,10 @@
+import 'package:final_project/Logic/containermidle.dart';
 import 'package:final_project/Logic/containerright.dart';
 import 'package:final_project/Logic/containetLeft.dart';
 import 'package:final_project/Screens/CatScreen.dart';
 import 'package:final_project/Screens/DogScreen.dart';
+import 'package:final_project/Screens/HorseScreen.dart';
+import 'package:final_project/Screens/bird.dart';
 import 'package:final_project/main.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -92,12 +95,19 @@ class _FirestoreState extends State<Firestore> {
           Center(
             child: Column(
               children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 0, top: 0),
+                  child: Image.asset(
+                    "images/55.png",
+                    scale: 10,
+                  ),
+                ),
                 Container(
                   width: double.infinity,
                   height: 200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage('images/555.jpg'), fit: BoxFit.fill),
+                        image: AssetImage('images/55.png'), fit: BoxFit.fill),
                   ),
                 ),
                 SizedBox(height: 20),
@@ -115,13 +125,24 @@ class _FirestoreState extends State<Firestore> {
                   height: 25,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right: 30, left: 30),
+                  padding: const EdgeInsets.only(left: 40),
                   child: Center(
                     child: Row(
                       children: [
                         ContainerRight(
-                          imagepath: "images/catl.png",
-                          tilte: "Cats",
+                          imagepath: "images/horse.png",
+                          OnTapping: () {
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) {
+                                return HorseScreen();
+                              },
+                            ));
+                          },
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Containermidle(
                           OnTapping: () {
                             Navigator.push(context, MaterialPageRoute(
                               builder: (context) {
@@ -129,63 +150,72 @@ class _FirestoreState extends State<Firestore> {
                               },
                             ));
                           },
+                          imagepath: "images/cat.png",
                         ),
                         const SizedBox(
-                          width: 30,
+                          width: 10,
                         ),
                         ContainerLeft(
                           OnTapping: () {
                             Navigator.push(context, MaterialPageRoute(
                               builder: (context) {
-                                return MyApp();
+                                return CatScreen();
                               },
                             ));
                           },
-                          tilte: "Horse",
-                          imagepath: "images/horse.png",
-                        )
+                          imagepath: "images/cat.png",
+                        ),
                       ],
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
+                SizedBox(height: 20),
                 Padding(
-                  padding: const EdgeInsets.only(right: 30, left: 30),
+                  padding: const EdgeInsets.only(left: 40),
                   child: Center(
                     child: Row(
                       children: [
                         ContainerLeft(
+                          imagepath: "images/horse.png",
                           OnTapping: () {
                             Navigator.push(context, MaterialPageRoute(
                               builder: (context) {
-                                return MyApp();
+                                return HorseScreen();
                               },
                             ));
                           },
-                          tilte: "Birds",
-                          imagepath: "images/bird.png",
                         ),
                         const SizedBox(
-                          width: 30,
+                          width: 10,
                         ),
-                        ContainerRight(
-                          imagepath: "images/dog.png",
-                          tilte: "Dogs",
+                        Containermidle(
                           OnTapping: () {
                             Navigator.push(context, MaterialPageRoute(
                               builder: (context) {
-                                return DogScreen();
+                                return CatScreen();
                               },
                             ));
                           },
+                          imagepath: "images/cat.png",
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ContainerRight(
+                          OnTapping: () {
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) {
+                                return CatScreen();
+                              },
+                            ));
+                          },
+                          imagepath: "images/cat.png",
                         ),
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 40)
+                SizedBox(height: 20),
               ],
             ),
           ),

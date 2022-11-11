@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ContainerRight extends StatelessWidget {
-  ContainerRight({this.imagepath, required this.OnTapping});
+class Containermidle extends StatelessWidget {
+  Containermidle({this.imagepath, required this.OnTapping});
   String? imagepath;
 
   Function() OnTapping;
@@ -14,6 +14,7 @@ class ContainerRight extends StatelessWidget {
         height: 100,
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(
+            color: Color(0xffd7e5ff),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey,
@@ -21,7 +22,6 @@ class ContainerRight extends StatelessWidget {
                 blurRadius: 0.1,
               )
             ],
-            color: Color(0xfffd521c),
             borderRadius: const BorderRadius.only(
                 topRight: Radius.circular(25),
                 bottomLeft: Radius.circular(25),
