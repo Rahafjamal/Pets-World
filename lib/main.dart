@@ -2,6 +2,7 @@ import 'package:final_project/Screens/BetScreen.dart';
 import 'package:final_project/Screens/CatScreen.dart';
 import 'package:final_project/Screens/DogScreen.dart';
 import 'package:final_project/Screens/FishScreen.dart';
+import 'package:final_project/Screens/HorseScreenCard.dart';
 import 'package:final_project/Screens/firestore.dart';
 import 'package:intro_slider/intro_slider.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Splash_screen(),
+      body: CatScreen(),
     );
   }
 }
