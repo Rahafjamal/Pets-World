@@ -1,95 +1,66 @@
+import 'package:final_project/CatModels/CatPagination.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ant_design_flutter/ant_design_flutter.dart' as ant;
 
-class CartSliderView extends StatefulWidget {
-  CartSliderView({super.key, required this.Data});
+class CartSliderView extends StatelessWidget {
+  CartSliderView({super.key, required this.Data, required this.type,required this.PaginationData});
   var Data;
-
-  @override
-  State<CartSliderView> createState() => _CartSliderViewState();
-}
-
-class _CartSliderViewState extends State<CartSliderView> {
+  String type;
+  Function PaginationData;
   @override
   Widget build(BuildContext context) {
-    if(widget.Data == null){
-      return const Center(child: CircularProgressIndicator());
-    }
-    List Data = widget.Data['animals'];
-    var pagination =widget.Data['pagination'];
+    List NewData = Data['animals'] ?? [];
+
     return SingleChildScrollView(
       child: Column(
-      children: [
-        Container(
-            width: double.infinity,
-            height: 400,
-            child: CarouselSlider.builder(
-                options: CarouselOptions(
-                  aspectRatio: 2.0,
-                  enlargeCenterPage: true,
-                  autoPlay: true,
-                  height: 320,
-                  scrollDirection: Axis.vertical,
-                  autoPlayCurve: Curves.fastOutSlowIn,
-                  enableInfiniteScroll: false,
-                ),
-                itemCount: Data.length,
-                itemBuilder: (context, index, realIndex) {
-                  return ant.Card(
-                    title: Text(Data[index]['name']),
-                    extra: Text(Data[index]['gender']),
-                    hoverable: true,
-                    size: ant.Size.large,
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: [
-                        Image.network(
-                          Data[index]['photos'][0]['medium'],
-                          height: 200,
-                          width: 280,
-                          fit: BoxFit.cover,
-                        ),
-                      ],
-                    ),
-                  );
-                })),
-        
-        Container(
-         child:ant.Button(
-           type: ant.ButtonType.primary,
-           onClick: () {
-            // open modal for pagination
-            showDialog(
-              context: context,
-              builder: (context) => AlertDialog(
-                  title: const Text("Pagination"),
-                  content: ant.Pagination(
-                    defaultCurrent: pagination['current_page'],
-                    total: pagination['total_count'],
-                    pageSize: 50,
-                    onChange: (page, pageSize) {
-                      print(page);
-                      print(pageSize);
-                    },
-                  ),
-                  actions: [
-                    ant.Button(
-                      type: ant.ButtonType.primary,
-                      onClick: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: const Text("Close"),
-                    ),
-                  ],
-                )
-            );
-           },
-           child: Text('Paginaton ${pagination['current_page']}'),
-         ),
-        ),
-      
-      ],
-    ),);
+        children: [
+          NewData.length > 0
+              ? Container(
+                  width: double.infinity,
+                  height: 400,
+                  child: CarouselSlider.builder(
+                      options: CarouselOptions(
+                        aspectRatio: 2.0,
+                        enlargeCenterPage: true,
+                        autoPlay: true,
+                        height: 320,
+                        scrollDirection: Axis.vertical,
+                        autoPlayCurve: Curves.fastOutSlowIn,
+                        enableInfiniteScroll: false,
+                      ),
+                      itemCount: NewData.length,
+                      itemBuilder: (context, index, realIndex) {
+                        return ant.Card(
+                          title: Text(NewData[index]['name'] ?? ""),
+                          extra: Text(NewData[index]['gender'] ?? ""),
+                          hoverable: true,
+                          size: ant.Size.large,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Image.network(
+                                NewData[index]['photos'].length > 0
+                                    ? NewData[index]['photos'][0]['medium']
+                                    : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+                                height: 200,
+                                width: 280,
+                                fit: BoxFit.cover,
+                              ),
+                            ],
+                          ),
+                        );
+                      }))
+              : Container(),
+          Container(
+            child: CatPagination(
+              PaginationData: PaginationData,
+              Data: Data,
+              type: type,
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
