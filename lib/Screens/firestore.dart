@@ -1,10 +1,7 @@
 import 'package:final_project/Logic/containermidle.dart';
 import 'package:final_project/Logic/containerright.dart';
 import 'package:final_project/Logic/containetLeft.dart';
-import 'package:final_project/Screens/CatScreen.dart';
-import 'package:final_project/Screens/DogScreen.dart';
-import 'package:final_project/Screens/HorseScreen.dart';
-import 'package:final_project/Screens/bird.dart';
+import 'package:final_project/Screens/Animals/CatScreen.dart';
 import 'package:final_project/main.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
