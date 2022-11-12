@@ -91,131 +91,75 @@ class _FirestoreState extends State<Firestore> {
       backgroundColor: Colors.white,
       body: ListView(
         children: [
-          SizedBox(height: 30),
           Center(
             child: Column(
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 0, top: 0),
-                  child: Image.asset(
-                    "images/55.png",
-                    scale: 10,
-                  ),
-                ),
+                SizedBox(width: 10),
                 Container(
                   width: double.infinity,
-                  height: 200,
+                  height: 300,
+                  padding: EdgeInsets.only(top: 10),
                   decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('images/55.png'), fit: BoxFit.fill),
-                  ),
+                      image: DecorationImage(
+                          image: AssetImage('images/home.png'))),
                 ),
-                SizedBox(height: 20),
-                Container(
-                    width: double.infinity,
-                    child: CarouselSlider(
-                      options: CarouselOptions(
-                        aspectRatio: 2.0,
-                        enlargeCenterPage: true,
-                        autoPlay: true,
-                      ),
-                      items: imageSliders,
-                    )),
-                SizedBox(
-                  height: 25,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40),
-                  child: Center(
-                    child: Row(
-                      children: [
-                        ContainerRight(
-                          imagepath: "images/horse.png",
-                          OnTapping: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return HorseScreen();
-                              },
-                            ));
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Containermidle(
-                          OnTapping: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return CatScreen();
-                              },
-                            ));
-                          },
-                          imagepath: "images/cat.png",
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ContainerLeft(
-                          OnTapping: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return CatScreen();
-                              },
-                            ));
-                          },
-                          imagepath: "images/cat.png",
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                Padding(
-                  padding: const EdgeInsets.only(left: 40),
-                  child: Center(
-                    child: Row(
-                      children: [
-                        ContainerLeft(
-                          imagepath: "images/horse.png",
-                          OnTapping: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return HorseScreen();
-                              },
-                            ));
-                          },
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        Containermidle(
-                          OnTapping: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return CatScreen();
-                              },
-                            ));
-                          },
-                          imagepath: "images/cat.png",
-                        ),
-                        const SizedBox(
-                          width: 10,
-                        ),
-                        ContainerRight(
-                          OnTapping: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) {
-                                return CatScreen();
-                              },
-                            ));
-                          },
-                          imagepath: "images/cat.png",
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
+                Row(children: [
+                  SizedBox(width: 10),
+                  Containermidle(
+                      OnTapping: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return CatScreen();
+                        }));
+                      },
+                      imagepath: 'images/cat.png'),
+                  SizedBox(width: 10),
+                  Containermidle(
+                      OnTapping: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return CatScreen();
+                        }));
+                      },
+                      imagepath: 'images/cat.png'),
+                  SizedBox(width: 10),
+                  Containermidle(
+                      OnTapping: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return CatScreen();
+                        }));
+                      },
+                      imagepath: 'images/cat.png'),
+                  SizedBox(width: 10),
+                  Containermidle(
+                      OnTapping: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return CatScreen();
+                        }));
+                      },
+                      imagepath: 'images/cat.png'),
+                  SizedBox(width: 10),
+                  Containermidle(
+                      OnTapping: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return CatScreen();
+                        }));
+                      },
+                      imagepath: 'images/cat.png'),
+                  SizedBox(width: 10),
+                  Containermidle(
+                      OnTapping: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) {
+                          return CatScreen();
+                        }));
+                      },
+                      imagepath: 'images/cat.png'),
+                ]),
               ],
             ),
           ),

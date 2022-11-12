@@ -9,33 +9,34 @@ class Containermidle extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: OnTapping,
-      child: Container(
-        width: 100,
-        height: 100,
-        padding: EdgeInsets.all(20),
-        decoration: BoxDecoration(
-            color: Color(0xffd7e5ff),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey,
-                spreadRadius: 0.1,
-                blurRadius: 0.1,
-              )
-            ],
-            borderRadius: const BorderRadius.only(
-                topRight: Radius.circular(25),
-                bottomLeft: Radius.circular(25),
-                bottomRight: Radius.circular(25),
-                topLeft: Radius.circular(25))),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              "$imagepath",
-              scale: 2,
+      child: Column(
+        children: [
+          Container(
+            width: 50,
+            height: 50,
+            padding: EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: Color(0xffd7e5ff),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  spreadRadius: 0.1,
+                  blurRadius: 0.1,
+                )
+              ],
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
-          ],
-        ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "$imagepath",
+                  fit: BoxFit.cover,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

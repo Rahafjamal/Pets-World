@@ -120,6 +120,7 @@ class _SignUpPageState extends State<SignUpPage> {
               style: TextStyle(
                 fontFamily: 'Tajawal-Light',
                 fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
             ),
             SizedBox(
@@ -130,6 +131,7 @@ class _SignUpPageState extends State<SignUpPage> {
               style: TextStyle(
                 fontFamily: 'Tajawal-Light',
                 fontSize: 20,
+                fontWeight: FontWeight.bold,
                 color: Color(0xff2b5eaf),
               ),
             ),
