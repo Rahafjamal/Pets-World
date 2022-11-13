@@ -1,12 +1,16 @@
 import 'package:final_project/Logic/containermidle.dart';
 import 'package:final_project/Logic/containerright.dart';
 import 'package:final_project/Logic/containetLeft.dart';
+import 'package:final_project/Screens/Animals/BirdScreen.dart';
 import 'package:final_project/Screens/Animals/CatScreen.dart';
+import 'package:final_project/Screens/Animals/DogScreen.dart';
+import 'package:final_project/Screens/Animals/HorseScreen.dart';
 import 'package:final_project/main.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Firestore extends StatefulWidget {
   const Firestore({super.key});
@@ -84,83 +88,115 @@ class _FirestoreState extends State<Firestore> {
   bool isAdmin = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: ListView(
-        children: [
-          Center(
-            child: Column(
-              children: [
-                SizedBox(width: 10),
-                Container(
-                  width: double.infinity,
-                  height: 300,
-                  padding: EdgeInsets.only(top: 10),
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('images/home.png'))),
-                ),
-                SizedBox(height: 10),
-                Row(children: [
-                  SizedBox(width: 10),
-                  Containermidle(
-                      OnTapping: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return CatScreen();
-                        }));
-                      },
-                      imagepath: 'images/cat.png'),
-                  SizedBox(width: 10),
-                  Containermidle(
-                      OnTapping: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return CatScreen();
-                        }));
-                      },
-                      imagepath: 'images/cat.png'),
-                  SizedBox(width: 10),
-                  Containermidle(
-                      OnTapping: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return CatScreen();
-                        }));
-                      },
-                      imagepath: 'images/cat.png'),
-                  SizedBox(width: 10),
-                  Containermidle(
-                      OnTapping: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return CatScreen();
-                        }));
-                      },
-                      imagepath: 'images/cat.png'),
-                  SizedBox(width: 10),
-                  Containermidle(
-                      OnTapping: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return CatScreen();
-                        }));
-                      },
-                      imagepath: 'images/cat.png'),
-                  SizedBox(width: 10),
-                  Containermidle(
-                      OnTapping: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) {
-                          return CatScreen();
-                        }));
-                      },
-                      imagepath: 'images/cat.png'),
-                ]),
-              ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: ListView(
+          children: [
+            Center(
+              child: Column(
+                children: [
+                  SizedBox(height: 20),
+                  Container(
+                    child: Text(
+                      'WE LOVE YOU HUMAN',
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: double.infinity,
+                    height: 300,
+                    padding: EdgeInsets.only(top: 10),
+                    decoration: BoxDecoration(
+                        image: DecorationImage(
+                            image: AssetImage('images/home.png'))),
+                  ),
+                  SizedBox(height: 20),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Container(
+                      height: 150,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey,
+                            spreadRadius: 0.1,
+                            blurRadius: 0.1,
+                          )
+                        ],
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 25),
+                        child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(width: 30),
+                              Containermidle(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return CatScreen();
+                                    }));
+                                  },
+                                  imagepath: 'images/cat.png'),
+                              SizedBox(width: 20),
+                              Containermidle(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return CatScreen();
+                                    }));
+                                  },
+                                  imagepath: 'images/furry.png'),
+                              SizedBox(width: 20),
+                              Containermidle(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return BirdScreen();
+                                    }));
+                                  },
+                                  imagepath: 'images/dog.png'),
+                              SizedBox(width: 20),
+                              Containermidle(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return DogScreen();
+                                    }));
+                                  },
+                                  imagepath: 'images/horse.png'),
+                              SizedBox(width: 10),
+                              Containermidle(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return HorseScreen();
+                                    }));
+                                  },
+                                  imagepath: 'images/cat.png'),
+                              SizedBox(width: 10),
+                              Containermidle(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return CatScreen();
+                                    }));
+                                  },
+                                  imagepath: 'images/cat.png'),
+                            ]),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
