@@ -12,11 +12,11 @@ class Containermidle extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 50,
-            height: 50,
+            width: 100,
+            height: 100,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: Color(0xffd7e5ff),
+              color: Colors.white,
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
@@ -29,9 +29,12 @@ class Containermidle extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  "$imagepath",
-                  fit: BoxFit.cover,
+                Padding(
+                  padding: const EdgeInsets.all(1),
+                  child: Image.asset(
+                    "$imagepath",
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ],
             ),
