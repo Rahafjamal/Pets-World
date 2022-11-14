@@ -3,56 +3,98 @@ class WritingViewModel {
 
   List<Map> questions = [
     {
-      'question': 'Roughly how long, on average, do pet bunnies live?',
-      'answers': ['at', 'to', 'in', 'on'],
+      'question': 'Roughly how long, on average, do pet bunnies live? , ',
+      'answers': [
+        'more tahn 10 years ',
+        'less than 5 years',
+        '2 years',
+        'less than 1 year'
+      ],
       'correctAnswer': 'on',
     },
     {
       'question':
-          'Dogs have such a strong sense of smell that they can sniff out medical issues or problems in humans — true or false?',
+          'Dogs have such a strong sense of smell that they can sniff out medical issues or problems in humans ?',
       'answers': ['Yes', 'No'],
       'correctAnswer': 'Yes',
     },
     {
       'question':
-          'Rabbits are social creatures and can become depressed if they’re kept alone as pets — true or false?',
+          'Rabbits are social creatures and can become depressed if they’re kept alone as pets ?',
       'answers': ['False', 'True'],
       'correctAnswer': 'True',
     },
     {
       'question': 'Do you like classical music? ----.',
-      'answers': ['Yes, I likes', 'Yes, I like', 'Yes, I does', 'Yes, I do'],
-      'correctAnswer': 'Yes, I do',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'True',
     },
     {
-      'question': '---- you ever visited London?',
-      'answers': ['Did', 'Do', 'Were', 'Have'],
-      'correctAnswer': 'Have',
+      'question': 'Pet birds do not need regular vet checkups ?',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'False',
     },
     {
-      'question': 'She has never ---- to New York.',
-      'answers': ['gone', 'was', 'been', 'went'],
-      'correctAnswer': 'been',
+      'question': 'Cats live longer when they’re kept outdoors as pets ?',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'False',
     },
     {
-      'question': 'He passed his English exam very ----.',
-      'answers': ['easy', 'easier', 'good', 'easily'],
-      'correctAnswer': 'easily',
+      'question':
+          "If they’re cared for properly, pet turtles can live for decades and grow to be a foot long ?",
+      'answers': ['False', 'True'],
+      'correctAnswer': 'True',
     },
     {
-      'question': 'He ---- born in 1963 in America.',
-      'answers': ['had', 'is', 'was', 'did'],
-      'correctAnswer': 'was',
+      'question':
+          'Chinchillas are not nocturnal and are most active during the day ?',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'False',
     },
     {
-      'question': 'Switzerland is ---- than Britain.',
-      'answers': ['as small', 'smallest', 'more small', 'smaller'],
-      'correctAnswer': 'smaller',
+      'question': "A pet cat’s lifespan is which of these, generally speaking?",
+      'answers': ['20-25 years', '5-10 years', '1-5 years', '12-18 years'],
+      'correctAnswer': '12-18 years',
     },
     {
-      'question': 'When ---- you go to the USA? Last year.',
-      'answers': ['did', 'was', 'went', 'have'],
-      'correctAnswer': 'did',
+      'question':
+          'Our blood pressure goes down when we pet a dog, and the dog’s blood pressure goes down, too ?',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'True',
+    },
+    {
+      'question':
+          'A bloodhound’s sense of smell is so accurate that the tracking can be used as evidence in a court of law, according to the AKC ?',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'True',
+    },
+    {
+      'question':
+          'Covering a pet bird’s cage at night gives it privacy and often helps keep it calm until morning ?',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'True',
+    },
+    {
+      'question': 'Cats spend roughly what percentage of their lives sleeping?',
+      'answers': ['20%', '50%', '70%', '90%'],
+      'correctAnswer': '50',
+    },
+    {
+      'question':
+          'During her lifetime, Queen Elizabeth II owned dozens of which type of dog?',
+      'answers': [
+        'German Shepherd',
+        'German Shepherd',
+        'German Shepherd',
+        'German Shepherd'
+      ],
+      'correctAnswer': 'German Shepherd',
+    },
+    {
+      'question':
+          'When it comes to keeping geckos as pets, male geckos should not be in the same enclosure because they’ll attack each other ?',
+      'answers': ['False', 'True'],
+      'correctAnswer': 'True',
     },
   ];
 }

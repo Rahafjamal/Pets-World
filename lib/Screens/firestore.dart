@@ -6,6 +6,7 @@ import 'package:final_project/Screens/Animals/CatScreen.dart';
 import 'package:final_project/Screens/Animals/DogScreen.dart';
 import 'package:final_project/Screens/Animals/HorseScreen.dart';
 import 'package:final_project/main.dart';
+import 'package:final_project/quiz/writing_view.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -91,12 +92,28 @@ class _FirestoreState extends State<Firestore> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.black),
+          backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+          elevation: 0,
+          leading: Builder(
+            builder: (context) => IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Image.asset(
+                "images/R.png",
+                width: 30,
+              ),
+            ),
+          ),
+        ),
         body: ListView(
           children: [
             Center(
               child: Column(
                 children: [
-                  SizedBox(height: 20),
+                  SizedBox(height: 0),
                   Container(
                     child: Text(
                       'WE LOVE YOU HUMAN',
@@ -192,6 +209,41 @@ class _FirestoreState extends State<Firestore> {
                       ),
                     ),
                   ),
+                  SizedBox(height: 5),
+                  Center(
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 60),
+                            child: ContainerRight(
+                                title: 'Test your pet info !',
+                                OnTapping: () {
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) {
+                                      return WritingView();
+                                    },
+                                  ));
+                                }),
+                          ),
+                          SizedBox(width: 20),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 30),
+                            child: ContainerRight(
+                                title: 'Chat with pets owners',
+                                OnTapping: () {
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (context) {
+                                      return WritingView();
+                                    },
+                                  ));
+                                }),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
                 ],
               ),
             ),
