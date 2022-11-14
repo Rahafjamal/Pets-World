@@ -18,24 +18,47 @@ class _WritingViewState extends State<WritingView> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          iconTheme: const IconThemeData(color: Colors.black),
+          backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+          elevation: 0,
+          leading: Builder(
+            builder: (context) => IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Image.asset(
+                "images/R.png",
+                width: 30,
+              ),
+            ),
+          ),
+        ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(0),
           child: ListView(
             children: [
+              SizedBox(height: 0),
               const Text(
-                "Please Answer the following questions ",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                "Should i get a pet ?",
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  letterSpacing: 0,
+                ),
                 textAlign: TextAlign.center,
               ),
-              const SizedBox(
-                height: 16,
-              ),
+              SizedBox(height: 5),
               Image.asset(
-                "assets/images/good_luck.png",
-                height: 240.0,
+                "images/quiz.jfif",
+                height: 190.0,
               ),
               const SizedBox(
-                height: 16,
+                height: 5,
+              ),
+              const SizedBox(
+                height: 15,
               ),
               ListView.separated(
                 shrinkWrap: true,
@@ -56,38 +79,41 @@ class _WritingViewState extends State<WritingView> {
                 },
               ),
               const SizedBox(
-                height: 16,
+                height: 20,
               ),
-              ElevatedButton(
-                onPressed: () {
-                  showDialog(
-                      context: context,
-                      builder: ((context) {
-                        return AlertDialog(
-                          actions: [
-                            TextButton(
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                  Navigator.pop(context);
-                                },
-                                child: const Text(
-                                  "OK",
-                                  style: TextStyle(fontSize: 24),
-                                ))
-                          ],
-                          // title: Text(FirebaseAuth.instance.currentUser!.displayName!),
-                          content: SingleChildScrollView(
-                            child: Column(
-                              children: [
-                                const Text("Your score is"),
-                                Text("${_viewModel.score}/10"),
-                              ],
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40),
+                child: ElevatedButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: ((context) {
+                          return AlertDialog(
+                            actions: [
+                              TextButton(
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                    Navigator.pop(context);
+                                  },
+                                  child: const Text(
+                                    "OK",
+                                    style: TextStyle(fontSize: 24),
+                                  ))
+                            ],
+                            // title: Text(FirebaseAuth.instance.currentUser!.displayName!),
+                            content: SingleChildScrollView(
+                              child: Column(
+                                children: [
+                                  const Text("Your score is"),
+                                  Text("${_viewModel.score}/10"),
+                                ],
+                              ),
                             ),
-                          ),
-                        );
-                      }));
-                },
-                child: const Text('Finish Quiz'),
+                          );
+                        }));
+                  },
+                  child: const Text('Finish Quiz'),
+                ),
               ),
             ],
           ),

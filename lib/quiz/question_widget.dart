@@ -21,15 +21,32 @@ class QuestionWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          questionText!,
-          style: const TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey,
+                  spreadRadius: 1,
+                  blurRadius: 1,
+                ),
+              ],
+              borderRadius: const BorderRadius.all(Radius.circular(25)),
+            ),
+            padding: const EdgeInsets.all(12),
+            child: Text(
+              questionText!,
+              style: const TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ),
         ),
         const SizedBox(
-          height: 16.0,
+          height: 20.0,
         ),
         StatefulBuilder(
           builder:
@@ -43,8 +60,8 @@ class QuestionWidget extends StatelessWidget {
                     title: Text(
                       answers![i],
                       style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                        fontWeight: FontWeight.normal,
                       ),
                     ),
                     groupValue: radioGroupValue,

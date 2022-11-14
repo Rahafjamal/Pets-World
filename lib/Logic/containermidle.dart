@@ -20,8 +20,8 @@ class Containermidle extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   color: Colors.grey,
-                  spreadRadius: 0.1,
-                  blurRadius: 0.1,
+                  spreadRadius: 1,
+                  blurRadius: 1,
                 )
               ],
               borderRadius: const BorderRadius.all(Radius.circular(10)),
