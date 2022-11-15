@@ -1,3 +1,4 @@
+import 'package:final_project/Screens/drawerScreen.dart';
 import 'package:final_project/quiz/question_widget.dart';
 import 'package:final_project/quiz/writing_model.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,7 @@ class _WritingViewState extends State<WritingView> {
             children: [
               SizedBox(height: 0),
               const Text(
-                "Should i get a pet ?",
+                "Should you get a pet ?",
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,

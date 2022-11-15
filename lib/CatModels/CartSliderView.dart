@@ -1,5 +1,6 @@
 import 'package:final_project/CatModels/CatPagination.dart';
 import 'package:final_project/CatModels/CatSpecification.dart';
+import 'package:final_project/model/HeaderCatScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ant_design_flutter/ant_design_flutter.dart' as ant;
@@ -20,6 +21,7 @@ class CartSliderView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
+          const HeaderCatScreen(),
           NewData.length > 0
               ? Container(
                   width: double.infinity,

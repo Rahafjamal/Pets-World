@@ -1,3 +1,4 @@
+import 'package:final_project/model/HeaderCatScreen.dart';
 import 'package:flutter/material.dart';
 
 class CatAppBar extends StatelessWidget with PreferredSizeWidget {
@@ -22,7 +23,7 @@ class CatAppBar extends StatelessWidget with PreferredSizeWidget {
       ),
     );
   }
+
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
-
 }

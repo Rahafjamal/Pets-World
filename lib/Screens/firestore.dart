@@ -4,7 +4,9 @@ import 'package:final_project/Logic/containetLeft.dart';
 import 'package:final_project/Screens/Animals/BirdScreen.dart';
 import 'package:final_project/Screens/Animals/CatScreen.dart';
 import 'package:final_project/Screens/Animals/DogScreen.dart';
+import 'package:final_project/Screens/Animals/FurryScreen.dart';
 import 'package:final_project/Screens/Animals/HorseScreen.dart';
+import 'package:final_project/Screens/drawerScreen.dart';
 import 'package:final_project/main.dart';
 import 'package:final_project/quiz/writing_view.dart';
 import 'package:flutter/material.dart';
@@ -165,19 +167,10 @@ class _FirestoreState extends State<Firestore> {
                                   OnTapping: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return CatScreen();
+                                      return FurryScreen();
                                     }));
                                   },
-                                  imagepath: 'images/furry.png'),
-                              SizedBox(width: 20),
-                              Containermidle(
-                                  OnTapping: () {
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return BirdScreen();
-                                    }));
-                                  },
-                                  imagepath: 'images/dog.png'),
+                                  imagepath: 'images/h3.png'),
                               SizedBox(width: 20),
                               Containermidle(
                                   OnTapping: () {
@@ -186,7 +179,16 @@ class _FirestoreState extends State<Firestore> {
                                       return DogScreen();
                                     }));
                                   },
-                                  imagepath: 'images/horse.png'),
+                                  imagepath: 'images/dog.png'),
+                              SizedBox(width: 20),
+                              Containermidle(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return BirdScreen();
+                                    }));
+                                  },
+                                  imagepath: 'images/b3.png'),
                               SizedBox(width: 10),
                               Containermidle(
                                   OnTapping: () {
@@ -195,16 +197,7 @@ class _FirestoreState extends State<Firestore> {
                                       return HorseScreen();
                                     }));
                                   },
-                                  imagepath: 'images/cat.png'),
-                              SizedBox(width: 10),
-                              Containermidle(
-                                  OnTapping: () {
-                                    Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return CatScreen();
-                                    }));
-                                  },
-                                  imagepath: 'images/cat.png'),
+                                  imagepath: 'images/horse.png'),
                             ]),
                       ),
                     ),

@@ -26,17 +26,12 @@ class Containermidle extends StatelessWidget {
               ],
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(1),
-                  child: Image.asset(
-                    "$imagepath",
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ],
+            child: Padding(
+              padding: const EdgeInsets.all(1),
+              child: Image.asset(
+                "$imagepath",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ],
