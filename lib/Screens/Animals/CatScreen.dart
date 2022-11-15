@@ -15,14 +15,14 @@ class CatScreen extends StatefulWidget {
 }
 
 class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
-  var Data ;
+  var Data;
   String type = "cat";
   var storage = FlutterSecureStorage();
   @override
   void initState() {
     // TODO: implement initState
     BetFinderApi myobject = BetFinderApi();
-    
+
     myobject.get(type, storage).then((value) {
       setState(() {
         Data = value;
@@ -30,16 +30,17 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
     });
     super.initState();
   }
-  void FilterData(params,filter)  {
+
+  void FilterData(params, filter) {
     setState(() {
       Data = null;
     });
     FilterAnimal object = FilterAnimal();
-        object.get(type, storage, filter, params).then((value) {
-          setState(() {
-           Data = value;
-          });
-        });
+    object.get(type, storage, filter, params).then((value) {
+      setState(() {
+        Data = value;
+      });
+    });
   }
 
   void PaginationData(page) {
@@ -53,20 +54,25 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
       });
     });
   }
-  
-
 
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
-    return Scaffold(
-      appBar: const CatAppBar(),
-      drawer: DrawerScreen(),
-      body: CatListView(
-        tabController: _tabController,
-        Data: Data,
-        type: type,
-        FilterData: FilterData,
-        PaginationData: PaginationData,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: const CatAppBar(),
+        drawer: DrawerScreen(
+          FilterData: FilterData,
+          Data: Data,
+          type: type,
+        ),
+        body: CatListView(
+          tabController: _tabController,
+          Data: Data,
+          type: type,
+          FilterData: FilterData,
+          PaginationData: PaginationData,
+        ),
       ),
     );
   }

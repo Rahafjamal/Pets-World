@@ -1,16 +1,29 @@
 import 'dart:io';
 
+import 'package:final_project/Screens/Login_screen.dart';
 import 'package:final_project/Screens/firestore.dart';
 import 'package:flutter/material.dart';
 
-class DrawerScreen extends StatefulWidget {
-  const DrawerScreen({super.key});
+import '../CatModels/SizeDrop.dart';
 
+class DrawerScreen extends StatefulWidget {
+  DrawerScreen(
+      {super.key,
+      required this.Data,
+      required this.FilterData,
+      required this.type});
+
+  Function FilterData;
+  String type;
+  var Data;
   @override
   State<DrawerScreen> createState() => _DrawerScreenState();
 }
 
 class _DrawerScreenState extends State<DrawerScreen> {
+  late Function FilterData;
+  var Data;
+  late String type;
   bool _SwitchVal = true;
   @override
   Widget build(BuildContext context) {
@@ -18,6 +31,30 @@ class _DrawerScreenState extends State<DrawerScreen> {
       backgroundColor: Color.fromARGB(255, 15, 136, 145),
       child: Column(
         children: [
+          SizeDrop(
+            FilterData: FilterData,
+            Data: Data,
+            Filter: const ["Size", "Small", "Medium", "Large"],
+            value: "Size",
+            type: type,
+            params: "size",
+          ),
+          SizeDrop(
+            FilterData: FilterData,
+            Data: Data,
+            Filter: const ["Age", "Baby", "Young", "Adult", "Senior"],
+            value: "Age",
+            type: type,
+            params: "age",
+          ),
+          SizeDrop(
+            FilterData: FilterData,
+            Data: Data,
+            Filter: const ['Gender', 'Female', 'Male'],
+            value: "Gender",
+            type: type,
+            params: "gender",
+          ),
           Padding(
             padding: const EdgeInsets.only(bottom: 80),
             child: ClipRRect(
@@ -28,7 +65,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
           ),
           CircleAvatar(
             radius: 50.0,
-            backgroundImage: AssetImage("images/1.png"),
+            backgroundImage: AssetImage("images/user.png"),
           ),
           SizedBox(
             height: 10,
@@ -40,13 +77,6 @@ class _DrawerScreenState extends State<DrawerScreen> {
                 Icons.circle_rounded,
                 size: 12,
                 color: Color.fromARGB(255, 78, 241, 84),
-              ),
-              Text(
-                "  ",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -84,7 +114,7 @@ class _DrawerScreenState extends State<DrawerScreen> {
                   setState(() {
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: ((context) {
-                      return Firestore();
+                      return Login_screen();
                     })));
                   });
                 },

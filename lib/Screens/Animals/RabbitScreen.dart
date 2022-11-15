@@ -14,15 +14,16 @@ class RabbitScreen extends StatefulWidget {
   State<RabbitScreen> createState() => _RabbitScreenState();
 }
 
-class _RabbitScreenState extends State<RabbitScreen> with TickerProviderStateMixin {
-  var Data ;
+class _RabbitScreenState extends State<RabbitScreen>
+    with TickerProviderStateMixin {
+  var Data;
   String type = "rabbit";
   var storage = FlutterSecureStorage();
   @override
   void initState() {
     // TODO: implement initState
     BetFinderApi myobject = BetFinderApi();
-    
+
     myobject.get(type, storage).then((value) {
       setState(() {
         Data = value;
@@ -30,16 +31,17 @@ class _RabbitScreenState extends State<RabbitScreen> with TickerProviderStateMix
     });
     super.initState();
   }
-  void FilterData(params,filter)  {
+
+  void FilterData(params, filter) {
     setState(() {
       Data = null;
     });
     FilterAnimal object = FilterAnimal();
-        object.get(type, storage, filter, params).then((value) {
-          setState(() {
-           Data = value;
-          });
-        });
+    object.get(type, storage, filter, params).then((value) {
+      setState(() {
+        Data = value;
+      });
+    });
   }
 
   void PaginationData(page) {
@@ -53,14 +55,16 @@ class _RabbitScreenState extends State<RabbitScreen> with TickerProviderStateMix
       });
     });
   }
-  
-
 
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
     return Scaffold(
       appBar: const CatAppBar(),
-      drawer: DrawerScreen(),
+      drawer: DrawerScreen(
+        FilterData: FilterData,
+        Data: Data,
+        type: type,
+      ),
       body: CatListView(
         tabController: _tabController,
         Data: Data,
