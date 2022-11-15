@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../CatModels/SizeDrop.dart';
 
-class DrawerScreen extends StatefulWidget {
+class DrawerScreen extends StatelessWidget {
   DrawerScreen(
       {super.key,
       required this.Data,
@@ -16,19 +16,11 @@ class DrawerScreen extends StatefulWidget {
   Function FilterData;
   String type;
   var Data;
-  @override
-  State<DrawerScreen> createState() => _DrawerScreenState();
-}
 
-class _DrawerScreenState extends State<DrawerScreen> {
-  late Function FilterData;
-  var Data;
-  late String type;
-  bool _SwitchVal = true;
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Color.fromARGB(255, 15, 136, 145),
+      backgroundColor: const Color.fromARGB(255, 15, 136, 145),
       child: Column(
         children: [
           SizeDrop(
@@ -55,90 +47,87 @@ class _DrawerScreenState extends State<DrawerScreen> {
             type: type,
             params: "gender",
           ),
-          Padding(
-            padding: const EdgeInsets.only(bottom: 80),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 80),
             child: ClipRRect(
               borderRadius: BorderRadius.only(
                 bottomRight: Radius.circular(250),
               ),
             ),
           ),
-          CircleAvatar(
+          const CircleAvatar(
             radius: 50.0,
             backgroundImage: AssetImage("images/user.png"),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
             children: [
-              Padding(padding: EdgeInsets.only(right: 110)),
-              Icon(
+              const Padding(padding: EdgeInsets.only(right: 110)),
+              const Icon(
                 Icons.circle_rounded,
                 size: 12,
                 color: Color.fromARGB(255, 78, 241, 84),
               ),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           Expanded(
             child: ListView(children: [
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               ListTile(
                 onTap: () {
-                  setState(() {
+                  
                     Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: ((context) {
-                      return Firestore();
+                      return const Firestore();
                     })));
-                  });
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.home,
                   color: Colors.white,
                 ),
-                title: Text(
+                title: const Text(
                   "Home",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               ListTile(
                 onTap: () {
-                  setState(() {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return Login_screen();
-                    })));
-                  });
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: ((context) {
+                    return const Login_screen();
+                  })));
                 },
-                leading: Icon(
+                leading: const Icon(
                   Icons.logout,
                   color: Colors.white,
                 ),
-                title: Text(
+                title: const Text(
                   "Log out",
                   style: TextStyle(fontSize: 20, color: Colors.white),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               ListTile(
                   onTap: () {
                     exit(0);
                   },
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.exit_to_app,
                     color: Colors.white,
                   ),
-                  title: Text(
+                  title: const Text(
                     "Exit app",
                     style: TextStyle(fontSize: 20, color: Colors.white),
                   )),

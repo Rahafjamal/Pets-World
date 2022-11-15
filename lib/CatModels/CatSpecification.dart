@@ -10,7 +10,6 @@ class CatSpecification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Data['contact']);
     List Photos = Data['photos'] ?? [];
     return Scaffold(
       body: SingleChildScrollView(
@@ -27,40 +26,90 @@ class CatSpecification extends StatelessWidget {
               ),
               itemCount: Photos.length,
               itemBuilder: (context, index, realIndex) {
-                return Container(
-                  child: Image.network(Photos[index]['medium'] ),
+                return Image.network(
+                  Photos[index]['full'],
+                  fit: BoxFit.cover,
+                  width: 1000,
                 );
               },
             ),
-            Text(Data['name'] ),
-            Text(Data['age'] ),
-            Text(Data['gender'] ),
-            Text(Data['size'] ),
-            Text(Data['coat'] ),
-            Text(Data['breeds']['primary'].toString() ),
-            Text(Data['breeds']['secondary'].toString() ),
-            Text(Data['breeds']['mixed'].toString() ),
-            Text(Data['breeds']['unknown'].toString() ),
-            Text(Data['colors']['primary'].toString() ),
-            Text(Data['colors']['secondary'].toString() ),
-            Text(Data['colors']['tertiary'].toString() ),
-            Text(Data['environment']['children'].toString() ),
-            Text(Data['environment']['dogs'].toString() ),
-            Text(Data['environment']['cats'].toString() ),
-            Text(Data['attributes']['spayed_neutered'].toString() ),
-            Text(Data['attributes']['house_trained'].toString() ),
-            Text(Data['attributes']['declawed'].toString() ),
-            Text(Data['attributes']['special_needs'].toString() ),
-            Text(Data['attributes']['shots_current'].toString() ),
-            Text(Data['contact']['address']['address1'] ),
-            Text(Data['contact']['address']['address2'] ),
-            Text(Data['contact']['address']['city'] ),
-            Text(Data['contact']['address']['state'] ),
-            Text(Data['contact']['address']['postcode'] ),
-            Text(Data['contact']['address']['country'] ),
-            Text(Data['contact']['email'] ),
-            Text(Data['contact']['phone'] ),
-            Text(Data['description'] ),
+            Text(Data['name'] ?? ""),
+            Text(Data['age'] ?? ""),
+            Text(Data['gender'] ?? ""),
+            Text(Data['size'] ?? ""),
+            Text(Data['coat'] ?? ""),
+            Text(Data['breeds']['primary'] != null
+                ? Data['breeds']['primary'].toString()
+                : ""),
+            Text(Data['breeds']['secondary'] != null
+                ? Data['breeds']['secondary'].toString()
+                : ""),
+            Text(Data['breeds']['mixed'] != null
+                ? Data['breeds']['mixed'].toString()
+                : ""),
+            Text(Data['breeds']['unknown'] != null
+                ? Data['breeds']['unknown'].toString()
+                : ""),
+            Text(Data['colors']['primary'] != null
+                ? Data['colors']['primary'].toString()
+                : ""),
+            Text(Data['colors']['secondary'] != null
+                ? Data['colors']['secondary'].toString()
+                : ""),
+            Text(Data['colors']['tertiary'] != null
+                ? Data['colors']['tertiary'].toString()
+                : ""),
+            Text(Data['environment']['children'] != null
+                ? Data['environment']['children'].toString()
+                : ""),
+            Text(Data['environment']['dogs'] != null
+                ? Data['environment']['dogs'].toString()
+                : ""),
+            Text(Data['environment']['cats'] != null
+                ? Data['environment']['cats'].toString()
+                : ""),
+            Text(Data['attributes']['spayed_neutered'] != null
+                ? Data['attributes']['spayed_neutered'].toString()
+                : ""),
+            Text(Data['attributes']['house_trained'] != null
+                ? Data['attributes']['house_trained'].toString()
+                : ""),
+            Text(Data['attributes']['declawed'] != null
+                ? Data['attributes']['declawed'].toString()
+                : ""),
+            Text(Data['attributes']['special_needs'] != null
+                ? Data['attributes']['special_needs'].toString()
+                : ""),
+            Text(Data['attributes']['shots_current'] != null
+                ? Data['attributes']['shots_current'].toString()
+                : ""),
+            Text(Data['contact']['address']['address1'] != null
+                ? Data['contact']['address']['address1'].toString()
+                : ""),
+            Text(Data['contact']['address']['address2'] != null
+                ? Data['contact']['address']['address2'].toString()
+                : ""),
+            Text(Data['contact']['address']['city'] != null
+                ? Data['contact']['address']['city'].toString()
+                : ""),
+            Text(Data['contact']['address']['state'] != null
+                ? Data['contact']['address']['state'].toString()
+                : ""),
+            Text(Data['contact']['address']['postcode'] != null
+                ? Data['contact']['address']['postcode'].toString()
+                : ""),
+            Text(Data['contact']['address']['country'] != null
+                ? Data['contact']['address']['country'].toString()
+                : ""),
+            Text(Data['contact']['email'] != null
+                ? Data['contact']['email'].toString()
+                : ""),
+            Text(Data['contact']['phone'] != null
+                ? Data['contact']['phone'].toString()
+                : ""),
+            Text(Data['description'] != null
+                ? Data['description'].toString()
+                : ""),
           ],
         ),
       ),

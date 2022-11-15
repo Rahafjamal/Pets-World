@@ -16,7 +16,7 @@ class DogScreen extends StatefulWidget {
 
 class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
   var Data;
-  String type = "dogs";
+  String type = "dog";
   var storage = FlutterSecureStorage();
   @override
   void initState() {

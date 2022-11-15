@@ -56,7 +56,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
   }
 
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 4, vsync: this);
+    TabController tabController = TabController(length: 4, vsync: this);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
@@ -67,7 +67,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
           type: type,
         ),
         body: CatListView(
-          tabController: _tabController,
+          tabController: tabController,
           Data: Data,
           type: type,
           FilterData: FilterData,
