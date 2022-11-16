@@ -17,14 +17,16 @@ class FurryScreen extends StatefulWidget {
 class _FurryScreenState extends State<FurryScreen>
     with TickerProviderStateMixin {
   var Data;
-  String type = "Small & Furry";
+  String type = "furry";
   var storage = FlutterSecureStorage();
   @override
   void initState() {
+    print('hiiiiiii');
     // TODO: implement initState
     BetFinderApi myobject = BetFinderApi();
 
     myobject.get(type, storage).then((value) {
+      print(value);
       setState(() {
         Data = value;
       });

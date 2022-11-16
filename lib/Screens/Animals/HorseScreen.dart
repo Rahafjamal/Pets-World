@@ -17,7 +17,7 @@ class HorseScreen extends StatefulWidget {
 class _HorseScreenState extends State<HorseScreen>
     with TickerProviderStateMixin {
   var Data;
-  String type = "cat";
+  String type = "horse";
   var storage = FlutterSecureStorage();
   @override
   void initState() {
