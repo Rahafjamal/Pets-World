@@ -1,9 +1,11 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:final_project/CatModels/CatAppBar.dart';
+import 'package:final_project/CatModels/AppBarTwo.dart';
 import 'package:final_project/CatModels/CatListView.dart';
 import 'package:final_project/Logic/animalapi.dart';
+import 'package:final_project/Screens/Drawer_screen.dart';
 import 'package:final_project/Screens/drawerScreen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
@@ -60,12 +62,13 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: const CatAppBar(),
-        drawer: DrawerScreen(
-          FilterData: FilterData,
+        endDrawer: DrawerScreen(
           Data: Data,
+          FilterData: FilterData,
           type: type,
         ),
+        appBar: const AppBarTwo(),
+        drawer: Drawer_screen(),
         body: CatListView(
           tabController: tabController,
           Data: Data,

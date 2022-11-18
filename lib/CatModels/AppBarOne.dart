@@ -8,7 +8,7 @@ class CatAppBar extends StatelessWidget with PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       iconTheme: const IconThemeData(color: Colors.black),
-      backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+      backgroundColor: Colors.white,
       elevation: 0,
       leading: Builder(
         builder: (context) => IconButton(

@@ -1,6 +1,6 @@
 import 'package:final_project/Screens/Animals/CatScreen.dart';
 import 'package:final_project/Screens/Animals/RabbitScreen.dart';
-import 'package:final_project/Screens/firestore.dart';
+import 'package:final_project/home/Home.dart';
 import 'package:final_project/quiz/writing_view.dart';
 import 'package:intro_slider/intro_slider.dart';
 
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Firestore(),
+      body: Splash_screen(),
     );
   }
 }
