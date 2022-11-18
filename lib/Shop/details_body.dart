@@ -4,9 +4,10 @@ import 'package:final_project/Shop/product_image.dart';
 import 'package:flutter/material.dart';
 
 class DetailsBody extends StatelessWidget {
-  DetailsBody({super.key, this.product, this.id});
+  DetailsBody({super.key, this.product, this.id, this.type});
   var product;
   var id;
+  var type;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -18,7 +19,7 @@ class DetailsBody extends StatelessWidget {
               alignment: Alignment.topRight,
               onPressed: (() {
                 FirebaseFirestore.instance
-                    .collection('cats')
+                    .collection(type)
                     .doc(id)
                     .delete()
                     .then((value) =>  Navigator.pop(context));

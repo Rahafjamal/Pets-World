@@ -19,19 +19,11 @@ Future<void> main() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await dotenv.load(fileName: ".env");
   runApp(MaterialApp(
-    routes: {
-        DetailsScreen.screenRoute: (context) => DetailsScreen(),
-      },
-      home: HomeScreen(),
-      title: "Electrecal Store",
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        colorScheme:
-            ColorScheme.fromSwatch().copyWith(secondary: kPrimaryColor),
-      ),
-    ));
+    debugShowCheckedModeBanner: false,
+    home: MyApp(),
+  ));
 }
+
 
 class MyApp extends StatelessWidget {
   @override

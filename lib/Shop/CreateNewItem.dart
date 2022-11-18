@@ -3,7 +3,8 @@ import 'package:final_project/Shop/AddImage.dart';
 import 'package:flutter/material.dart';
 
 class CreateNewFile extends StatelessWidget {
-  const CreateNewFile({super.key});
+   CreateNewFile({super.key, required this.type});
+  String type;
   bool isNumeric(String s) {
     if (s == null) {
       return false;
@@ -29,7 +30,7 @@ class CreateNewFile extends StatelessWidget {
         'image': ImageController.text,
       };
       FirebaseFirestore.instance
-          .collection('cats')
+          .collection(type)
           .add(data)
           .then((value) => {
                 ScaffoldMessenger.of(context).showSnackBar(

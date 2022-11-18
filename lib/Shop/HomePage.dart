@@ -5,14 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class HomeScreen extends StatelessWidget {
+   HomeScreen({super.key, required this.type});
+   String type;
 
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +16,10 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const CreateNewFile()),
+            MaterialPageRoute(builder: (context) =>  CreateNewFile(
+              type: type,
+            
+            )),
           );
         },
         child: const Icon(Icons.add),
@@ -28,7 +27,10 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       backgroundColor: kPrimaryColor,
       appBar: homeAppbar(),
-      body: HomeBody(),
+      body: HomeBody(
+        type: type,
+      
+      ),
     );
   }
 

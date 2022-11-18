@@ -1,4 +1,5 @@
 import 'package:final_project/CatModels/CartSliderView.dart';
+import 'package:final_project/Shop/HomePage.dart';
 import 'package:flutter/material.dart';
 
 class CatSlider extends StatefulWidget {
@@ -27,9 +28,10 @@ class _CatSliderState extends State<CatSlider> {
             type: widget.type,
             PaginationData: widget.PaginationData,
           ),
-          Container(),
-          Container(),
-          Container(),
+          HomeScreen(
+            type: widget.type,
+          )
+
 
         ],
       ),

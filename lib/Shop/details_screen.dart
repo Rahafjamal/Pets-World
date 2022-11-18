@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 
 
 class DetailsScreen extends StatelessWidget {
-   DetailsScreen({super.key, this.product, this.id});
+   DetailsScreen({super.key, this.product, this.id, this.type});
   static const String screenRoute = "DetailsSceen";
+  final type;
   var product;
   var id;
   @override
@@ -13,7 +14,7 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: DetailsAppbar(context),
-      body: DetailsBody(product: product, id: id),
+      body: DetailsBody(product: product, id: id, type: type),
     );
   }
 

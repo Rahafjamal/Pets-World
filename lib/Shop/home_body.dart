@@ -5,12 +5,13 @@ import 'package:final_project/Shop/product_cart.dart';
 import 'package:flutter/material.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
+   HomeBody({super.key, required this.type});
+   String type;
 
   @override
   Widget build(BuildContext context) {
     final Stream<QuerySnapshot> _productsStream =
-        FirebaseFirestore.instance.collection('cats').snapshots();
+        FirebaseFirestore.instance.collection(type).snapshots();
     return SafeArea(
       bottom: false,
       child: Column(
@@ -55,6 +56,7 @@ class HomeBody extends StatelessWidget {
                             return DetailsScreen(
                               product: data,
                               id: document.id,
+                              type: type,
                             );
                           })));
                         },
