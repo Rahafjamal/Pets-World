@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project/Screens/Signin_screen.dart';
 import 'package:final_project/Screens/gmail.dart';
-import 'package:final_project/main.dart';
+import 'package:final_project/home/TopHome.dart';
+
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'firestore.dart';
 
 class Login_screen extends StatefulWidget {
   const Login_screen({Key? key}) : super(key: key);
@@ -33,7 +33,7 @@ class _Login_screenState extends State<Login_screen> {
     }
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => Firestore()),
+      MaterialPageRoute(builder: (context) => Home()),
     );
   }
 
@@ -44,7 +44,7 @@ class _Login_screenState extends State<Login_screen> {
           email: nameController.text, password: passwordController.text);
       // ignore: use_build_context_synchronously
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const Firestore()));
+          context, MaterialPageRoute(builder: (context) => const Home()));
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(e.toString()),

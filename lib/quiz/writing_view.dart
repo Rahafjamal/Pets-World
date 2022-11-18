@@ -1,9 +1,8 @@
-import 'package:final_project/Screens/drawerScreen.dart';
+import 'package:final_project/CatModels/AppBarOne.dart';
+import 'package:final_project/Screens/Drawer_screen.dart';
 import 'package:final_project/quiz/question_widget.dart';
 import 'package:final_project/quiz/writing_model.dart';
 import 'package:flutter/material.dart';
-
-import 'custom_app_bar.dart';
 
 class WritingView extends StatefulWidget {
   const WritingView({super.key});
@@ -20,22 +19,8 @@ class _WritingViewState extends State<WritingView> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: AppBar(
-          iconTheme: const IconThemeData(color: Colors.black),
-          backgroundColor: const Color.fromARGB(0, 255, 255, 255),
-          elevation: 0,
-          leading: Builder(
-            builder: (context) => IconButton(
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              icon: Image.asset(
-                "images/R.png",
-                width: 30,
-              ),
-            ),
-          ),
-        ),
+        appBar: const CatAppBar(),
+        drawer: Drawer_screen(),
         body: Padding(
           padding: const EdgeInsets.all(0),
           child: ListView(

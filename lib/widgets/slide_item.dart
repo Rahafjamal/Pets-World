@@ -14,7 +14,7 @@ class SlideItem extends StatelessWidget {
       children: <Widget>[
         Container(
           width: double.infinity,
-          height: 250,
+          height: 275,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage(
@@ -29,16 +29,23 @@ class SlideItem extends StatelessWidget {
         Text(
           slideList[index].title,
           style: TextStyle(
-            fontSize: 22,
+            fontSize: 24,
             color: Theme.of(context).primaryColor,
+            fontWeight: FontWeight.w400,
           ),
         ),
         SizedBox(
           height: 10,
         ),
-        Text(
-          slideList[index].description,
-          textAlign: TextAlign.center,
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Text(
+            slideList[index].description,
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 20,
+            ),
+          ),
         ),
       ],
     );

@@ -25,30 +25,9 @@ class CatTabBar extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        SizeDrop(
-          FilterData: FilterData,
-          Data: Data,
-          Filter: const ["Size", "Small", "Medium", "Large"],
-          value: "Size",
-          type: type,
-          params: "size",
-        ),
-        SizeDrop(
-          FilterData: FilterData,
-          Data: Data,
-          Filter: const ["Age", "Baby", "Young", "Adult", "Senior"],
-          value: "Age",
-          type: type,
-          params: "age",
-        ),
-        SizeDrop(
-          FilterData: FilterData,
-          Data: Data,
-          Filter: const ['Gender', 'Female', 'Male'],
-          value: "Gender",
-          type: type,
-          params: "gender",
-        ),
+        Text(' '),
+        Text(' '),
+        Text(' '),
       ],
     );
   }
