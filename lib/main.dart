@@ -1,7 +1,11 @@
 import 'package:final_project/Screens/Animals/CatScreen.dart';
 import 'package:final_project/Screens/Animals/RabbitScreen.dart';
 import 'package:final_project/Screens/firestore.dart';
+import 'package:final_project/Shop/HomePage.dart';
+import 'package:final_project/Shop/constans.dart';
+import 'package:final_project/Shop/details_screen.dart';
 import 'package:final_project/quiz/writing_view.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_slider/intro_slider.dart';
 
 import 'Screens/Splash_screen.dart';
@@ -16,7 +20,19 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   await dotenv.load(fileName: ".env");
-  runApp(MaterialApp(home: MyApp()));
+  runApp(MaterialApp(
+    routes: {
+        DetailsScreen.screenRoute: (context) => DetailsScreen(),
+      },
+      home: HomeScreen(),
+      title: "Electrecal Store",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: kPrimaryColor,
+        colorScheme:
+            ColorScheme.fromSwatch().copyWith(secondary: kPrimaryColor),
+      ),
+    ));
 }
 
 class MyApp extends StatelessWidget {
