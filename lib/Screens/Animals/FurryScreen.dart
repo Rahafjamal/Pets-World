@@ -21,12 +21,10 @@ class _FurryScreenState extends State<FurryScreen>
   var storage = FlutterSecureStorage();
   @override
   void initState() {
-    print('hiiiiiii');
     // TODO: implement initState
     BetFinderApi myobject = BetFinderApi();
 
     myobject.get(type, storage).then((value) {
-      print(value);
       setState(() {
         Data = value;
       });
