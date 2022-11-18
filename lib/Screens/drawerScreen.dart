@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:final_project/Screens/Login_screen.dart';
-import 'package:final_project/Screens/firestore.dart';
+import 'package:final_project/home/Home.dart';
 import 'package:flutter/material.dart';
 
 import '../CatModels/SizeDrop.dart';
@@ -19,121 +19,126 @@ class DrawerScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      backgroundColor: const Color.fromARGB(255, 15, 136, 145),
-      child: Column(
-        children: [
-          SizeDrop(
-            FilterData: FilterData,
-            Data: Data,
-            Filter: const ["Size", "Small", "Medium", "Large"],
-            value: "Size",
-            type: type,
-            params: "size",
-          ),
-          SizeDrop(
-            FilterData: FilterData,
-            Data: Data,
-            Filter: const ["Age", "Baby", "Young", "Adult", "Senior"],
-            value: "Age",
-            type: type,
-            params: "age",
-          ),
-          SizeDrop(
-            FilterData: FilterData,
-            Data: Data,
-            Filter: const ['Gender', 'Female', 'Male'],
-            value: "Gender",
-            type: type,
-            params: "gender",
-          ),
-          const Padding(
-            padding: EdgeInsets.only(bottom: 80),
-            child: ClipRRect(
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(250),
-              ),
-            ),
-          ),
-          const CircleAvatar(
-            radius: 50.0,
-            backgroundImage: AssetImage("images/user.png"),
-          ),
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
+    return SafeArea(
+      child: Drawer(
+        backgroundColor: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Padding(padding: EdgeInsets.only(right: 110)),
-              const Icon(
-                Icons.circle_rounded,
-                size: 12,
-                color: Color.fromARGB(255, 78, 241, 84),
+              SizedBox(height: 20),
+              Container(
+                alignment: Alignment.topLeft,
+                width: 150,
+                height: 55,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                    )
+                  ],
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                ),
+                child: SizeDrop(
+                  FilterData: FilterData,
+                  Data: Data,
+                  Filter: const ["Size", "Small", "Medium", "Large"],
+                  value: "Size",
+                  type: type,
+                  params: "size",
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                alignment: Alignment.topLeft,
+                width: 150,
+                height: 55,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                    )
+                  ],
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                ),
+                child: SizeDrop(
+                  FilterData: FilterData,
+                  Data: Data,
+                  Filter: const ["Age", "Baby", "Young", "Adult", "Senior"],
+                  value: "Age",
+                  type: type,
+                  params: "age",
+                ),
+              ),
+              SizedBox(height: 20),
+              Container(
+                alignment: Alignment.topLeft,
+                width: 150,
+                height: 55,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      spreadRadius: 1,
+                      blurRadius: 1,
+                    )
+                  ],
+                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                ),
+                child: SizeDrop(
+                  FilterData: FilterData,
+                  Data: Data,
+                  Filter: const ['Gender', 'Female', 'Male'],
+                  value: "Gender",
+                  type: type,
+                  params: "gender",
+                ),
+              ),
+              SizedBox(height: 20),
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(30),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      label: Text(
+                        " What you want ... ",
+                        style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.normal,
+                          fontStyle: FontStyle.italic,
+                        ),
+                      ),
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(),
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 2,
+                      ),
+                      hintText: "search here",
+                      hintStyle: TextStyle(
+                        fontSize: 20,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 25,
-          ),
-          Expanded(
-            child: ListView(children: [
-              const SizedBox(
-                height: 15,
-              ),
-              ListTile(
-                onTap: () {
-                  
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: ((context) {
-                      return const Firestore();
-                    })));
-                },
-                leading: const Icon(
-                  Icons.home,
-                  color: Colors.white,
-                ),
-                title: const Text(
-                  "Home",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              ListTile(
-                onTap: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: ((context) {
-                    return const Login_screen();
-                  })));
-                },
-                leading: const Icon(
-                  Icons.logout,
-                  color: Colors.white,
-                ),
-                title: const Text(
-                  "Log out",
-                  style: TextStyle(fontSize: 20, color: Colors.white),
-                ),
-              ),
-              const SizedBox(
-                height: 15,
-              ),
-              ListTile(
-                  onTap: () {
-                    exit(0);
-                  },
-                  leading: const Icon(
-                    Icons.exit_to_app,
-                    color: Colors.white,
-                  ),
-                  title: const Text(
-                    "Exit app",
-                    style: TextStyle(fontSize: 20, color: Colors.white),
-                  )),
-            ]),
-          )
-        ],
+        ),
       ),
     );
   }

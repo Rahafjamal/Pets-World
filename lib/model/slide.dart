@@ -15,20 +15,19 @@ class Slide {
 final slideList = [
   Slide(
     imageUrl: 'images/1.png',
-    title: 'A Cool Way to Get Start',
+    title: 'A Cool Way to Get Start ',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus tincidunt bibendum. Maecenas eu viverra orci. Duis diam leo, porta at justo vitae, euismod aliquam nulla.',
+        "All what you need to know or to have for your pet in one application .",
   ),
   Slide(
     imageUrl: 'images/2.png',
-    title: 'Design Interactive App UI',
+    title: 'What our application can do !',
     description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus tincidunt bibendum. Maecenas eu viverra orci. Duis diam leo, porta at justo vitae, euismod aliquam nulla.',
+        "You can test your knowledge in pets,       read, shop, and look for soulotions.",
   ),
   Slide(
     imageUrl: 'images/3.png',
-    title: 'It\'s Just the Beginning',
-    description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec dapibus tincidunt bibendum. Maecenas eu viverra orci. Duis diam leo, porta at justo vitae, euismod aliquam nulla.',
+    title: "It's Just the Beginning",
+    description: 'We will keep improving our application.',
   ),
 ];

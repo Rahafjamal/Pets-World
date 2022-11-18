@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:final_project/Screens/Login_screen.dart';
-import 'package:final_project/Screens/firestore.dart';
+import 'package:final_project/home/Home.dart';
 
 import 'package:flutter/material.dart';
 
@@ -52,98 +52,72 @@ class _Splash_screenState extends State<Splash_screen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: <Widget>[
-              Expanded(
-                child: Stack(
-                  alignment: AlignmentDirectional.bottomCenter,
-                  children: <Widget>[
-                    PageView.builder(
-                      scrollDirection: Axis.horizontal,
-                      controller: _pageController,
-                      onPageChanged: _onPageChanged,
-                      itemCount: slideList.length,
-                      itemBuilder: (ctx, i) => SlideItem(i),
-                    ),
-                    Stack(
-                      alignment: AlignmentDirectional.topStart,
-                      children: <Widget>[
-                        Container(
-                          margin: const EdgeInsets.only(bottom: 10),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.min,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              for (int i = 0; i < slideList.length; i++)
-                                if (i == _currentPage)
-                                  SlideDots(true)
-                                else
-                                  SlideDots(false)
-                            ],
-                          ),
-                        )
-                      ],
-                    )
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 275),
-                child: TextButton(
-                  child: const Text(
-                    'Skip',
-                    style: TextStyle(
-                      fontSize: 18,
-                      color: Color(0xff2b5eaf),
-                    ),
-                    textAlign: TextAlign.right,
-                  ),
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return Firestore();
-                      },
-                    ));
-                  },
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Container(
-                padding: const EdgeInsets.only(left: 10, right: 10),
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      padding: EdgeInsets.only(
-                          top: 10, bottom: 5, right: 15, left: 15),
-                      backgroundColor: Color(0xffd7e5ff),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10),
+    return SafeArea(
+      child: Scaffold(
+        body: Container(
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              children: <Widget>[
+                Expanded(
+                  child: Stack(
+                    alignment: AlignmentDirectional.bottomCenter,
+                    children: <Widget>[
+                      PageView.builder(
+                        scrollDirection: Axis.horizontal,
+                        controller: _pageController,
+                        onPageChanged: _onPageChanged,
+                        itemCount: slideList.length,
+                        itemBuilder: (ctx, i) => SlideItem(i),
                       ),
-                    ),
+                      Stack(
+                        alignment: AlignmentDirectional.topStart,
+                        children: <Widget>[
+                          Container(
+                            margin: const EdgeInsets.only(bottom: 10),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                for (int i = 0; i < slideList.length; i++)
+                                  if (i == _currentPage)
+                                    SlideDots(true)
+                                  else
+                                    SlideDots(false)
+                              ],
+                            ),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 250),
+                  child: TextButton(
                     child: const Text(
-                      '        Log  in        ',
+                      'Skip',
                       style: TextStyle(
-                          color: Color(0xff5674cc),
-                          fontSize: 25,
-                          fontFamily: "Tajawal-Light",
-                          letterSpacing: 1,
-                          fontWeight: FontWeight.w600),
+                        fontSize: 18,
+                        color: Colors.blue,
+                      ),
+                      textAlign: TextAlign.right,
                     ),
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute(
                         builder: (context) {
-                          return Login_screen();
+                          return Firestore();
                         },
                       ));
-                    }),
-              ),
-            ],
+                    },
+                  ),
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+              ],
+            ),
           ),
         ),
       ),

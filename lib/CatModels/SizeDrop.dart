@@ -21,7 +21,6 @@ class SizeDrop extends StatefulWidget {
 }
 
 class _SizeDropState extends State<SizeDrop> {
-
   @override
   Widget build(BuildContext context) {
     return DropdownButton(
@@ -31,17 +30,13 @@ class _SizeDropState extends State<SizeDrop> {
           child: Text(
             "$e",
             style: TextStyle(
-                fontSize: 10,
-                color: Colors.brown[700],
-                fontWeight: FontWeight.bold,
-                fontFamily: 'DancingScript'),
+                fontSize: 20, color: Colors.black, fontWeight: FontWeight.w400),
           ))).toList(),
       onChanged: ((val) {
         setState(() {
           widget.value = val.toString();
         });
         widget.FilterData(widget.params, val.toString());
-        
       }),
     );
   }
