@@ -5,9 +5,13 @@ import 'package:final_project/CatModels/CatTabBar.dart';
 import 'package:flutter/material.dart';
 
 class CatDetail extends StatelessWidget {
-  CatDetail({super.key, required this.tabController, required this.Data, required this.type,required this.FilterData,required this.PaginationData});
+  CatDetail({super.key, required this.tabController,
+   required this.Data, required this.type,
+   required this.FilterData,required this.defaultImage,
+   required this.PaginationData});
   TabController tabController;
   var Data;
+  String defaultImage;
   Function FilterData;
   String type;
   Function PaginationData;
@@ -22,7 +26,13 @@ class CatDetail extends StatelessWidget {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : CatSlider(tabController: tabController, Data: Data, type: type,PaginationData: PaginationData),
+          : CatSlider(
+            defaultImage: defaultImage,
+            tabController: tabController,
+             Data: Data, 
+             type: type,
+             PaginationData: PaginationData
+             ),
     ]);
   }
 }

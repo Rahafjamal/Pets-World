@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project/Screens/Signin_screen.dart';
+import 'package:final_project/Screens/Splash_screen.dart';
 import 'package:final_project/Screens/gmail.dart';
 import 'package:final_project/home/TopHome.dart';
 
@@ -44,7 +45,7 @@ class _Login_screenState extends State<Login_screen> {
           email: nameController.text, password: passwordController.text);
       // ignore: use_build_context_synchronously
       Navigator.push(
-          context, MaterialPageRoute(builder: (context) => const Home()));
+          context, MaterialPageRoute(builder: (context) => const Splash_screen()));
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         content: Text(e.toString()),

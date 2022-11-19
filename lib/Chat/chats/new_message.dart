@@ -10,23 +10,46 @@ class NewMessage extends StatefulWidget {
 class _NewMessageState extends State<NewMessage> {
   final _controller = TextEditingController();
   String _enterdmessage = "";
-  _sendmessage() async {
+  String UserId = '';
+  String UserName = '';
+  void _sendmessage() async {
     FocusScope.of(context).unfocus();
-    final user =  FirebaseAuth.instance.currentUser;
-    final userData = await FirebaseFirestore.instance
-        .collection("users")
-        .doc(user!.uid)
-        .get();
-    FirebaseFirestore.instance.collection("chat").add({
+    final user = FirebaseAuth.instance.currentUser;
+    final userData = FirebaseFirestore.instance.collection("chat").add({
       'text': _enterdmessage,
       "createdAt": Timestamp.now(),
-      "username": userData["username"],
-      "userId": user.uid,
+      "username": UserName,
+      "userId": user!.uid,
+    }).then((value) => {
+          _controller.clear(),
+          setState(() {
+            _enterdmessage = "";
+          })
+        });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        FirebaseFirestore.instance
+            .collection("users")
+            .doc(user.uid)
+            .get()
+            .then((value) {
+          print(value);
+          setState(() {
+            UserId = user.uid;
+            UserName = value["username"];
+          });
+        });
+        print('User is signed in!');
+      }
     });
-    _controller.clear();
-    setState(() {
-      _enterdmessage="";
-    });
+    super.initState();
   }
 
   @override
@@ -46,9 +69,17 @@ class _NewMessageState extends State<NewMessage> {
               });
             },
           )),
-          IconButton(
-              onPressed: _enterdmessage.trim().isEmpty ? null : _sendmessage,
-              icon: Icon(Icons.send))
+          UserId == ''
+              ? Container()
+              : IconButton(
+                  onPressed: (() {
+                    if (_enterdmessage != "") {
+                      _sendmessage();
+                    }
+                  }),
+                  icon: Icon(Icons.send),
+                  color: Theme.of(context).primaryColor,
+                )
         ],
       ),
     );

@@ -8,10 +8,12 @@ import 'package:ant_design_flutter/ant_design_flutter.dart' as ant;
 class CartSliderView extends StatelessWidget {
   CartSliderView(
       {super.key,
+      required this.defaultImage,
       required this.Data,
       required this.type,
       required this.PaginationData});
   var Data;
+  String defaultImage;
   String type;
   Function PaginationData;
   @override
@@ -60,7 +62,7 @@ class CartSliderView extends StatelessWidget {
                                 Image.network(
                                   NewData[index]['photos'].length > 0
                                       ? NewData[index]['photos'][0]['medium']
-                                      : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+                                      : defaultImage,
                                   height: 200,
                                   width: 280,
                                   fit: BoxFit.cover,

@@ -17,7 +17,7 @@ class FurryScreen extends StatefulWidget {
 class _FurryScreenState extends State<FurryScreen>
     with TickerProviderStateMixin {
   var Data;
-  String type = "furry";
+  String type = "Small %26 Furry";
   var storage = FlutterSecureStorage();
   @override
   void initState() {
@@ -68,7 +68,7 @@ class _FurryScreenState extends State<FurryScreen>
 }
 
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 4, vsync: this);
+    TabController _tabController = TabController(length: 2, vsync: this);
     return Scaffold(
       appBar: const CatAppBar(),
       drawer: DrawerScreen(
@@ -80,6 +80,7 @@ class _FurryScreenState extends State<FurryScreen>
       body: CatListView(
         tabController: _tabController,
         Data: Data,
+                  defaultImage:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
         type: type,
         FilterData: FilterData,
         PaginationData: PaginationData,

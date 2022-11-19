@@ -55,19 +55,21 @@ class _HorseScreenState extends State<HorseScreen>
       });
     });
   }
-void SearchData(search){
-  setState(() {
-    Data = null;
-  });
-  SearchAnimal myobject = SearchAnimal();
-  myobject.get(type, storage, search).then((value) {
+
+  void SearchData(search) {
     setState(() {
-      Data = value;
+      Data = null;
     });
-  });
-}
+    SearchAnimal myobject = SearchAnimal();
+    myobject.get(type, storage, search).then((value) {
+      setState(() {
+        Data = value;
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 4, vsync: this);
+    TabController _tabController = TabController(length: 2, vsync: this);
     return Scaffold(
       appBar: const CatAppBar(),
       drawer: DrawerScreen(
@@ -79,6 +81,8 @@ void SearchData(search){
       body: CatListView(
         tabController: _tabController,
         Data: Data,
+        defaultImage:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
         type: type,
         FilterData: FilterData,
         PaginationData: PaginationData,

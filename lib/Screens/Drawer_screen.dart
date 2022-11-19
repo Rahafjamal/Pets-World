@@ -20,31 +20,31 @@ class _Drawer_screenState extends State<Drawer_screen> {
         backgroundColor: Colors.white,
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(bottom: 80),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 80),
               child: ClipRRect(
                 borderRadius: BorderRadius.only(
                   bottomRight: Radius.circular(250),
                 ),
               ),
             ),
-            CircleAvatar(
+            const CircleAvatar(
               backgroundColor: Colors.white,
               radius: 70,
               backgroundImage: AssetImage("images/user.png"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
               children: [
-                Padding(padding: EdgeInsets.only(right: 110)),
-                Icon(
+                const Padding(padding: EdgeInsets.only(right: 110)),
+                const Icon(
                   Icons.circle_rounded,
                   size: 12,
                   color: Color.fromARGB(255, 78, 241, 84),
                 ),
-                Text(
+                const Text(
                   "",
                   style: TextStyle(
                       color: Colors.white,
@@ -53,12 +53,12 @@ class _Drawer_screenState extends State<Drawer_screen> {
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
             Expanded(
               child: ListView(children: [
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Padding(
@@ -68,15 +68,15 @@ class _Drawer_screenState extends State<Drawer_screen> {
                       setState(() {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: ((context) {
-                          return Firestore();
+                          return const Firestore();
                         })));
                       });
                     },
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.home,
                       color: Colors.black,
                     ),
-                    title: Text(
+                    title: const Text(
                       "Home",
                       style: TextStyle(
                           fontSize: 20,
@@ -86,7 +86,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Padding(
@@ -97,16 +97,16 @@ class _Drawer_screenState extends State<Drawer_screen> {
                       setState(() {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: ((context) {
-                          return Login_screen();
+                          return const Login_screen();
                         })));
                       });
                     },
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.logout,
                       color: Colors.black,
                     ),
-                    title: Text(
-                      "Log out",
+                    title: const Text(
+                      "Log in",
                       style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
@@ -115,7 +115,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                     ),
                   ),
                 ),
-                SizedBox(
+              const SizedBox(
                   height: 15,
                 ),
                 Padding(
@@ -124,11 +124,11 @@ class _Drawer_screenState extends State<Drawer_screen> {
                       onTap: () {
                         exit(0);
                       },
-                      leading: Icon(
+                      leading: const Icon(
                         Icons.exit_to_app,
                         color: Colors.black,
                       ),
-                      title: Text(
+                      title: const Text(
                         "Exit app",
                         style: TextStyle(
                             fontSize: 20,

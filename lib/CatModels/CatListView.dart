@@ -9,8 +9,10 @@ class CatListView extends StatelessWidget {
       required this.tabController,
       required this.type,
       required this.FilterData,
-      required this.PaginationData});
+      required this.PaginationData,
+      required this.defaultImage});
   Function FilterData;
+  String defaultImage;
   var Data;
   TabController tabController;
   String type;
@@ -21,6 +23,7 @@ class CatListView extends StatelessWidget {
     return ListView(children: [
       const SizedBox(height: 20),
       CatDetail(
+        defaultImage: defaultImage,
           tabController: tabController,
           Data: Data,
           type: type,

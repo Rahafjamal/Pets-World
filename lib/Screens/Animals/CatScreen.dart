@@ -84,6 +84,7 @@ void SearchData(search){
         body: CatListView(
           tabController: tabController,
           Data: Data,
+          defaultImage:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
           type: type,
           FilterData: FilterData,
           PaginationData: PaginationData,
