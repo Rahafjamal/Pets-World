@@ -119,7 +119,10 @@ void SearchData(search){
                                 OnTapping: () {
                                   Navigator.push(context,
                                       MaterialPageRoute(builder: (context) {
-                                    return CatTypes();
+                                    return CatTypes(
+                                      type: type,
+                                      defaultImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg'
+                                    );
                                   }));
                                 },
                                 name: 'Typs'),

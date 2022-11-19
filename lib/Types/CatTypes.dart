@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class CatTypes extends StatefulWidget {
-  const CatTypes({super.key});
+   CatTypes({super.key, required this.type, required this.defaultImage});
+  String type;
+  String defaultImage;
 
   @override
   State<CatTypes> createState() => _CatTypesState();
@@ -16,8 +18,8 @@ class CatTypes extends StatefulWidget {
 
 class _CatTypesState extends State<CatTypes> with TickerProviderStateMixin {
   var Data;
-  String type = "cat";
-  var storage = FlutterSecureStorage();
+  late String type = widget.type;
+    var storage = FlutterSecureStorage();
   @override
   void initState() {
     // TODO: implement initState
@@ -86,7 +88,7 @@ void SearchData(search){
               color: Colors.amber[600],
               child: CatListView(
                   tabController: tabController,
-                  defaultImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+                  defaultImage: widget.defaultImage,
                   Data: Data,
                   type: type,
                   FilterData: FilterData,

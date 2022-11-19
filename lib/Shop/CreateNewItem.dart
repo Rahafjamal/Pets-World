@@ -103,7 +103,7 @@ class CreateNewFile extends StatelessWidget {
                 labelText: "Image",
               ),
             ),
-            // // AddImage(),
+            AddImage(),
             ElevatedButton(
               onPressed: () {
                 // AddItemToCart(form);
