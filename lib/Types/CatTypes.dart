@@ -86,7 +86,7 @@ void SearchData(search){
               color: Colors.amber[600],
               child: CatListView(
                   tabController: tabController,
-                  defaultImage: "assets/images/cat.png",
+                  defaultImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
                   Data: Data,
                   type: type,
                   FilterData: FilterData,
