@@ -112,6 +112,7 @@ class DrawerScreen extends StatelessWidget {
               const SizedBox(height: 20),
               Center(
                 child: Padding(
+
                   padding: const EdgeInsets.all(30),
                   child: Column(children: [
                   TextFormField(

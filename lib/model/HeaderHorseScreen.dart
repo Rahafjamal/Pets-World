@@ -12,7 +12,7 @@ class HeaderHorseScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 5, top: 5),
               child: Image.asset(
-                "images/cool.png",
+                "images/h2.png",
                 scale: 3,
               ),
             ),
@@ -23,9 +23,11 @@ class HeaderHorseScreen extends StatelessWidget {
                   child: Text(
                     "Hello Sweety !",
                     style: TextStyle(
+                      fontFamily: 'Comfortaa-VariableFont_wght',
                       fontSize: 20,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w600,
                       color: Colors.black,
+                      letterSpacing: 1,
                     ),
                     textAlign: TextAlign.end,
                   ),
@@ -33,6 +35,20 @@ class HeaderHorseScreen extends StatelessWidget {
               ],
             ),
           ],
+        ),
+        Padding(
+          padding: const EdgeInsets.only(top: 5, right: 40),
+          child: Text(
+            textAlign: TextAlign.left,
+            "Welcome in Horse Kingdom",
+            style: TextStyle(
+              fontFamily: 'Comfortaa-VariableFont_wght',
+              fontSize: 22,
+              fontWeight: FontWeight.w900,
+              color: Colors.black,
+              letterSpacing: 1,
+            ),
+          ),
         ),
       ],
     );

@@ -16,6 +16,7 @@ class CatTabBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return TabBar(
       controller: tabController,
+
       tabs: const[
          Text(
           "Animals",
@@ -25,6 +26,7 @@ class CatTabBar extends StatelessWidget {
             color: Colors.black,
           ),
         ),
+
          Text(
           "Shop",
           style: TextStyle(

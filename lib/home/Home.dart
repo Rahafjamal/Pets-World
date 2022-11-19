@@ -17,26 +17,25 @@ class _FirestoreState extends State<Firestore> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      backgroundColor: Colors.white,
-      appBar: const CatAppBar(),
-      drawer: Drawer_screen(),
-      body: SafeArea(
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          drawer: Drawer_screen(),
-          body: ListView(children: [
-            Center(
-                child: Column(children: [
-              SizedBox(height: 5),
-              Home(),
-              SizedBox(height: 10),
-              row_one(),
-              SizedBox(height: 25),
-              row_two(),
-            ]))
-          ]),
-        ),
-      ),
-    ));
+            backgroundColor: Colors.white,
+            appBar: const CatAppBar(),
+            drawer: Drawer_screen(),
+            body: Stack(children: [
+              Column(
+                children: [
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.amber[600],
+                    ),
+                    child: Container(
+                      height: 200,
+                      width: double.infinity,
+                      child: Center(child: row_one()),
+                    ),
+                  ),
+                ],
+              ),
+            ])));
   }
 }

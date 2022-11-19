@@ -100,7 +100,7 @@ class _Splash_screenState extends State<Splash_screen> {
                       'Skip',
                       style: TextStyle(
                         fontSize: 18,
-                        color: Colors.blue,
+                        color: Color.fromRGBO(255, 179, 0, 1),
                       ),
                       textAlign: TextAlign.right,
                     ),

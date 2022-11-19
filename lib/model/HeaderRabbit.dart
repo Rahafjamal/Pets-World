@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class HeaderBirdScreen extends StatelessWidget {
-  const HeaderBirdScreen({super.key});
+class HeaderRabbitScreen extends StatelessWidget {
+  const HeaderRabbitScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +12,7 @@ class HeaderBirdScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 5, top: 5),
               child: Image.asset(
-                "images/b2.png",
+                "images/R2.png",
                 scale: 3,
               ),
             ),
@@ -37,10 +37,10 @@ class HeaderBirdScreen extends StatelessWidget {
           ],
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 5, right: 60),
+          padding: const EdgeInsets.only(top: 5, right: 40),
           child: Text(
             textAlign: TextAlign.left,
-            "Welcome in Bird Kingdom",
+            "Welcome in Rabbit Kingdom",
             style: TextStyle(
               fontFamily: 'Comfortaa-VariableFont_wght',
               fontSize: 22,

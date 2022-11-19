@@ -1,9 +1,14 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:final_project/CatModels/AppBarOne.dart';
+import 'package:final_project/CatModels/AppBarTwo.dart';
 import 'package:final_project/CatModels/CatListView.dart';
+import 'package:final_project/CatModels/RabbitAdo.dart';
 import 'package:final_project/Logic/animalapi.dart';
+import 'package:final_project/Logic/containetLeft.dart';
+import 'package:final_project/Screens/Drawer_screen.dart';
 import 'package:final_project/Screens/drawerScreen.dart';
+import 'package:final_project/model/HeaderRabbit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
@@ -69,24 +74,88 @@ class _RabbitScreenState extends State<RabbitScreen>
   }
 
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 2, vsync: this);
-    return Scaffold(
-      appBar: const CatAppBar(),
-      drawer: DrawerScreen(
-        SearchData: SearchData,
-        FilterData: FilterData,
-        Data: Data,
-        type: type,
-      ),
-      body: CatListView(
-        tabController: _tabController,
-        Data: Data,
-        defaultImage:
-            'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg',
-        type: type,
-        FilterData: FilterData,
-        PaginationData: PaginationData,
-      ),
+    TabController _tabController = TabController(length: 4, vsync: this);
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: Colors.white,
+          endDrawer: DrawerScreen(
+          SearchData: SearchData,
+            Data: Data,
+            FilterData: FilterData,
+            type: type,
+          ),
+          appBar: const AppBarTwo(),
+          drawer: Drawer_screen(),
+          body: Stack(children: [
+            Container(
+              height: double.infinity,
+              width: double.infinity,
+              color: Colors.amber[600],
+              child: Column(
+                children: [
+                  DecoratedBox(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.only(
+                        bottomRight: Radius.circular(60),
+                      ),
+                      color: Colors.white,
+                    ),
+                    child: Container(
+                      height: 180,
+                      width: double.infinity,
+                      child: HeaderRabbitScreen(),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 30),
+                            child: containerN(OnTapping: () {}, name: 'Types'),
+                          ),
+                          SizedBox(width: 15),
+                          Padding(
+                            padding: const EdgeInsets.only(right: 30),
+                            child: containerN(
+                                OnTapping: () {
+                                  Navigator.push(context,
+                                      MaterialPageRoute(builder: (context) {
+                                    return rabbitado();
+                                  }));
+                                },
+                                name: 'Are YOU Redy for adopt !'),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: containerN(OnTapping: () {}, name: ''),
+                        ),
+                        SizedBox(width: 15),
+                        Padding(
+                          padding: const EdgeInsets.only(right: 30),
+                          child: containerN(OnTapping: () {}, name: ''),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                ],
+              ),
+            ),
+          ])),
+
     );
   }
 }
