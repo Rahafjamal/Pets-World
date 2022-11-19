@@ -54,6 +54,17 @@ class _CatTypesState extends State<CatTypes> with TickerProviderStateMixin {
       });
     });
   }
+void SearchData(search){
+  setState(() {
+    Data = null;
+  });
+  SearchAnimal myobject = SearchAnimal();
+  myobject.get(type, storage, search).then((value) {
+    setState(() {
+      Data = value;
+    });
+  });
+}
 
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 1, vsync: this);
@@ -61,6 +72,7 @@ class _CatTypesState extends State<CatTypes> with TickerProviderStateMixin {
       child: Scaffold(
         backgroundColor: Colors.white,
         endDrawer: DrawerScreen(
+          SearchData: SearchData,
           Data: Data,
           FilterData: FilterData,
           type: type,
@@ -74,6 +86,7 @@ class _CatTypesState extends State<CatTypes> with TickerProviderStateMixin {
               color: Colors.amber[600],
               child: CatListView(
                   tabController: tabController,
+                  defaultImage: "assets/images/cat.png",
                   Data: Data,
                   type: type,
                   FilterData: FilterData,

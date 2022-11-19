@@ -61,6 +61,18 @@ class _catadoState extends State<birdado> with TickerProviderStateMixin {
       });
     });
   }
+  void SearchData(search){
+  setState(() {
+    Data = null;
+  });
+  SearchAnimal myobject = SearchAnimal();
+  myobject.get(type, storage, search).then((value) {
+    setState(() {
+      Data = value;
+    });
+  });
+}
+
 
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 4, vsync: this);
@@ -68,6 +80,7 @@ class _catadoState extends State<birdado> with TickerProviderStateMixin {
       child: Scaffold(
           backgroundColor: Colors.white,
           endDrawer: DrawerScreen(
+            SearchData: SearchData,
             Data: Data,
             FilterData: FilterData,
             type: type,
