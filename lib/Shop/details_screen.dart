@@ -1,20 +1,39 @@
 import 'package:final_project/Shop/constans.dart';
 import 'package:final_project/Shop/details_body.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 
-class DetailsScreen extends StatelessWidget {
-   DetailsScreen({super.key, this.product, this.id, this.type});
+class DetailsScreen extends StatefulWidget {
+   DetailsScreen({super.key, this.product, this.id, this.type,});
   static const String screenRoute = "DetailsSceen";
   final type;
   var product;
   var id;
+
   @override
+  State<DetailsScreen> createState() => _DetailsScreenState();
+}
+
+class _DetailsScreenState extends State<DetailsScreen> {
+  @override
+  void initState() {
+    // check if user is logged in
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        print('User is signed in!');
+      }
+    });
+    super.initState();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kPrimaryColor,
       appBar: DetailsAppbar(context),
-      body: DetailsBody(product: product, id: id, type: type),
+      body: DetailsBody(product: widget.product, id: widget.id, type: widget.type),
     );
   }
 

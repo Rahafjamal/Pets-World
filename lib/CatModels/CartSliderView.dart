@@ -72,13 +72,13 @@ class CartSliderView extends StatelessWidget {
                       }),
                 )
               : Container(),
-          // Container(
-          //   child: CatPagination(
-          //     PaginationData: PaginationData,
-          //     Data: Data,
-          //     type: type,
-          //   ),
-          // ),
+          Container(
+            child: CatPagination(
+              PaginationData: PaginationData,
+              Data: Data,
+              type: type,
+            ),
+          ),
         ],
       ),
     );

@@ -11,14 +11,18 @@ class DrawerScreen extends StatelessWidget {
       {super.key,
       required this.Data,
       required this.FilterData,
-      required this.type});
+      required this.type,
+      required this.SearchData,});
 
   Function FilterData;
   String type;
   var Data;
+  Function SearchData;
 
   @override
   Widget build(BuildContext context) {
+    var SearchController = TextEditingController();
+
     return SafeArea(
       child: Drawer(
         backgroundColor: Colors.white,
@@ -27,13 +31,13 @@ class DrawerScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 alignment: Alignment.topLeft,
                 width: 150,
                 height: 55,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(10),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -42,7 +46,7 @@ class DrawerScreen extends StatelessWidget {
                       blurRadius: 1,
                     )
                   ],
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 child: SizeDrop(
                   FilterData: FilterData,
@@ -53,13 +57,13 @@ class DrawerScreen extends StatelessWidget {
                   params: "size",
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 alignment: Alignment.topLeft,
                 width: 150,
                 height: 55,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(10),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -68,7 +72,7 @@ class DrawerScreen extends StatelessWidget {
                       blurRadius: 1,
                     )
                   ],
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 child: SizeDrop(
                   FilterData: FilterData,
@@ -79,13 +83,13 @@ class DrawerScreen extends StatelessWidget {
                   params: "age",
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 alignment: Alignment.topLeft,
                 width: 150,
                 height: 55,
-                padding: EdgeInsets.all(10),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.all(10),
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
@@ -94,7 +98,7 @@ class DrawerScreen extends StatelessWidget {
                       blurRadius: 1,
                     )
                   ],
-                  borderRadius: const BorderRadius.all(Radius.circular(10)),
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
                 child: SizeDrop(
                   FilterData: FilterData,
@@ -105,12 +109,14 @@ class DrawerScreen extends StatelessWidget {
                   params: "gender",
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Center(
                 child: Padding(
-                  padding: EdgeInsets.all(30),
-                  child: TextFormField(
-                    decoration: InputDecoration(
+                  padding: const EdgeInsets.all(30),
+                  child: Column(children: [
+                  TextFormField(
+                    controller: SearchController,
+                    decoration: const InputDecoration(
                       label: Text(
                         " What you want ... ",
                         style: TextStyle(
@@ -134,10 +140,18 @@ class DrawerScreen extends StatelessWidget {
                       ),
                     ),
                   ),
+                  ElevatedButton(
+              onPressed: () {
+                SearchData(SearchController.text);
+                },
+              child: const Text("Add"),
+            ),
+                  ],),
                 ),
               ),
             ],
           ),
+
         ),
       ),
     );

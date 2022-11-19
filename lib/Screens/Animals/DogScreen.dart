@@ -54,13 +54,24 @@ class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
       });
     });
   }
-
+void SearchData(search){
+  setState(() {
+    Data = null;
+  });
+  SearchAnimal myobject = SearchAnimal();
+  myobject.get(type, storage, search).then((value) {
+    setState(() {
+      Data = value;
+    });
+  });
+}
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
     return Scaffold(
       appBar: const CatAppBar(),
       drawer: DrawerScreen(
         FilterData: FilterData,
+        SearchData: SearchData,
         Data: Data,
         type: type,
       ),

@@ -65,12 +65,7 @@ class HomeBody extends StatelessWidget {
                     }).toList());
                   },
                 ),
-
-                // ListView.builder(
-                //   itemCount: products.length,
-                //   itemBuilder: (BuildContext context, int index) {
-                //   },
-                // ),
+  
               ],
             ),
           )
