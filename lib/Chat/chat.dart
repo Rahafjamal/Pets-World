@@ -17,13 +17,13 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        child: Column(children: [
-          Expanded(child: Message()),
-          NewMessage(),
-        ],),
+        child: Column(
+          children: [
+            Expanded(child: Message()),
+            NewMessage(),
+          ],
+        ),
       ),
-      
-  
     );
   }
 }

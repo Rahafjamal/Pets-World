@@ -21,18 +21,15 @@ class Message extends StatelessWidget {
 
           final docs = snapshot.data!.docs;
           final user = FirebaseAuth.instance.currentUser;
-          print(docs[0].data());
-
           return ListView.builder(
-              reverse: true,
-              itemCount: docs.length,
-              itemBuilder: (ctx, index) {
-                return Message_bubble(
-                  docs[index].data()['text'],
-                  docs[index].data()['username'],
-                  docs[index].data()['userId'] == user!.uid,
-                );
-              });
+            reverse: true,
+            itemCount: docs.length,
+            itemBuilder: (ctx, index) => Message_bubble(
+              docs[index]["text"],
+              docs[index]["username"],
+              docs[index]["userId"] == user!.uid,
+            ),
+          );
         });
   }
 }

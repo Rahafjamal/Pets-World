@@ -61,12 +61,25 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
     });
   }
 
+  void SearchData(search) {
+    setState(() {
+      Data = null;
+    });
+    SearchAnimal myobject = SearchAnimal();
+    myobject.get(type, storage, search).then((value) {
+      setState(() {
+        Data = value;
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
     return SafeArea(
         child: Scaffold(
             backgroundColor: Colors.white,
             endDrawer: DrawerScreen(
+            SearchData: SearchData,
               Data: Data,
               FilterData: FilterData,
               type: type,
@@ -149,5 +162,6 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                 ),
               ),
             ])));
+
   }
 }

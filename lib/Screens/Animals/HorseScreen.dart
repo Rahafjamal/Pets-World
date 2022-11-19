@@ -61,8 +61,20 @@ class _HorseScreenState extends State<HorseScreen>
     });
   }
 
+  void SearchData(search) {
+    setState(() {
+      Data = null;
+    });
+    SearchAnimal myobject = SearchAnimal();
+    myobject.get(type, storage, search).then((value) {
+      setState(() {
+        Data = value;
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 4, vsync: this);
+    TabController _tabController = TabController(length: 2, vsync: this);
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -70,6 +82,7 @@ class _HorseScreenState extends State<HorseScreen>
             Data: Data,
             FilterData: FilterData,
             type: type,
+            SearchData: SearchData,
           ),
           appBar: const AppBarTwo(),
           drawer: Drawer_screen(),
@@ -142,6 +155,7 @@ class _HorseScreenState extends State<HorseScreen>
               ),
             ),
           ])),
+
     );
   }
 }

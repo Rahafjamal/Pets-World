@@ -51,6 +51,18 @@ class ChangePagination {
   }
 }
 
+class SearchAnimal {
+  Future get(type, storage, search) async {
+    var token = await storage.read(key: 'token');
+    Uri myurl = Uri.parse(
+        "https://api.petfinder.com/v2/animals?type=$type&name=$search");
+    http.Response myresponse =
+        await http.get(myurl, headers: {"Authorization": "Bearer $token"});
+    var MyData = jsonDecode(myresponse.body);
+    return (MyData);
+  }
+}
+
 class FilterAnimal {
   Future get(type, storage, filter, params) async {
     var token = await storage.read(key: "token");

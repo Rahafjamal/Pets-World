@@ -61,9 +61,20 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
       });
     });
   }
+void SearchData(search){
+  setState(() {
+    Data = null;
+  });
+  SearchAnimal myobject = SearchAnimal();
+  myobject.get(type, storage, search).then((value) {
+    setState(() {
+      Data = value;
+    });
+  });
+}
 
   Widget build(BuildContext context) {
-    TabController tabController = TabController(length: 4, vsync: this);
+    TabController tabController = TabController(length: 2, vsync: this);
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -71,6 +82,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
             Data: Data,
             FilterData: FilterData,
             type: type,
+            SearchData: SearchData,
           ),
           appBar: const AppBarTwo(),
           drawer: Drawer_screen(),

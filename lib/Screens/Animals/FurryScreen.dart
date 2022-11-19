@@ -22,16 +22,14 @@ class FurryScreen extends StatefulWidget {
 class _FurryScreenState extends State<FurryScreen>
     with TickerProviderStateMixin {
   var Data;
-  String type = "furry";
+  String type = "Small %26 Furry";
   var storage = FlutterSecureStorage();
   @override
   void initState() {
-    print('hiiiiiii');
     // TODO: implement initState
     BetFinderApi myobject = BetFinderApi();
 
     myobject.get(type, storage).then((value) {
-      print(value);
       setState(() {
         Data = value;
       });
@@ -62,6 +60,17 @@ class _FurryScreenState extends State<FurryScreen>
       });
     });
   }
+  void SearchData(search){
+  setState(() {
+    Data = null;
+  });
+  SearchAnimal myobject = SearchAnimal();
+  myobject.get(type, storage, search).then((value) {
+    setState(() {
+      Data = value;
+    });
+  });
+}
 
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 4, vsync: this);
@@ -69,6 +78,7 @@ class _FurryScreenState extends State<FurryScreen>
       child: Scaffold(
           backgroundColor: Colors.white,
           endDrawer: DrawerScreen(
+          SearchData: SearchData,
             Data: Data,
             FilterData: FilterData,
             type: type,
@@ -144,6 +154,7 @@ class _FurryScreenState extends State<FurryScreen>
               ),
             ),
           ])),
+
     );
   }
 }
