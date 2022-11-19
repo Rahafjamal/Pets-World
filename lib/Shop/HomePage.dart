@@ -1,35 +1,48 @@
 import 'package:final_project/Shop/CreateNewItem.dart';
+import 'package:final_project/Shop/cart.dart';
 import 'package:final_project/Shop/constans.dart';
 import 'package:final_project/Shop/home_body.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
 class HomeScreen extends StatelessWidget {
-   HomeScreen({super.key, required this.type});
-   String type;
+  HomeScreen({super.key, required this.type});
+  String type;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) =>  CreateNewFile(
-              type: type,
-            
-            )),
-          );
-        },
-        child: const Icon(Icons.add),
-        backgroundColor: kPrimaryColor,
+      floatingActionButton: Row(
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => CreateNewFile(
+                          type: type,
+                        )),
+              );
+            },
+            child: const Icon(Icons.add),
+            backgroundColor: kPrimaryColor,
+          ),
+          FloatingActionButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const Cart()),
+              );
+            },
+            child: const Icon(Icons.shopping_bag),
+            backgroundColor: kPrimaryColor,
+          ),
+        ],
       ),
       backgroundColor: kPrimaryColor,
       appBar: homeAppbar(),
       body: HomeBody(
         type: type,
-      
       ),
     );
   }
