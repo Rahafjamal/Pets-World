@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:final_project/Screens/Login_screen.dart';
 import 'package:final_project/home/Home.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Drawer_screen extends StatefulWidget {
   const Drawer_screen({super.key});
@@ -92,6 +93,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                   padding: const EdgeInsets.only(left: 15),
                   child: ListTile(
                     onTap: () {
+                      FirebaseAuth.instance.signOut();
                       setState(() {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: ((context) {
