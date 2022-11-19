@@ -108,7 +108,7 @@ class DrawerScreen extends StatelessWidget {
               SizedBox(height: 20),
               Center(
                 child: Padding(
-                  padding: EdgeInsets.all(30),
+                  padding: EdgeInsets.all(15),
                   child: TextFormField(
                     decoration: InputDecoration(
                       label: Text(

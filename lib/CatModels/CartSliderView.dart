@@ -21,17 +21,16 @@ class CartSliderView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const HeaderCatScreen(),
           NewData.length > 0
               ? Container(
                   width: double.infinity,
-                  height: 400,
+                  height: 500,
                   child: CarouselSlider.builder(
                       options: CarouselOptions(
                         aspectRatio: 2.0,
                         enlargeCenterPage: true,
-                        autoPlay: true,
-                        height: 320,
+                        autoPlay: false,
+                        height: 500,
                         scrollDirection: Axis.vertical,
                         autoPlayCurve: Curves.fastOutSlowIn,
                         enableInfiniteScroll: false,
@@ -49,23 +48,35 @@ class CartSliderView extends StatelessWidget {
                               ),
                             );
                           },
-                          child: ant.Card(
-                            title: Text(NewData[index]['name'] ?? ""),
-                            extra: Text(NewData[index]['gender'] ?? ""),
-                            hoverable: true,
-                            size: ant.Size.large,
-                            child: Stack(
-                              alignment: Alignment.center,
-                              children: [
-                                Image.network(
-                                  NewData[index]['photos'].length > 0
-                                      ? NewData[index]['photos'][0]['medium']
-                                      : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
-                                  height: 200,
-                                  width: 280,
-                                  fit: BoxFit.cover,
-                                ),
-                              ],
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            child: ant.Card(
+                              title: Text(
+                                NewData[index]['name'] ?? "",
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              extra: Text(
+                                NewData[index]['gender'] ?? "",
+                                style: TextStyle(fontSize: 18),
+                              ),
+                              hoverable: true,
+                              size: ant.Size.large,
+                              child: Stack(
+                                alignment: Alignment.center,
+                                children: [
+                                  Center(
+                                    child: Image.network(
+                                      NewData[index]['photos'].length > 0
+                                          ? NewData[index]['photos'][0]
+                                              ['medium']
+                                          : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg",
+                                      height: 300,
+                                      width: 300,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         );

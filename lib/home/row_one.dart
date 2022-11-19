@@ -1,19 +1,11 @@
 import 'package:final_project/Logic/containermidle.dart';
-import 'package:final_project/Logic/containerright.dart';
-
 import 'package:final_project/Screens/Animals/BirdScreen.dart';
 import 'package:final_project/Screens/Animals/CatScreen.dart';
 import 'package:final_project/Screens/Animals/DogScreen.dart';
 import 'package:final_project/Screens/Animals/FurryScreen.dart';
 import 'package:final_project/Screens/Animals/HorseScreen.dart';
-import 'package:final_project/Screens/Drawer_screen.dart';
-import 'package:final_project/Screens/drawerScreen.dart';
-import 'package:final_project/main.dart';
-import 'package:final_project/quiz/writing_view.dart';
+import 'package:final_project/Screens/Animals/RabbitScreen.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:carousel_slider/carousel_slider.dart';
 
 class row_one extends StatefulWidget {
   const row_one({super.key});
@@ -27,7 +19,7 @@ class _row_oneState extends State<row_one> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        height: 110,
+        height: 160,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Padding(
@@ -36,49 +28,65 @@ class _row_oneState extends State<row_one> {
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
               SizedBox(width: 30),
               Containermidle(
+                  name: 'Cat',
                   OnTapping: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return CatScreen();
                     }));
                   },
-                  imagepath: 'images/cat.png'),
+                  imagepath: 'images/cat.svg'),
               SizedBox(width: 20),
               Containermidle(
+                  name: 'Furry',
                   OnTapping: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return FurryScreen();
                     }));
                   },
-                  imagepath: 'images/h3.png'),
+                  imagepath: 'images/furry.svg'),
               SizedBox(width: 20),
               Containermidle(
+                  name: 'Dog',
                   OnTapping: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return DogScreen();
                     }));
                   },
-                  imagepath: 'images/dog.png'),
+                  imagepath: 'images/dog.svg'),
               SizedBox(width: 20),
               Containermidle(
+                  name: 'Bird',
                   OnTapping: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return BirdScreen();
                     }));
                   },
-                  imagepath: 'images/b3.png'),
-              SizedBox(width: 10),
+                  imagepath: 'images/bird.svg'),
+              SizedBox(width: 20),
               Containermidle(
+                  name: 'Horse',
                   OnTapping: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
                       return HorseScreen();
                     }));
                   },
-                  imagepath: 'images/horse.png'),
+                  imagepath: 'images/horse.svg'),
+              SizedBox(width: 20),
+              Containermidle(
+                  name: 'Rabbit',
+                  OnTapping: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return RabbitScreen();
+                    }));
+                  },
+                  imagepath: 'images/rab.svg'),
+              SizedBox(width: 20),
             ]),
           ),
         ),

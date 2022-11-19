@@ -2,7 +2,12 @@ import 'package:final_project/CatModels/CartSliderView.dart';
 import 'package:flutter/material.dart';
 
 class CatSlider extends StatefulWidget {
-  CatSlider({super.key, required this.tabController, required this.Data, required this.type,required this.PaginationData});
+  CatSlider(
+      {super.key,
+      required this.tabController,
+      required this.Data,
+      required this.type,
+      required this.PaginationData});
   TabController tabController;
   var Data;
   String type;
@@ -27,10 +32,6 @@ class _CatSliderState extends State<CatSlider> {
             type: widget.type,
             PaginationData: widget.PaginationData,
           ),
-          Container(),
-          Container(),
-          Container(),
-
         ],
       ),
     );

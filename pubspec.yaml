@@ -96,6 +96,12 @@ flutter:
     - family: Tajawal-Light
       fonts:
         - asset: assets\fonts\Tajawal-Light.ttf
+    - family: Changa-VariableFont_wght
+      fonts:
+        - asset: assets\fonts\Changa-VariableFont_wght.ttf
+    - family: Comfortaa-VariableFont_wght
+      fonts:
+        - asset: assets\fonts\Comfortaa-VariableFont_wght.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

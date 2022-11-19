@@ -60,6 +60,7 @@ class FilterAnimal {
     http.Response myresponse =
         await http.get(myurl, headers: {"Authorization": "Bearer $token"});
     var MyData = jsonDecode(myresponse.body);
+
     return (MyData);
   }
 }

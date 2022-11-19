@@ -24,9 +24,11 @@ class HeaderCatScreen extends StatelessWidget {
                     child: Text(
                       "Hello Sweety !",
                       style: TextStyle(
+                        fontFamily: 'Comfortaa-VariableFont_wght',
                         fontSize: 20,
-                        fontWeight: FontWeight.w500,
+                        fontWeight: FontWeight.w600,
                         color: Colors.black,
+                        letterSpacing: 1,
                       ),
                       textAlign: TextAlign.end,
                     ),
@@ -36,14 +38,16 @@ class HeaderCatScreen extends StatelessWidget {
             ],
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 5),
+            padding: const EdgeInsets.only(top: 5, right: 60),
             child: Text(
               textAlign: TextAlign.left,
-              "Welcome in Cat Kingdom ",
+              "Welcome in Cat Kingdom",
               style: TextStyle(
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+                fontFamily: 'Comfortaa-VariableFont_wght',
+                fontSize: 22,
+                fontWeight: FontWeight.w900,
                 color: Colors.black,
+                letterSpacing: 1,
               ),
             ),
           ),

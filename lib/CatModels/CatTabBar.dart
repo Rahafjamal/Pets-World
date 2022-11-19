@@ -18,16 +18,13 @@ class CatTabBar extends StatelessWidget {
       controller: tabController,
       tabs: [
         const Text(
-          "Typs",
+          " ",
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w500,
             color: Colors.black,
           ),
         ),
-        Text(' '),
-        Text(' '),
-        Text(' '),
       ],
     );
   }

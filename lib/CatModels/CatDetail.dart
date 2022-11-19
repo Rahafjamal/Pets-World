@@ -5,7 +5,13 @@ import 'package:final_project/CatModels/CatTabBar.dart';
 import 'package:flutter/material.dart';
 
 class CatDetail extends StatelessWidget {
-  CatDetail({super.key, required this.tabController, required this.Data, required this.type,required this.FilterData,required this.PaginationData});
+  CatDetail(
+      {super.key,
+      required this.tabController,
+      required this.Data,
+      required this.type,
+      required this.FilterData,
+      required this.PaginationData});
   TabController tabController;
   var Data;
   Function FilterData;
@@ -13,16 +19,27 @@ class CatDetail extends StatelessWidget {
   Function PaginationData;
   @override
   Widget build(BuildContext context) {
-    return Column(children: [
-      CatTabBar(tabController: tabController, Data: Data, type: type,FilterData: FilterData),
-      const SizedBox(
-        height: 10,
-      ),
-      Data == null
-          ? const Center(
-              child: CircularProgressIndicator(),
-            )
-          : CatSlider(tabController: tabController, Data: Data, type: type,PaginationData: PaginationData),
-    ]);
+    return Container(
+      color: Colors.amber[600],
+      child: Column(children: [
+        CatTabBar(
+            tabController: tabController,
+            Data: Data,
+            type: type,
+            FilterData: FilterData),
+        const SizedBox(
+          height: 10,
+        ),
+        Data == null
+            ? const Center(
+                child: CircularProgressIndicator(),
+              )
+            : CatSlider(
+                tabController: tabController,
+                Data: Data,
+                type: type,
+                PaginationData: PaginationData),
+      ]),
+    );
   }
 }

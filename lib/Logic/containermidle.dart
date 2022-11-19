@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Containermidle extends StatelessWidget {
-  Containermidle({this.imagepath, required this.OnTapping});
+  Containermidle({this.imagepath, required this.OnTapping, required this.name});
   String? imagepath;
+  String? name;
 
   Function() OnTapping;
   @override
@@ -12,8 +14,8 @@ class Containermidle extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            width: 100,
-            height: 100,
+            width: 130,
+            height: 150,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.white,
@@ -26,12 +28,31 @@ class Containermidle extends StatelessWidget {
               ],
               borderRadius: const BorderRadius.all(Radius.circular(10)),
             ),
-            child: Padding(
-              padding: const EdgeInsets.all(1),
-              child: Image.asset(
-                "$imagepath",
-                fit: BoxFit.cover,
-              ),
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 0),
+                  child: SvgPicture.asset(
+                    "$imagepath",
+                    width: 65,
+                    height: 65,
+                    alignment: Alignment.center,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(
+                    '${name}',
+                    style: TextStyle(
+                      fontSize: 22,
+                      fontFamily: 'Comfortaa-VariableFont_wght',
+                      letterSpacing: 1,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ],

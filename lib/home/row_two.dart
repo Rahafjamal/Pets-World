@@ -21,17 +21,16 @@ class _row_twoState extends State<row_two> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: ContainerRight(
-                  title: 'Test your pet info !',
-                  OnTapping: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return WritingView();
-                      },
-                    ));
-                  }),
-            ),
+                padding: const EdgeInsets.only(left: 50),
+                child: Container(
+                  height: 150,
+                  width: 100,
+                  decoration: BoxDecoration(
+                      image: DecorationImage(
+                    image: AssetImage('images/quiz.png'),
+                    scale: 3,
+                  )),
+                )),
             SizedBox(width: 20),
             Padding(
               padding: const EdgeInsets.only(right: 50),

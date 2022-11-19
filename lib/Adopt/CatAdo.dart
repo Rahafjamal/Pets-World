@@ -1,27 +1,26 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:final_project/Adopt/CatAdo.dart';
 import 'package:final_project/CatModels/AppBarTwo.dart';
 import 'package:final_project/CatModels/CatListView.dart';
-
 import 'package:final_project/Logic/animalapi.dart';
 import 'package:final_project/Logic/containetLeft.dart';
 import 'package:final_project/Screens/Drawer_screen.dart';
 import 'package:final_project/Screens/drawerScreen.dart';
-import 'package:final_project/Types/CatTypes.dart';
+
+import 'package:final_project/Logic/containermidle.dart';
 import 'package:final_project/model/HeaderCatScreen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class CatScreen extends StatefulWidget {
-  const CatScreen({super.key});
+class catado extends StatefulWidget {
+  const catado({super.key});
 
   @override
-  State<CatScreen> createState() => _CatScreenState();
+  State<catado> createState() => _catadoState();
 }
 
-class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
+class _catadoState extends State<catado> with TickerProviderStateMixin {
   var Data;
   String type = "cat";
   var storage = FlutterSecureStorage();
@@ -92,57 +91,6 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                       height: 180,
                       width: double.infinity,
                       child: HeaderCatScreen(),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30),
-                            child: containerN(
-                                OnTapping: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return CatTypes();
-                                  }));
-                                },
-                                name: 'Typs'),
-                          ),
-                          SizedBox(width: 15),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 30),
-                            child: containerN(
-                                OnTapping: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return catado();
-                                  }));
-                                },
-                                name: 'Are YOU Redy for adopt !'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30),
-                          child: containerN(OnTapping: () {}, name: ''),
-                        ),
-                        SizedBox(width: 15),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 30),
-                          child: containerN(OnTapping: () {}, name: ''),
-                        ),
-                      ],
                     ),
                   ),
                   SizedBox(height: 20),

@@ -1,27 +1,29 @@
 // ignore_for_file: non_constant_identifier_names
 
-import 'package:final_project/CatModels/AppBarOne.dart';
 import 'package:final_project/CatModels/AppBarTwo.dart';
 import 'package:final_project/CatModels/CatListView.dart';
-import 'package:final_project/CatModels/DogAdo.dart';
 import 'package:final_project/Logic/animalapi.dart';
 import 'package:final_project/Logic/containetLeft.dart';
 import 'package:final_project/Screens/Drawer_screen.dart';
 import 'package:final_project/Screens/drawerScreen.dart';
+
+import 'package:final_project/Logic/containermidle.dart';
+import 'package:final_project/model/HeaderCatScreen.dart';
 import 'package:final_project/model/HeaderDogScreen.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
-class DogScreen extends StatefulWidget {
-  const DogScreen({super.key});
+class dogado extends StatefulWidget {
+  const dogado({super.key});
 
   @override
-  State<DogScreen> createState() => _DogScreenState();
+  State<dogado> createState() => _dogadoState();
 }
 
-class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
+class _dogadoState extends State<dogado> with TickerProviderStateMixin {
   var Data;
-  String type = "dog";
+  String type = "cat";
   var storage = FlutterSecureStorage();
   @override
   void initState() {
@@ -61,7 +63,7 @@ class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
   }
 
   Widget build(BuildContext context) {
-    TabController _tabController = TabController(length: 4, vsync: this);
+    TabController tabController = TabController(length: 4, vsync: this);
     return SafeArea(
       child: Scaffold(
           backgroundColor: Colors.white,
@@ -90,50 +92,6 @@ class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
                       height: 180,
                       width: double.infinity,
                       child: HeaderDogScreen(),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30),
-                            child: containerN(OnTapping: () {}, name: 'Types'),
-                          ),
-                          SizedBox(width: 15),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 30),
-                            child: containerN(
-                                OnTapping: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return dogado();
-                                  }));
-                                },
-                                name: 'Are YOU Redy for adopt !'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30),
-                          child: containerN(OnTapping: () {}, name: ''),
-                        ),
-                        SizedBox(width: 15),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 30),
-                          child: containerN(OnTapping: () {}, name: ''),
-                        ),
-                      ],
                     ),
                   ),
                   SizedBox(height: 20),

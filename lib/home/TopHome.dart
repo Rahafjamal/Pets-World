@@ -13,19 +13,23 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: Column(
         children: [
-          Container(
-            child: Text(
-              'WE LOVE YOU HUMAN',
-              style: TextStyle(
-                letterSpacing: 1,
-                fontSize: 25,
-                fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Container(
+              child: Text(
+                'Find Your New Bestie',
+                style: TextStyle(
+                  fontFamily: 'Comfortaa-VariableFont_wght',
+                  letterSpacing: 1,
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
           Container(
             width: double.infinity,
-            height: 300,
+            height: 220,
             padding: EdgeInsets.only(top: 5),
             decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage('images/home.png'))),
