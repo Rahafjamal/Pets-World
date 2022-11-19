@@ -67,7 +67,7 @@ void SearchData(search){
 }
 
   Widget build(BuildContext context) {
-    TabController tabController = TabController(length: 1, vsync: this);
+    TabController tabController = TabController(length: 2, vsync: this);
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
