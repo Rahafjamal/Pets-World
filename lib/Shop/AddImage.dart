@@ -3,7 +3,9 @@ import 'dart:io';
 import 'package:image_picker/image_picker.dart';
 
 class AddImage extends StatefulWidget {
-  AddImage({super.key});
+  AddImage({super.key, required this.form, required this.AddItemToCart});
+  Function AddItemToCart;
+  final form;
 
   @override
   State<AddImage> createState() => _AddImageState();
@@ -102,7 +104,20 @@ class _AddImageState extends State<AddImage> {
               : const Text(
                   "No Image",
                   style: TextStyle(fontSize: 20),
-                )
+                ),
+              ElevatedButton(
+                onPressed: () {
+                  if (widget.form.currentState!.validate()) {
+                    widget.form.currentState
+                    !.save();
+                    widget.AddItemToCart(image);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      const SnackBar(content: Text('Processing Data')),
+                    );
+                  }
+                },
+                child: const Text("Submit"),
+              ),
         ],
       ),
     );
