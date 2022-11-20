@@ -75,7 +75,7 @@ class _FirestoreState extends State<Firestore> {
                   Positioned(
                     height: height / 7,
                     left: width * 0.025 + width / 10,
-                    top: 5 * height / 45 + height / 7,
+                    top: 6 * height / 45 + height / 7,
                     width: width - (width / 4),
                     child: Align(alignment: Alignment.center, child: row_two()),
                   ),

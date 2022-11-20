@@ -7,26 +7,30 @@ class containerN extends StatelessWidget {
   String? name;
 
   Function() OnTapping;
+  var size, height, width;
   @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     return GestureDetector(
       onTap: OnTapping,
       child: Column(
         children: [
           Container(
-            width: 150,
-            height: 180,
+            width: width / 3.5,
+            height: height / 4,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Colors.white,
-                  spreadRadius: 1,
-                  blurRadius: 1,
+                  color: Colors.grey,
+                  spreadRadius: 0,
+                  blurRadius: 2,
                 )
               ],
-              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              borderRadius: const BorderRadius.all(Radius.circular(24)),
             ),
             child: Column(
               children: [

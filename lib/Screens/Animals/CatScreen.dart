@@ -1,6 +1,7 @@
 // ignore_for_file: non_constant_identifier_names
 
 import 'package:final_project/Adopt/CatAdo.dart';
+import 'package:final_project/CatModels/AppBarOne.dart';
 import 'package:final_project/CatModels/AppBarTwo.dart';
 import 'package:final_project/CatModels/CatListView.dart';
 
@@ -8,6 +9,7 @@ import 'package:final_project/Logic/animalapi.dart';
 import 'package:final_project/Logic/containetLeft.dart';
 import 'package:final_project/Screens/Drawer_screen.dart';
 import 'package:final_project/Screens/drawerScreen.dart';
+import 'package:final_project/Shop/HomePage.dart';
 import 'package:final_project/Types/CatTypes.dart';
 import 'package:final_project/model/HeaderCatScreen.dart';
 
@@ -61,110 +63,210 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
       });
     });
   }
-void SearchData(search){
-  setState(() {
-    Data = null;
-  });
-  SearchAnimal myobject = SearchAnimal();
-  myobject.get(type, storage, search).then((value) {
-    setState(() {
-      Data = value;
-    });
-  });
-}
 
+  void SearchData(search) {
+    setState(() {
+      Data = null;
+    });
+    SearchAnimal myobject = SearchAnimal();
+    myobject.get(type, storage, search).then((value) {
+      setState(() {
+        Data = value;
+      });
+    });
+  }
+
+  var size, height, width;
+  @override
   Widget build(BuildContext context) {
+    size = MediaQuery.of(context).size;
+    height = size.height;
+    width = size.width;
     TabController tabController = TabController(length: 2, vsync: this);
     return SafeArea(
-      child: Scaffold(
-          backgroundColor: Colors.white,
-          endDrawer: DrawerScreen(
-            Data: Data,
-            FilterData: FilterData,
-            type: type,
-            SearchData: SearchData,
-          ),
-          appBar: const AppBarTwo(),
-          drawer: Drawer_screen(),
-          body: Stack(children: [
-            Container(
-              height: double.infinity,
-              width: double.infinity,
-              color: Colors.amber[600],
-              child: Column(
-                children: [
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(60),
-                      ),
-                      color: Colors.white,
-                    ),
-                    child: Container(
-                      height: 180,
-                      width: double.infinity,
-                      child: HeaderCatScreen(),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Center(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 15),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30),
-                            child: containerN(
-                                OnTapping: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return CatTypes(
-                                      type: type,
-                                      defaultImage: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg'
-                                    );
-                                  }));
-                                },
-                                name: 'Typs'),
+        child: Scaffold(
+            backgroundColor: Colors.white,
+            appBar: CatAppBar(),
+            drawer: Drawer_screen(),
+            body: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(children: [
+                Container(
+                    width: width,
+                    height: height,
+                    child: Stack(fit: StackFit.loose, children: [
+                      Container(
+                        width: width,
+                        height: height,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.white,
+                                Color.fromARGB(255, 156, 182, 255),
+                              ],
+                            ),
                           ),
-                          SizedBox(width: 15),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 30),
-                            child: containerN(
-                                OnTapping: () {
-                                  Navigator.push(context,
-                                      MaterialPageRoute(builder: (context) {
-                                    return catado();
-                                  }));
-                                },
-                                name: 'Are YOU Redy for adopt !'),
-                          ),
-                        ],
+                        ),
                       ),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Center(
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 30),
-                          child: containerN(OnTapping: () {}, name: ''),
+                      Positioned(
+                        left: width / 10,
+                        height: 1.5 * height / 7,
+                        width: width - (width / 5),
+                        top: 2 * height / 45,
+                        child: Card(
+                          shadowColor: Colors.blue[900],
+                          elevation: 8,
+                          clipBehavior: Clip.antiAlias,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(24),
+                          ),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                colors: [
+                                  Color.fromARGB(255, 129, 162, 255),
+                                  Color.fromARGB(255, 129, 162, 255),
+                                ],
+                                begin: Alignment.topCenter,
+                                end: Alignment.bottomCenter,
+                              ),
+                            ),
+                          ),
                         ),
-                        SizedBox(width: 15),
-                        Padding(
-                          padding: const EdgeInsets.only(right: 30),
-                          child: containerN(OnTapping: () {}, name: ''),
+                      ),
+                      Positioned(
+                          left: width / 2.8,
+                          width: width - (width / 4.5),
+                          top: height / 65,
+                          child: Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: SizedBox(
+                                width: width / 15,
+                                height: height / 4.5,
+                                child: Image(
+                                    image: AssetImage('images/cat1.png'))),
+                          )),
+                      Positioned(
+                          left: width / 7,
+                          height: 2 * height / 7,
+                          top: 4 * height / 45,
+                          child: Text(
+                            'Hello Sweety !',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontFamily: 'Comfortaa-VariableFont_wght',
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
+                      Positioned(
+                          left: width / 7,
+                          height: 2 * height / 7,
+                          top: 6 * height / 45,
+                          child: Text(
+                            'Welcome in Cat Kingdom',
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontFamily: 'Comfortaa-VariableFont_wght',
+                              letterSpacing: 1,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          )),
+                      Positioned(
+                        left: width / 7,
+                        height: 2 * height / 7,
+                        top: 4 * height / 45 + 1.5 * height / 7,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 30),
+                              child: containerN(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return CatTypes(
+                                          type: type,
+                                          defaultImage:
+                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                    }));
+                                  },
+                                  name: 'Typs'),
+                            ),
+                            SizedBox(width: 15),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 30),
+                              child: containerN(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return catado();
+                                    }));
+                                  },
+                                  name: 'Are YOU Redy for adopt !'),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                ],
-              ),
-            ),
-          ])),
-    );
+                      ),
+                      Positioned(
+                        left: width / 7,
+                        height: 2 * height / 7,
+                        top:
+                            4 * height / 45 + 1.5 * height / 7 + 2 * height / 7,
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 30),
+                              child: containerN(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return CatTypes(
+                                          type: type,
+                                          defaultImage:
+                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                    }));
+                                  },
+                                  name: 'Vaccination schedule'),
+                            ),
+                            SizedBox(width: 15),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 30),
+                              child: containerN(
+                                  OnTapping: () {
+                                    Navigator.push(context,
+                                        MaterialPageRoute(builder: (context) {
+                                      return HomeScreen(
+                                        type: '',
+                                      );
+                                    }));
+                                  },
+                                  name: ' '),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                          left: width / 3.6,
+                          width: width - (width / 4.5),
+                          top: 5 * height / 45 +
+                              1.5 * height / 7 +
+                              height / 7 +
+                              2 * height / 14,
+                          child: Padding(
+                            padding: const EdgeInsets.all(0),
+                            child: SizedBox(
+                                width: width / 5,
+                                height: height / 5,
+                                child: Image(
+                                    image: AssetImage('images/shop.png'))),
+                          )),
+                    ])),
+              ]),
+            )));
   }
 }

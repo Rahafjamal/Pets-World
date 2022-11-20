@@ -1,3 +1,4 @@
+import 'package:final_project/Adopt/CatAdo.dart';
 import 'package:final_project/Screens/Animals/CatScreen.dart';
 import 'package:final_project/Screens/Animals/RabbitScreen.dart';
 

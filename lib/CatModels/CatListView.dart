@@ -23,7 +23,7 @@ class CatListView extends StatelessWidget {
     return ListView(children: [
       const SizedBox(height: 20),
       CatDetail(
-        defaultImage: defaultImage,
+          defaultImage: defaultImage,
           tabController: tabController,
           Data: Data,
           type: type,
