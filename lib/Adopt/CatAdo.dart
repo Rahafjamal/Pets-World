@@ -60,17 +60,18 @@ class _catadoState extends State<catado> with TickerProviderStateMixin {
       });
     });
   }
-void SearchData(search){
-  setState(() {
-    Data = null;
-  });
-  SearchAnimal myobject = SearchAnimal();
-  myobject.get(type, storage, search).then((value) {
+
+  void SearchData(search) {
     setState(() {
-      Data = value;
+      Data = null;
     });
-  });
-}
+    SearchAnimal myobject = SearchAnimal();
+    myobject.get(type, storage, search).then((value) {
+      setState(() {
+        Data = value;
+      });
+    });
+  }
 
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 4, vsync: this);
@@ -82,35 +83,36 @@ void SearchData(search){
             SearchData: SearchData,
             FilterData: FilterData,
             type: type,
-
           ),
           appBar: const AppBarTwo(),
           drawer: Drawer_screen(),
-          body: Stack(children: [
-            Container(
-              height: double.infinity,
-              width: double.infinity,
-              color: Colors.amber[600],
-              child: Column(
-                children: [
-                  DecoratedBox(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        bottomRight: Radius.circular(60),
+          body: SafeArea(
+            child: Stack(children: [
+              Container(
+                height: double.infinity,
+                width: double.infinity,
+                color: Colors.amber[600],
+                child: Column(
+                  children: [
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.only(
+                          bottomRight: Radius.circular(60),
+                        ),
+                        color: Colors.white,
                       ),
-                      color: Colors.white,
+                      child: Container(
+                        height: 180,
+                        width: double.infinity,
+                        child: HeaderCatScreen(),
+                      ),
                     ),
-                    child: Container(
-                      height: 180,
-                      width: double.infinity,
-                      child: HeaderCatScreen(),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                ],
+                    SizedBox(height: 20),
+                  ],
+                ),
               ),
-            ),
-          ])),
+            ]),
+          )),
     );
   }
 }

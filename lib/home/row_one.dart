@@ -19,14 +19,13 @@ class _row_oneState extends State<row_one> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Container(
-        height: 160,
         child: SingleChildScrollView(
           scrollDirection: Axis.horizontal,
           child: Padding(
-            padding: const EdgeInsets.only(top: 5),
+            padding: const EdgeInsets.only(top: 0),
             child:
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              SizedBox(width: 30),
+              SizedBox(width: 0),
               Containermidle(
                   name: 'Cat',
                   OnTapping: () {
@@ -56,37 +55,37 @@ class _row_oneState extends State<row_one> {
                     }));
                   },
                   imagepath: 'images/dog.svg'),
-              SizedBox(width: 20),
-              Containermidle(
-                  name: 'Bird',
-                  OnTapping: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return BirdScreen();
-                    }));
-                  },
-                  imagepath: 'images/bird.svg'),
-              SizedBox(width: 20),
-              Containermidle(
-                  name: 'Horse',
-                  OnTapping: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return HorseScreen();
-                    }));
-                  },
-                  imagepath: 'images/horse.svg'),
-              SizedBox(width: 20),
-              Containermidle(
-                  name: 'Rabbit',
-                  OnTapping: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return RabbitScreen();
-                    }));
-                  },
-                  imagepath: 'images/rab.svg'),
-              SizedBox(width: 20),
+              // SizedBox(width: 20),
+              // Containermidle(
+              //     name: 'Bird',
+              //     OnTapping: () {
+              //       Navigator.push(context,
+              //           MaterialPageRoute(builder: (context) {
+              //         return BirdScreen();
+              //       }));
+              //     },
+              //     imagepath: 'images/bird.svg'),
+              // SizedBox(width: 20),
+              // Containermidle(
+              //     name: 'Horse',
+              //     OnTapping: () {
+              //       Navigator.push(context,
+              //           MaterialPageRoute(builder: (context) {
+              //         return HorseScreen();
+              //       }));
+              //     },
+              //     imagepath: 'images/horse.svg'),
+              // SizedBox(width: 20),
+              // Containermidle(
+              //     name: 'Rabbit',
+              //     OnTapping: () {
+              //       Navigator.push(context,
+              //           MaterialPageRoute(builder: (context) {
+              //         return RabbitScreen();
+              //       }));
+              //     },
+              //     imagepath: 'images/rab.svg'),
+              // SizedBox(width: 20),
             ]),
           ),
         ),
