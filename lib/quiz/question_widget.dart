@@ -28,7 +28,7 @@ class QuestionWidget extends StatelessWidget {
               color: Colors.white,
               boxShadow: [
                 BoxShadow(
-                  color: Color.fromRGBO(255, 179, 0, 1),
+                  color: Colors.grey,
                   spreadRadius: 1,
                   blurRadius: 1,
                 ),
