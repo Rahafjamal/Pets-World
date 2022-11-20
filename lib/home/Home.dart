@@ -83,7 +83,7 @@ class _FirestoreState extends State<Firestore> {
                     left: width / 10,
                     height: height / 7,
                     width: width - (width / 5),
-                    top: 2 * (height / 7) + (6 * height / 45),
+                    top: 2 * (height / 7) + (8 * height / 45),
                     child: Card(
                       shadowColor: Colors.blue[900],
                       elevation: 8,
@@ -130,7 +130,7 @@ class _FirestoreState extends State<Firestore> {
                   ),
                   Positioned(
                       left: width / 10,
-                      top: 3 * (height / 7) + (7 * height / 45),
+                      top: 3 * (height / 7) + (10 * height / 45),
                       height: 2 * height / 45,
                       width: width - (width / 5),
                       child: Text(
@@ -145,8 +145,8 @@ class _FirestoreState extends State<Firestore> {
                   Positioned(
                       left: width * 0.025 + width / 10,
                       top: 3 * (height / 7) +
-                          (7 * height / 45) +
-                          (2 * height / 45),
+                          (9 * height / 45) +
+                          (3 * height / 45),
                       height: 2 * height / 45,
                       width: width - (width / 5),
                       child: Row(
