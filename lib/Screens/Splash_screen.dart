@@ -94,13 +94,14 @@ class _Splash_screenState extends State<Splash_screen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 250),
+                  padding: const EdgeInsets.only(left: 275),
                   child: TextButton(
                     child: const Text(
                       'Skip',
                       style: TextStyle(
+                        fontFamily: 'Comfortaa-VariableFont_wght',
                         fontSize: 18,
-                        color: Color.fromRGBO(255, 179, 0, 1),
+                        color: Color.fromRGBO(13, 71, 161, 1),
                       ),
                       textAlign: TextAlign.right,
                     ),

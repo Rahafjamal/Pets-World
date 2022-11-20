@@ -14,19 +14,19 @@ class Slide {
 
 final slideList = [
   Slide(
-    imageUrl: 'images/1.png',
+    imageUrl: 'images/sp1.jpg',
     title: 'A Cool Way to Get Start ',
     description:
         "All what you need to know or to have for your pet in one application .",
   ),
   Slide(
-    imageUrl: 'images/2.png',
+    imageUrl: 'images/sp2.jpg',
     title: 'What our application can do !',
     description:
         "You can test your knowledge in pets,       read, shop, and look for soulotions.",
   ),
   Slide(
-    imageUrl: 'images/3.png',
+    imageUrl: 'images/sp2.jpg',
     title: "It's Just the Beginning",
     description: 'We will keep improving our application.',
   ),
