@@ -240,7 +240,7 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
                                       return HomeScreen(
-                                        type: ' ',
+                                        type: type,
                                       );
                                     }));
                                   },
@@ -250,19 +250,30 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                         ),
                       ),
                       Positioned(
-                          left: width / 3.6,
-                          width: width - (width / 4.5),
-                          top: 5 * height / 45 +
+                          left: width / 1.925,
+                          width: width / 3.5,
+                          height: height / 3.7,
+                          top: 4 * height / 45 +
                               1.5 * height / 7 +
                               height / 7 +
                               2 * height / 14,
-                          child: Padding(
-                            padding: const EdgeInsets.all(0),
-                            child: SizedBox(
-                                width: width / 5,
-                                height: height / 5,
-                                child: Image(
-                                    image: AssetImage('images/shop.png'))),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return HomeScreen(
+                                  type: type,
+                                );
+                              }));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(0),
+                              child: SizedBox(
+                                  width: width / 3.5,
+                                  height: height / 3.7,
+                                  child: Image(
+                                      image: AssetImage('images/shop.png'))),
+                            ),
                           )),
                     ])),
               ]),

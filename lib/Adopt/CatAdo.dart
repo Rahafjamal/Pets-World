@@ -151,13 +151,13 @@ class _catadoState extends State<catado> with TickerProviderStateMixin {
                       Positioned(
                           left: width / 10,
                           top: 8 * height / 45,
-                          height: 4 * height / 45,
+                          height: 6 * height / 45,
                           width: width - (width / 5),
-                          child: Align(
-                              alignment: Alignment.center,
-                              child: Image(
-                                  image: NetworkImage(
-                                      ' https://th.bing.com/th/id/OIP.FNXQnxIOzpmtRmh86rxonwHaD9?pid=ImgDet&w=1440&h=770&rs=1')))),
+                          child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage('images/cadp.jfif'),
+                                      fit: BoxFit.cover)))),
                       Positioned(
                           left: width / 10,
                           top: 13 * height / 45,

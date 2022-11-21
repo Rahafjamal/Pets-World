@@ -167,7 +167,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                           height: 2 * height / 7,
                           top: 6 * height / 45,
                           child: Text(
-                            'Welcome in Cat Kingdom',
+                            'Welcome in Cat Land',
                             style: TextStyle(
                               fontSize: 18,
                               fontFamily: 'Comfortaa-VariableFont_wght',
@@ -206,7 +206,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                                       return catado();
                                     }));
                                   },
-                                  name: 'Are YOU Redy for adopt !'),
+                                  name: 'Are You Redy for adopt !'),
                             ),
                           ],
                         ),
@@ -231,7 +231,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                                               'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
                                     }));
                                   },
-                                  name: 'Vaccination schedule'),
+                                  name: 'Vacination schedule'),
                             ),
                             SizedBox(width: 15),
                             Padding(
@@ -241,7 +241,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
                                       return HomeScreen(
-                                        type: '',
+                                        type: type,
                                       );
                                     }));
                                   },
@@ -251,19 +251,30 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                         ),
                       ),
                       Positioned(
-                          left: width / 3.6,
-                          width: width - (width / 4.5),
-                          top: 5 * height / 45 +
+                          left: width / 1.925,
+                          width: width / 3.5,
+                          height: height / 3.7,
+                          top: 4 * height / 45 +
                               1.5 * height / 7 +
                               height / 7 +
                               2 * height / 14,
-                          child: Padding(
-                            padding: const EdgeInsets.all(0),
-                            child: SizedBox(
-                                width: width / 5,
-                                height: height / 5,
-                                child: Image(
-                                    image: AssetImage('images/shop.png'))),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                return HomeScreen(
+                                  type: type,
+                                );
+                              }));
+                            },
+                            child: Padding(
+                              padding: const EdgeInsets.all(0),
+                              child: SizedBox(
+                                  width: width / 3.5,
+                                  height: height / 3.7,
+                                  child: Image(
+                                      image: AssetImage('images/shop.png'))),
+                            ),
                           )),
                     ])),
               ]),

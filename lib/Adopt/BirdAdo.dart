@@ -151,13 +151,14 @@ class _BirdadoState extends State<Birdado> with TickerProviderStateMixin {
                         Positioned(
                             left: width / 10,
                             top: 8 * height / 45,
-                            height: 4 * height / 45,
+                            height: 6 * height / 45,
                             width: width - (width / 5),
-                            child: Align(
-                                alignment: Alignment.center,
-                                child: Image(
-                                    image: NetworkImage(
-                                        ' https://th.bing.com/th/id/OIP.FNXQnxIOzpmtRmh86rxonwHaD9?pid=ImgDet&w=1440&h=770&rs=1')))),
+                            child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('images/badp.jfif'),
+                                        fit: BoxFit.cover)))),
+                        // image: AssetImage('images/badp.jfif')))),
                         Positioned(
                             left: width / 10,
                             top: 13 * height / 45,

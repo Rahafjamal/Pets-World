@@ -21,9 +21,9 @@ class Containermidle extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              width: width / 6,
-              height: height / 7,
-              padding: EdgeInsets.all(12),
+              width: width / 5,
+              height: height / 6,
+              padding: EdgeInsets.all(15),
               decoration: BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -42,8 +42,8 @@ class Containermidle extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 0),
                       child: SvgPicture.asset(
                         "$imagepath",
-                        width: width / 20,
-                        height: height / 18,
+                        width: width / 18,
+                        height: height / 16,
                         alignment: Alignment.center,
                         fit: BoxFit.contain,
                       ),
@@ -59,7 +59,7 @@ class Containermidle extends StatelessWidget {
                       child: Text(
                         '${name}',
                         style: TextStyle(
-                          fontSize: 10,
+                          fontSize: 14,
                           fontFamily: 'Comfortaa-VariableFont_wght',
                           letterSpacing: 1,
                           fontWeight: FontWeight.w500,

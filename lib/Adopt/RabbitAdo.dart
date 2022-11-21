@@ -150,14 +150,14 @@ class _RabbitAdoState extends State<RabbitAdo> with TickerProviderStateMixin {
                             )),
                         Positioned(
                             left: width / 10,
-                            top: 8 * height / 45,
-                            height: 4 * height / 45,
+                            top: 6 * height / 45,
+                            height: 8 * height / 45,
                             width: width - (width / 5),
-                            child: Align(
-                                alignment: Alignment.center,
-                                child: Image(
-                                    image: NetworkImage(
-                                        ' https://th.bing.com/th/id/OIP.FNXQnxIOzpmtRmh86rxonwHaD9?pid=ImgDet&w=1440&h=770&rs=1')))),
+                            child: DecoratedBox(
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        image: AssetImage('images/rado.jpg'),
+                                        fit: BoxFit.contain)))),
                         Positioned(
                             left: width / 10,
                             top: 13 * height / 45,
