@@ -148,7 +148,8 @@ class _HorseScreenState extends State<HorseScreen>
                             child: SizedBox(
                                 width: width / 15,
                                 height: height / 4.5,
-                                child: Image(image: AssetImage(' '))),
+                                child: Image(
+                                    image: AssetImage('images/hors5,png'))),
                           )),
                       Positioned(
                           left: width / 7,
