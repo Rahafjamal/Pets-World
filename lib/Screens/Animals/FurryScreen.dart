@@ -13,6 +13,7 @@ import 'package:final_project/model/HeaderFurryScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import '../../Logic/URL.dart';
 import '../../Shop/HomePage.dart';
 import '../../Types/CatTypes.dart';
 
@@ -227,13 +228,10 @@ class _FurryScreenState extends State<FurryScreen>
                                   OnTapping: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return CatTypes(
-                                          type: type,
-                                          defaultImage:
-                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                      return URLclass(myfunction: furryUrl);
                                     }));
                                   },
-                                  name: 'Vaccination schedule'),
+                                  name: 'Vacination schedule'),
                             ),
                             SizedBox(width: 15),
                             Padding(
@@ -272,8 +270,8 @@ class _FurryScreenState extends State<FurryScreen>
                             child: Padding(
                               padding: const EdgeInsets.all(0),
                               child: SizedBox(
-                                  width: width / 3.5,
-                                  height: height / 3.7,
+                                  width: width / 4,
+                                  height: height / 4,
                                   child: Image(
                                       image: AssetImage('images/shop.png'))),
                             ),

@@ -14,6 +14,7 @@ import 'package:final_project/model/HeaderHorseScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import '../../Logic/URL.dart';
 import '../../Types/CatTypes.dart';
 
 class HorseScreen extends StatefulWidget {
@@ -148,7 +149,7 @@ class _HorseScreenState extends State<HorseScreen>
                                 width: width / 15,
                                 height: height / 4.5,
                                 child: Image(
-                                    image: AssetImage('images/dog1.png'))),
+                                    image: AssetImage('images/hors5,png'))),
                           )),
                       Positioned(
                           left: width / 7,
@@ -226,10 +227,7 @@ class _HorseScreenState extends State<HorseScreen>
                                   OnTapping: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return CatTypes(
-                                          type: type,
-                                          defaultImage:
-                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                      return URLclass(myfunction: horseUrl);
                                     }));
                                   },
                                   name: 'Vaccination schedule'),
@@ -271,8 +269,8 @@ class _HorseScreenState extends State<HorseScreen>
                             child: Padding(
                               padding: const EdgeInsets.all(0),
                               child: SizedBox(
-                                  width: width / 3.5,
-                                  height: height / 3.7,
+                                  width: width / 4,
+                                  height: height / 4,
                                   child: Image(
                                       image: AssetImage('images/shop.png'))),
                             ),

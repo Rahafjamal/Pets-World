@@ -156,7 +156,7 @@ class _catadoState extends State<catado> with TickerProviderStateMixin {
                           child: DecoratedBox(
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage('images/cadp.jfif'),
+                                      image: AssetImage('images/cado.jfif'),
                                       fit: BoxFit.cover)))),
                       Positioned(
                           left: width / 10,

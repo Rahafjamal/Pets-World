@@ -5,6 +5,7 @@ import 'package:final_project/CatModels/AppBarOne.dart';
 import 'package:final_project/CatModels/AppBarTwo.dart';
 import 'package:final_project/CatModels/BirdAdo.dart';
 import 'package:final_project/CatModels/CatListView.dart';
+import 'package:final_project/Logic/URL.dart';
 import 'package:final_project/Logic/animalapi.dart';
 import 'package:final_project/Logic/containetLeft.dart';
 import 'package:final_project/Screens/Drawer_screen.dart';
@@ -224,13 +225,10 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                                   OnTapping: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return CatTypes(
-                                          type: type,
-                                          defaultImage:
-                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                      return URLclass(myfunction: birdUrl);
                                     }));
                                   },
-                                  name: 'Vaccination schedule'),
+                                  name: 'Vacination schedule'),
                             ),
                             SizedBox(width: 15),
                             Padding(
@@ -269,8 +267,8 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                             child: Padding(
                               padding: const EdgeInsets.all(0),
                               child: SizedBox(
-                                  width: width / 3.5,
-                                  height: height / 3.7,
+                                  width: width / 4,
+                                  height: height / 4,
                                   child: Image(
                                       image: AssetImage('images/shop.png'))),
                             ),

@@ -156,7 +156,7 @@ class _BirdadoState extends State<Birdado> with TickerProviderStateMixin {
                             child: DecoratedBox(
                                 decoration: BoxDecoration(
                                     image: DecorationImage(
-                                        image: AssetImage('images/badp.jfif'),
+                                        image: AssetImage('images/bado.jfif'),
                                         fit: BoxFit.cover)))),
                         // image: AssetImage('images/badp.jfif')))),
                         Positioned(
