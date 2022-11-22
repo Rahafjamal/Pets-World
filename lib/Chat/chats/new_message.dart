@@ -36,7 +36,7 @@ class _NewMessageState extends State<NewMessage> {
         print('User is currently signed out!');
       } else {
         FirebaseFirestore.instance
-            .collection("users")
+            .collection("user")
             .doc(user.uid)
             .get()
             .then((value) {

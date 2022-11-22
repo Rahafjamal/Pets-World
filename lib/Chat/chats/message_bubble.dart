@@ -36,7 +36,7 @@ class Message_bubble extends StatelessWidget {
               Text(
                 username,
                 style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                    TextStyle(color: Color.fromARGB(255, 235, 217, 217), fontWeight: FontWeight.bold),
               ),
               Text(
                 message,
