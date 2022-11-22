@@ -93,7 +93,6 @@ class _Drawer_screenState extends State<Drawer_screen> {
                   padding: const EdgeInsets.only(left: 15),
                   child: ListTile(
                     onTap: () {
-                      FirebaseAuth.instance.signOut();
                       setState(() {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: ((context) {
@@ -107,6 +106,32 @@ class _Drawer_screenState extends State<Drawer_screen> {
                     ),
                     title: const Text(
                       "Log in",
+                      style: TextStyle(
+                          fontSize: 20,
+                          color: Colors.black,
+                          fontWeight: FontWeight.w400,
+                          letterSpacing: 0.8),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 15),
+                  child: ListTile(
+                    onTap: () {
+                      FirebaseAuth.instance.signOut();
+                      setState(() {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: ((context) {
+                          return const Login_screen();
+                        })));
+                      });
+                    },
+                    leading: const Icon(
+                      Icons.logout,
+                      color: Colors.black,
+                    ),
+                    title: const Text(
+                      "Log out",
                       style: TextStyle(
                           fontSize: 20,
                           color: Colors.black,
