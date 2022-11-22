@@ -146,60 +146,74 @@ class _Login_screenState extends State<Login_screen> {
                     // //   //   ),
                     // //   // ),
                     // ),
-                    Container(
-                      padding: EdgeInsets.only(left: 50, right: 50),
-                      child: Column(
-                        children: <Widget>[
-                          const Text(
-                            'Does not have account?',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'Tajawal-Light',
-                              fontSize: 20,
-                            ),
-                          ),
-                          Row(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(left: 60),
-                                child: TextButton(
-                                  child: const Text(
-                                    'Sign up',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 20,
-                                      color: Color(0xff2b5eaf),
+                    Center(
+                      child: Container(
+                        padding: EdgeInsets.only(left: 50, right: 50),
+                        child: Center(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              const Text(
+                                'Does not have account?',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Tajawal-Light',
+                                  fontSize: 20,
+                                ),
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Center(
+                                    child: Padding(
+                                      padding: EdgeInsets.only(left: 60),
+                                      child: TextButton(
+                                        child: const Text(
+                                          'Sign up',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 20,
+                                            color: Color(0xff2b5eaf),
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          Navigator.push(context,
+                                              MaterialPageRoute(
+                                            builder: (context) {
+                                              return SignUpPage();
+                                            },
+                                          ));
+                                        },
+                                      ),
                                     ),
                                   ),
-                                  onPressed: () {
-                                    Navigator.push(context, MaterialPageRoute(
-                                      builder: (context) {
-                                        return SignUpPage();
-                                      },
-                                    ));
-                                  },
-                                ),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(right: 60),
-                                child: IconButton(
-                                  onPressed: () {
-                                    addUser();
-                                  },
-                                  icon: ImageIcon(
-                                    AssetImage('images/4.png'),
-                                    size: 100,
+                                  SizedBox(
+                                    width: 20,
                                   ),
-                                  splashColor: Color(0x00000000),
-                                ),
+                                  Center(
+                                    child: Padding(
+                                        padding: EdgeInsets.only(left: 60),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            LoginWithGmail;
+                                          },
+                                          child: Container(
+                                            width: 30,
+                                            height: 30,
+                                            decoration: BoxDecoration(
+                                                image: DecorationImage(
+                                                    image: AssetImage(
+                                                        'images/12.png'),
+                                                    fit: BoxFit.cover)),
+                                          ),
+                                        )),
+                                  )
+                                ],
                               )
                             ],
-                          )
-                        ],
-                        mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                          ),
+                        ),
                       ),
                     ),
                     // Container(
