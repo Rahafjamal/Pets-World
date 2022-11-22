@@ -27,7 +27,7 @@ class _FirestoreState extends State<Firestore> {
         child: Scaffold(
       backgroundColor: Colors.white,
       appBar: const CatAppBar(),
-      drawer: Drawer_screen(),
+      drawer: const Drawer_screen(),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -41,7 +41,7 @@ class _FirestoreState extends State<Firestore> {
                   Container(
                     width: width,
                     height: height,
-                    child: DecoratedBox(
+                    child: const DecoratedBox(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.topCenter,
@@ -59,7 +59,7 @@ class _FirestoreState extends State<Firestore> {
                       top: height / 45,
                       height: 2 * height / 45,
                       width: width - (width / 5),
-                      child: Text(
+                      child: const Text(
                         'Choose Your pet . . .',
                         style: TextStyle(
                           fontSize: 20,
@@ -73,14 +73,14 @@ class _FirestoreState extends State<Firestore> {
                     left: width * 0.025 + width / 10,
                     top: 4 * height / 45,
                     width: width - (width / 4),
-                    child: Align(alignment: Alignment.center, child: row_one()),
+                    child: const Align(alignment: Alignment.center, child: row_one()),
                   ),
                   Positioned(
                     height: height / 6,
                     left: width * 0.025 + width / 10,
                     top: 6 * height / 45 + height / 7,
                     width: width - (width / 4),
-                    child: Align(alignment: Alignment.center, child: row_two()),
+                    child: const Align(alignment: Alignment.center, child: row_two()),
                   ),
                   Positioned(
                     left: width / 10,
@@ -103,7 +103,7 @@ class _FirestoreState extends State<Firestore> {
                           ));
                         },
                         child: Container(
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             gradient: LinearGradient(
                               colors: [
                                 Color.fromARGB(255, 129, 162, 255),
@@ -114,11 +114,11 @@ class _FirestoreState extends State<Firestore> {
                             ),
                           ),
                           padding:
-                              EdgeInsets.symmetric(horizontal: 0, vertical: 2),
+                              const EdgeInsets.symmetric(horizontal: 0, vertical: 2),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text(
+                              const Text(
                                 ' ',
                                 style: TextStyle(
                                   fontSize: 20,
@@ -127,7 +127,7 @@ class _FirestoreState extends State<Firestore> {
                                 ),
                               ),
                               const SizedBox(height: 4),
-                              Text(
+                              const Text(
                                 ' ',
                                 style: TextStyle(
                                   fontSize: 20,
@@ -145,7 +145,7 @@ class _FirestoreState extends State<Firestore> {
                       top: 3 * (height / 7) + (10 * height / 45),
                       height: 2 * height / 45,
                       width: width - (width / 5),
-                      child: Text(
+                      child: const Text(
                         'Should you get a pet ?',
                         style: TextStyle(
                           fontSize: 20,
@@ -163,7 +163,7 @@ class _FirestoreState extends State<Firestore> {
                       width: width - (width / 5),
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             "Let's start the",
                             style: TextStyle(
                               fontSize: 16,
@@ -184,7 +184,7 @@ class _FirestoreState extends State<Firestore> {
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(
                                 builder: (context) {
-                                  return WritingView();
+                                  return const WritingView();
                                 },
                               ));
                             },
@@ -196,7 +196,7 @@ class _FirestoreState extends State<Firestore> {
                       height: height / 7,
                       width: width - (width / 5),
                       top: 2 * (height / 7) + (8 * height / 45),
-                      child: DecoratedBox(
+                      child: const DecoratedBox(
                         decoration: BoxDecoration(
                             image: DecorationImage(
                                 image: AssetImage('images/chat.png'))),

@@ -36,6 +36,7 @@ class _CatSliderState extends State<CatSlider> {
             type: widget.type,
             PaginationData: widget.PaginationData,
           ),
+          
           HomeScreen(
             type: widget.type,
           ),

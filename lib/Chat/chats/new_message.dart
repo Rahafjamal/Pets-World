@@ -40,7 +40,6 @@ class _NewMessageState extends State<NewMessage> {
             .doc(user.uid)
             .get()
             .then((value) {
-          print(value);
           setState(() {
             UserId = user.uid;
             UserName = value["username"];
