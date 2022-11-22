@@ -1,6 +1,10 @@
-import 'package:final_project/Chat/chat.dart';
-import 'package:final_project/Logic/containerright.dart';
-import 'package:final_project/quiz/writing_view.dart';
+import 'package:final_project/Logic/containermidle.dart';
+import 'package:final_project/Screens/Animals/BirdScreen.dart';
+import 'package:final_project/Screens/Animals/CatScreen.dart';
+import 'package:final_project/Screens/Animals/DogScreen.dart';
+import 'package:final_project/Screens/Animals/FurryScreen.dart';
+import 'package:final_project/Screens/Animals/HorseScreen.dart';
+import 'package:final_project/Screens/Animals/RabbitScreen.dart';
 import 'package:flutter/material.dart';
 
 class row_two extends StatefulWidget {
@@ -14,39 +18,47 @@ class _row_twoState extends State<row_two> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Center(
-      child: Padding(
-        padding: EdgeInsets.all(10),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-                padding: const EdgeInsets.only(left: 50),
-                child: Container(
-                  height: 150,
-                  width: 100,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                    image: AssetImage('images/quiz.png'),
-                    scale: 3,
-                  )),
-                )),
-            SizedBox(width: 20),
-            Padding(
-              padding: const EdgeInsets.only(right: 50),
-              child: ContainerRight(
-                  title: 'Chat with pets owners',
+      child: Container(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 0),
+            child:
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              SizedBox(width: 0),
+              Containermidle(
+                  name: 'Bird',
                   OnTapping: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return ChatScreen();
-                      },
-                    ));
-                  }),
-            ),
-          ],
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return BirdScreen();
+                    }));
+                  },
+                  imagepath: 'images/bird.svg'),
+              SizedBox(width: 20),
+              Containermidle(
+                  name: 'Horse',
+                  OnTapping: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return HorseScreen();
+                    }));
+                  },
+                  imagepath: 'images/horse.svg'),
+              SizedBox(width: 20),
+              Containermidle(
+                  name: 'Rabbit',
+                  OnTapping: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return RabbitScreen();
+                    }));
+                  },
+                  imagepath: 'images/rab.svg'),
+            ]),
+          ),
         ),
       ),
-    ));
+    );
   }
 }

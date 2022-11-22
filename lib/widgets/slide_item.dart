@@ -29,8 +29,9 @@ class SlideItem extends StatelessWidget {
         Text(
           slideList[index].title,
           style: TextStyle(
+            fontFamily: 'Comfortaa-VariableFont_wght',
             fontSize: 24,
-            color: Colors.amber[600],
+            color: Colors.blue[900],
             fontWeight: FontWeight.w400,
           ),
         ),
@@ -43,6 +44,7 @@ class SlideItem extends StatelessWidget {
             slideList[index].description,
             textAlign: TextAlign.center,
             style: TextStyle(
+              fontFamily: 'Comfortaa-VariableFont_wght',
               fontSize: 20,
             ),
           ),
