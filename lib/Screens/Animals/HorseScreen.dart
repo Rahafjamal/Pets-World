@@ -269,8 +269,8 @@ class _HorseScreenState extends State<HorseScreen>
                             child: Padding(
                               padding: const EdgeInsets.all(0),
                               child: SizedBox(
-                                  width: width / 3.5,
-                                  height: height / 3.7,
+                                  width: width / 4,
+                                  height: height / 4,
                                   child: Image(
                                       image: AssetImage('images/shop.png'))),
                             ),

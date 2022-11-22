@@ -195,7 +195,7 @@ class _Login_screenState extends State<Login_screen> {
                                         padding: EdgeInsets.only(left: 60),
                                         child: GestureDetector(
                                           onTap: () {
-                                            LoginWithGmail;
+                                            addUser();
                                           },
                                           child: Container(
                                             width: 30,
