@@ -13,31 +13,39 @@ class Cart extends StatelessWidget {
         .snapshots();
 
     return Scaffold(
-      body: Container(
-        child: StreamBuilder<QuerySnapshot>(
-          stream: UserCart,
-          builder:
-              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-            if (snapshot.hasError) {
-              return const Text('Something went wrong');
-            }
+      body: StreamBuilder<QuerySnapshot>(
+        stream: UserCart,
+        builder:
+            (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (snapshot.hasError) {
+            return const Text('Something went wrong');
+          }
 
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Text("Loading");
-            }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Text("Loading");
+          }
 
-            return ListView(
-              children: snapshot.data!.docs.map((DocumentSnapshot document) {
-                Map<String, dynamic> data =
-                    document.data()! as Map<String, dynamic>;
-                return ListTile(
-                  title: Text(data['title'].toString()),
-                  subtitle: Text(data['price'].toString()),
-                );
-              }).toList(),
-            );
-          },
-        ),
+          return ListView(
+            children: snapshot.data!.docs.map((DocumentSnapshot document) {
+              Map<String, dynamic> data =
+                  document.data()! as Map<String, dynamic>;
+              return ListTile(
+                title: Text(data['title'].toString()),
+                subtitle: Text(data['price'].toString()),
+                leading: Image.network(data['image'].toString()),
+                trailing: IconButton(
+                  icon: Icon(Icons.delete),
+                  onPressed: () {
+                    FirebaseFirestore.instance
+                        .collection('cart')
+                        .doc(document.id)
+                        .delete();
+                  },
+                ),
+              );
+            }).toList(),
+          );
+        },
       ),
     );
   }

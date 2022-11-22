@@ -32,7 +32,7 @@ class CartSliderView extends StatelessWidget {
                         aspectRatio: 2.0,
                         enlargeCenterPage: true,
                         autoPlay: false,
-                        height: 500,
+                        height: 600,
                         scrollDirection: Axis.vertical,
                         autoPlayCurve: Curves.fastOutSlowIn,
                         enableInfiniteScroll: false,
@@ -63,36 +63,35 @@ class CartSliderView extends StatelessWidget {
                               ),
                               hoverable: true,
                               size: ant.Size.large,
-                              child: Stack(
-                                alignment: Alignment.center,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
+                                  Container(
+                                    child: CatPagination(
+                                      PaginationData: PaginationData,
+                                      Data: Data,
+                                      type: type,
+                                    ),
+                                  ),
                                   Center(
                                     child: Image.network(
                                       NewData[index]['photos'].length > 0
                                           ? NewData[index]['photos'][0]
                                               ['medium']
                                           : defaultImage,
-                                      height: 300,
+                                      height: 280,
                                       width: 300,
                                       fit: BoxFit.contain,
                                     ),
                                   ),
                                 ],
                               ),
-
                             ),
                           ),
                         );
                       }),
                 )
               : Container(),
-          Container(
-            child: CatPagination(
-              PaginationData: PaginationData,
-              Data: Data,
-              type: type,
-            ),
-          ),
         ],
       ),
     );

@@ -28,7 +28,7 @@ class CatScreen extends StatefulWidget {
 class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
   var Data;
   String type = "cat";
-  var storage = FlutterSecureStorage();
+  var storage = const FlutterSecureStorage();
   @override
   void initState() {
     // TODO: implement initState
@@ -88,8 +88,8 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
     return SafeArea(
         child: Scaffold(
             backgroundColor: Colors.white,
-            appBar: CatAppBar(),
-            drawer: Drawer_screen(),
+            appBar: const CatAppBar(),
+            drawer: const Drawer_screen(),
             body: SingleChildScrollView(
               scrollDirection: Axis.vertical,
               child: Column(children: [
@@ -100,7 +100,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                       Container(
                         width: width,
                         height: height,
-                        child: DecoratedBox(
+                        child: const DecoratedBox(
                           decoration: BoxDecoration(
                             gradient: LinearGradient(
                               begin: Alignment.topCenter,
@@ -126,7 +126,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                             borderRadius: BorderRadius.circular(24),
                           ),
                           child: Container(
-                            decoration: BoxDecoration(
+                            decoration: const BoxDecoration(
                               gradient: LinearGradient(
                                 colors: [
                                   Color.fromARGB(255, 129, 162, 255),
@@ -148,14 +148,14 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                             child: SizedBox(
                                 width: width / 15,
                                 height: height / 4.5,
-                                child: Image(
+                                child: const Image(
                                     image: AssetImage('images/cat1.png'))),
                           )),
                       Positioned(
                           left: width / 7,
                           height: 2 * height / 7,
                           top: 4 * height / 45,
-                          child: Text(
+                          child: const Text(
                             'Hello Sweety !',
                             style: TextStyle(
                               fontSize: 20,
@@ -168,7 +168,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                           left: width / 7,
                           height: 2 * height / 7,
                           top: 6 * height / 45,
-                          child: Text(
+                          child: const Text(
                             'Welcome in Cat Land',
                             style: TextStyle(
                               fontSize: 18,
@@ -193,19 +193,19 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                                       return CatTypes(
                                           type: type,
                                           defaultImage:
-                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt8VZeUreffiBN2cyb8CSl0aRIN4_e6BM7zH70GPJONg&s');
                                     }));
                                   },
                                   name: 'Typs'),
                             ),
-                            SizedBox(width: 15),
+                            const SizedBox(width: 15),
                             Padding(
                               padding: const EdgeInsets.only(right: 30),
                               child: containerN(
                                   OnTapping: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return catado();
+                                      return const catado();
                                     }));
                                   },
                                   name: 'Are You Redy for adopt !'),
@@ -232,7 +232,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                                   },
                                   name: 'Vacination schedule'),
                             ),
-                            SizedBox(width: 15),
+                            const SizedBox(width: 15),
                             Padding(
                               padding: const EdgeInsets.only(right: 30),
                               child: containerN(

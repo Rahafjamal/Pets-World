@@ -1,32 +1,67 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:final_project/Shop/CreateNewItem.dart';
 import 'package:final_project/Shop/cart.dart';
 import 'package:final_project/Shop/constans.dart';
 import 'package:final_project/Shop/home_body.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   HomeScreen({super.key, required this.type});
   String type;
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  bool admin = false;
+  void initState() {
+    // TODO: implement initState
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('User is currently signed out!');
+      } else {
+        FirebaseFirestore.instance
+            .collection("users")
+            .doc(user.uid)
+            .get()
+            .then((value) {
+          if(value["isAdmin"] == true){
+            setState(() {
+              admin = true;
+            });
+          }
+        });
+        print('User is signed in!');
+      }
+    });
+    super.initState();
+  }
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Row(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+      floatingActionButton: 
+      Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+      crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => CreateNewFile(
-                          type: type,
-                        )),
-              );
-            },
-            child: const Icon(Icons.add),
-            backgroundColor: kPrimaryColor,
-          ),
+          admin
+              ? FloatingActionButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => CreateNewFile(
+                          type: widget.type,
+                        )));
+                  },
+                  child: const Icon(Icons.add),
+                )
+              : Container(),
+          
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -42,7 +77,7 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: kPrimaryColor,
       appBar: homeAppbar(),
       body: HomeBody(
-        type: type,
+        type: widget.type,
       ),
     );
   }
@@ -57,7 +92,6 @@ class HomeScreen extends StatelessWidget {
             fontWeight: FontWeight.bold, fontSize: 20),
       ),
       centerTitle: false,
-      actions: [IconButton(onPressed: (() {}), icon: Icon(Icons.menu))],
     );
   }
 }

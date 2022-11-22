@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:final_project/Screens/Login_screen.dart';
 import 'package:final_project/Shop/constans.dart';
 import 'package:final_project/Shop/product_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -17,6 +18,7 @@ class DetailsBody extends StatefulWidget {
 class _DetailsBodyState extends State<DetailsBody> {
   @override
   bool auth = false;
+  bool admin = false;
   @override
   void initState() {
     // check if user is logged in
@@ -24,7 +26,17 @@ class _DetailsBodyState extends State<DetailsBody> {
       if (user == null) {
         print('User is currently signed out!');
       } else {
-        print(user);
+        FirebaseFirestore.instance
+            .collection("users")
+            .doc(user.uid)
+            .get()
+            .then((value) {
+          if(value["isAdmin"] == true){
+            setState(() {
+              admin = true;
+            });
+          }
+        });
         setState(() {
           auth = true;
         });
@@ -39,16 +51,18 @@ class _DetailsBodyState extends State<DetailsBody> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          child: IconButton(
-              alignment: Alignment.topRight,
-              onPressed: (() {
-                FirebaseFirestore.instance
-                    .collection(widget.type)
-                    .doc(widget.id)
-                    .delete()
-                    .then((value) => Navigator.pop(context));
-              }),
-              icon: Icon(Icons.delete)),
+          child: admin
+              ? IconButton(
+                  alignment: Alignment.topRight,
+                  onPressed: (() {
+                    FirebaseFirestore.instance
+                        .collection(widget.type)
+                        .doc(widget.id)
+                        .delete()
+                        .then((value) => Navigator.pop(context));
+                  }),
+                  icon: Icon(Icons.delete))
+              : Container(),
         ),
         Container(
           width: double.infinity,
@@ -118,7 +132,15 @@ class _DetailsBodyState extends State<DetailsBody> {
                         }).then((value) => Navigator.pop(context));
                       }),
                     )
-                  : Container(),
+                  : ElevatedButton(
+                      child: const Text('Login to add to cart'),
+                      onPressed: (() {
+                        Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: ((context) {
+                          return const Login_screen();
+                        })));
+                      }),
+                    ),
             ],
           ),
         ),
