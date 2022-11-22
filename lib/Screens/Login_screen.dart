@@ -49,7 +49,7 @@ class _Login_screenState extends State<Login_screen> {
           context, MaterialPageRoute(builder: (context) => const Firestore()));
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-        content: Text(e.toString()),
+        content: Text("sorry something wrong"),
       ));
     }
   }

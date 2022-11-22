@@ -250,7 +250,7 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                         ),
                       ),
                       Positioned(
-                          left: width / 1.925,
+                          left: width / 1.84,
                           width: width / 3.5,
                           height: height / 3.7,
                           top: 4 * height / 45 +
@@ -269,8 +269,8 @@ class _CatScreenState extends State<CatScreen> with TickerProviderStateMixin {
                             child: Padding(
                               padding: const EdgeInsets.all(0),
                               child: SizedBox(
-                                  width: width / 4,
-                                  height: height / 4,
+                                   width: width / 7.5,
+                                  height: height / 7.5,
                                   child: Image(
                                       image: AssetImage('images/shop.png'))),
                             ),

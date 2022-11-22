@@ -191,15 +191,23 @@ class _FirestoreState extends State<Firestore> {
                           ),
                         ],
                       )),
-                  Positioned(
+                 Positioned(
                       left: width / 10,
                       height: height / 7,
                       width: width - (width / 5),
                       top: 2 * (height / 7) + (8 * height / 45),
-                      child: DecoratedBox(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage('images/chat.png'))),
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                            return ChatScreen();
+                          }));
+                        },
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                  image: AssetImage('images/chat.png'))),
+                        ),
                       )),
                 ],
               ),
