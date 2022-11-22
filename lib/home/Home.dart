@@ -7,6 +7,8 @@ import 'package:final_project/home/TopHome.dart';
 import 'package:final_project/quiz/writing_view.dart';
 import 'package:flutter/material.dart';
 
+import '../Chat/chats/new_message.dart';
+
 class Firestore extends StatefulWidget {
   const Firestore({super.key});
 
@@ -96,7 +98,7 @@ class _FirestoreState extends State<Firestore> {
                         onTap: () {
                           Navigator.push(context, MaterialPageRoute(
                             builder: (context) {
-                              return ChatScreen();
+                              return NewMessage();
                             },
                           ));
                         },

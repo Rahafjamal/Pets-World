@@ -14,6 +14,7 @@ import 'package:final_project/model/HeaderDogScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import '../../Logic/URL.dart';
 import '../../Shop/HomePage.dart';
 
 class DogScreen extends StatefulWidget {
@@ -225,13 +226,10 @@ class _DogScreenState extends State<DogScreen> with TickerProviderStateMixin {
                                   OnTapping: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return CatTypes(
-                                          type: type,
-                                          defaultImage:
-                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                      return URLclass(myfunction: dogUrl);
                                     }));
                                   },
-                                  name: 'Vaccination schedule'),
+                                  name: 'Vacination schedule'),
                             ),
                             SizedBox(width: 15),
                             Padding(

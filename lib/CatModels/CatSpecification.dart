@@ -33,83 +33,39 @@ class CatSpecification extends StatelessWidget {
                 );
               },
             ),
-            Text(Data['name'] ?? ""),
-            Text(Data['age'] ?? ""),
-            Text(Data['gender'] ?? ""),
-            Text(Data['size'] ?? ""),
-            Text(Data['coat'] ?? ""),
-            Text(Data['breeds']['primary'] != null
-                ? Data['breeds']['primary'].toString()
-                : ""),
-            Text(Data['breeds']['secondary'] != null
-                ? Data['breeds']['secondary'].toString()
-                : ""),
-            Text(Data['breeds']['mixed'] != null
-                ? Data['breeds']['mixed'].toString()
-                : ""),
-            Text(Data['breeds']['unknown'] != null
-                ? Data['breeds']['unknown'].toString()
-                : ""),
-            Text(Data['colors']['primary'] != null
-                ? Data['colors']['primary'].toString()
-                : ""),
-            Text(Data['colors']['secondary'] != null
-                ? Data['colors']['secondary'].toString()
-                : ""),
-            Text(Data['colors']['tertiary'] != null
-                ? Data['colors']['tertiary'].toString()
-                : ""),
-            Text(Data['environment']['children'] != null
-                ? Data['environment']['children'].toString()
-                : ""),
-            Text(Data['environment']['dogs'] != null
-                ? Data['environment']['dogs'].toString()
-                : ""),
-            Text(Data['environment']['cats'] != null
-                ? Data['environment']['cats'].toString()
-                : ""),
-            Text(Data['attributes']['spayed_neutered'] != null
-                ? Data['attributes']['spayed_neutered'].toString()
-                : ""),
-            Text(Data['attributes']['house_trained'] != null
-                ? Data['attributes']['house_trained'].toString()
-                : ""),
-            Text(Data['attributes']['declawed'] != null
-                ? Data['attributes']['declawed'].toString()
-                : ""),
-            Text(Data['attributes']['special_needs'] != null
-                ? Data['attributes']['special_needs'].toString()
-                : ""),
-            Text(Data['attributes']['shots_current'] != null
-                ? Data['attributes']['shots_current'].toString()
-                : ""),
-            Text(Data['contact']['address']['address1'] != null
-                ? Data['contact']['address']['address1'].toString()
-                : ""),
-            Text(Data['contact']['address']['address2'] != null
-                ? Data['contact']['address']['address2'].toString()
-                : ""),
-            Text(Data['contact']['address']['city'] != null
-                ? Data['contact']['address']['city'].toString()
-                : ""),
-            Text(Data['contact']['address']['state'] != null
-                ? Data['contact']['address']['state'].toString()
-                : ""),
-            Text(Data['contact']['address']['postcode'] != null
-                ? Data['contact']['address']['postcode'].toString()
-                : ""),
-            Text(Data['contact']['address']['country'] != null
-                ? Data['contact']['address']['country'].toString()
-                : ""),
-            Text(Data['contact']['email'] != null
-                ? Data['contact']['email'].toString()
-                : ""),
-            Text(Data['contact']['phone'] != null
-                ? Data['contact']['phone'].toString()
-                : ""),
-            Text(Data['description'] != null
-                ? Data['description'].toString()
-                : ""),
+            Text("Name : ${Data['name'] ?? ""}"),
+            Text('Age : ${Data['age'] ?? ""}'),
+            Text('Gender :${Data['gender'] ?? ""}'),
+            Text('Size :${Data['size'] ?? ""}'),
+            Text('Cost : ${Data['coat'] ?? ""}'),
+            Text(
+                'primary breeds${Data['breeds']['primary'] != null ? Data['breeds']['primary'].toString() : ""}'),
+            Text(
+                'Secondary breeds ${Data['breeds']['secondary'] != null ? Data['breeds']['secondary'].toString() : ""}'),
+            Text(
+                'declawed${Data['attributes']['declawed'] != null ? Data['attributes']['declawed'].toString() : ""}'),
+            Text(
+                "special_needs${Data['attributes']['special_needs'] != null ? Data['attributes']['special_needs'].toString() : ""}"),
+            Text(
+                'shots_current${Data['attributes']['shots_current'] != null ? Data['attributes']['shots_current'].toString() : ""}'),
+            Text(
+                'address1${Data['contact']['address']['address1'] != null ? Data['contact']['address']['address1'].toString() : ""}'),
+            Text(
+                'address2${Data['contact']['address']['address2'] != null ? Data['contact']['address']['address2'].toString() : ""}'),
+            Text(
+                'city${Data['contact']['address']['city'] != null ? Data['contact']['address']['city'].toString() : ""}'),
+            Text(
+                'state${Data['contact']['address']['state'] != null ? Data['contact']['address']['state'].toString() : ""}'),
+            Text(
+                'postcode${Data['contact']['address']['postcode'] != null ? Data['contact']['address']['postcode'].toString() : ""}'),
+            Text(
+                'country ${Data['contact']['address']['country'] != null ? Data['contact']['address']['country'].toString() : ""}'),
+            Text(
+                'Email${Data['contact']['email'] != null ? Data['contact']['email'].toString() : ""}'),
+            Text(
+                'phone ${Data['contact']['phone'] != null ? Data['contact']['phone'].toString() : ""}'),
+            Text(
+                "description : ${Data['description'] != null ? Data['description'].toString() : ""}"),
           ],
         ),
       ),

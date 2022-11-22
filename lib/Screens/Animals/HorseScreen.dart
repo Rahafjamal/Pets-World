@@ -14,6 +14,7 @@ import 'package:final_project/model/HeaderHorseScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
+import '../../Logic/URL.dart';
 import '../../Types/CatTypes.dart';
 
 class HorseScreen extends StatefulWidget {
@@ -147,8 +148,7 @@ class _HorseScreenState extends State<HorseScreen>
                             child: SizedBox(
                                 width: width / 15,
                                 height: height / 4.5,
-                                child: Image(
-                                    image: AssetImage('images/dog1.png'))),
+                                child: Image(image: AssetImage(' '))),
                           )),
                       Positioned(
                           left: width / 7,
@@ -226,10 +226,7 @@ class _HorseScreenState extends State<HorseScreen>
                                   OnTapping: () {
                                     Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
-                                      return CatTypes(
-                                          type: type,
-                                          defaultImage:
-                                              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
+                                      return URLclass(myfunction: horseUrl);
                                     }));
                                   },
                                   name: 'Vaccination schedule'),
