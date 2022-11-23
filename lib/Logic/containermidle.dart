@@ -59,7 +59,7 @@ class Containermidle extends StatelessWidget {
                       child: Text(
                         '${name}',
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 10,
                           fontFamily: 'Comfortaa-VariableFont_wght',
                           letterSpacing: 1,
                           fontWeight: FontWeight.w500,

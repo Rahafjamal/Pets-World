@@ -51,8 +51,8 @@ class _DetailsBodyState extends State<DetailsBody> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          child: admin
-              ? IconButton(
+          child: 
+               IconButton(
                   alignment: Alignment.topRight,
                   onPressed: (() {
                     FirebaseFirestore.instance
@@ -62,7 +62,7 @@ class _DetailsBodyState extends State<DetailsBody> {
                         .then((value) => Navigator.pop(context));
                   }),
                   icon: Icon(Icons.delete))
-              : Container(),
+            
         ),
         Container(
           width: double.infinity,
@@ -72,8 +72,8 @@ class _DetailsBodyState extends State<DetailsBody> {
           decoration: const BoxDecoration(
             color: kBackgroundColor,
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(50),
-              bottomRight: Radius.circular(50),
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
             ),
           ),
           child: Column(

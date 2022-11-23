@@ -48,8 +48,8 @@ class _HomeScreenState extends State<HomeScreen> {
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          admin
-              ? FloatingActionButton(
+          
+               FloatingActionButton(
                   onPressed: () {
                     Navigator.push(
                         context,
@@ -59,8 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                 )));
                   },
                   child: const Icon(Icons.add),
-                )
-              : Container(),
+                ),
+              
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
