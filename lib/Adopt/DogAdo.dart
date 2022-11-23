@@ -83,91 +83,150 @@ class _DogAdoState extends State<DogAdo> with TickerProviderStateMixin {
     width = size.width;
     TabController tabController = TabController(length: 4, vsync: this);
     return SafeArea(
-        child: Scaffold(
-            backgroundColor: Colors.white,
-            appBar: const AppBarTwo(),
-            drawer: Drawer_screen(),
-            body: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Column(children: [
-                  Container(
-                      width: width,
-                      height: height,
-                      child: Stack(fit: StackFit.loose, children: [
-                        Container(
-                          width: width,
-                          height: height,
-                          child: DecoratedBox(
-                            decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter,
-                                colors: [
-                                  Colors.white,
-                                  Color.fromARGB(255, 156, 182, 255),
-                                ],
-                              ),
+      child: Scaffold(
+          backgroundColor: Colors.white,
+          appBar: const AppBarTwo(),
+          drawer: Drawer_screen(),
+          body: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              child: Column(children: [
+                Container(
+                    width: width,
+                    height: height,
+                    child: Stack(fit: StackFit.loose, children: [
+                      Container(
+                        width: width,
+                        height: height,
+                        child: DecoratedBox(
+                          decoration: BoxDecoration(
+                            gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              end: Alignment.bottomCenter,
+                              colors: [
+                                Colors.white,
+                                Color.fromARGB(255, 156, 182, 255),
+                              ],
                             ),
                           ),
                         ),
-                        Positioned(
-                            left: width / 10,
-                            top: height / 45,
-                            height: 4 * height / 45,
-                            width: width - (width / 5),
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Center(
-                                child: Text(
-                                  'What Questions Should You Ask ',
+                      ),
+                      Positioned(
+                          left: width / 10,
+                          top: height / 45,
+                          height: 4 * height / 45,
+                          width: width - (width / 5),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Center(
+                              child: Text(
+                                'What Questions Should You Ask A Dog  Breeder ?',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  fontFamily: 'Comfortaa-VariableFont_wght',
+                                  letterSpacing: 1,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          )),
+                      Positioned(
+                          left: width / 10,
+                          top: 7 * height / 45,
+                          height: 10 * height / 45,
+                          width: width - (width / 5),
+                          child: DecoratedBox(
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage('images/dado.jpg'),
+                                      fit: BoxFit.contain)))),
+                      Positioned(
+                          left: width / 10,
+                          top: 8 * height / 45 + 10 * height / 45,
+                          height: 2.5 * height / 45,
+                          width: width - (width / 5),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Container(
+                              child: Text(
+                                ' Think about the kind of Dog  who will suit you best :',
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  fontFamily: 'Comfortaa-VariableFont_wght',
+                                  letterSpacing: 1,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          )),
+                      Positioned(
+                          left: width / 10,
+                          top: 9 * height / 45 +
+                              10 * height / 45 +
+                              2.5 * height / 45,
+                          width: width - (width / 5),
+                          child: Align(
+                            alignment: Alignment.topLeft,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Before finalizing your decision on a breed, there are lots of questions to ask yourself:',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 12,
                                     fontFamily: 'Comfortaa-VariableFont_wght',
-                                    letterSpacing: 1,
+                                  ),
+                                ),
+                                Container(height: height / 55),
+                                Text(
+                                  '- Do you have kids? If so, how old are they and how Dog -savvy are they?',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Comfortaa-VariableFont_wght',
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                              ),
-                            )),
-                        Positioned(
-                            left: width / 10,
-                            top: 3 * height / 45,
-                            height: 4 * height / 45,
-                            width: width - (width / 5),
-                            child: Align(
-                              alignment: Alignment.center,
-                              child: Center(
-                                child: Text(
-                                  ' A Dog Breeder?',
+                                Container(height: height / 55),
+                                Text(
+                                  '- How many hours a day are you out of the house?',
                                   style: TextStyle(
-                                    fontSize: 20,
+                                    fontSize: 12,
                                     fontFamily: 'Comfortaa-VariableFont_wght',
-                                    letterSpacing: 1,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                              ),
-                            )),
-                        Positioned(
-                            left: width / 10,
-                            top: 8 * height / 45,
-                            height: 6 * height / 45,
-                            width: width - (width / 5),
-                            child: DecoratedBox(
-                                decoration: BoxDecoration(
-                                    image: DecorationImage(
-                                        image: AssetImage('images/dado.jpg'),
-                                        fit: BoxFit.cover)))),
-                        Positioned(
-                            left: width / 10,
-                            top: 13 * height / 45,
-                            height: 2.5 * height / 45,
-                            width: width - (width / 5),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Container(
-                                child: Text(
-                                  ' Think about the kind of dog who will suit you best :',
+                                Container(height: height / 55),
+                                Text(
+                                  '- Do you have assistance if you are gone for long workdays?',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Comfortaa-VariableFont_wght',
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Container(height: height / 55),
+                                Text(
+                                  '- What kind of energy level are you looking for in a Dog ?',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Comfortaa-VariableFont_wght',
+                                    letterSpacing: 0,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                                Container(height: height / 55),
+                                Text(
+                                  "Once you’ve answered these basic questions, you’ll have a better picture of what characteristics you’re looking for in a Dog . This will help to narrow your search as you research breeds based on your answers.You can learn more about each unique Dog  breed by searching our Petfinder breed guide by name, collection (largest, smartest, and even hairless!), or just browse them all right here. It’s fascinating to discover the history behind each of the countless Dog  breeds. From small to large, each has a unique story.Even if you have your heart set on a particular breed, there’s an additional factor to keep in mind: Every Dog —even a purebred–is distinct and individual.Despite what is considered typical of a breed, you’ll need to remember that every Dog  in the world has their own unique personality (that’s why we love Dog s!) and some may have characteristics that aren’t commonly found within their breed. Luckily, when Dog s arrive with an adoption group, the shelter or rescue will often do a behavioral assessment that can give you more insight about an individual Dog  before you make a decision about adopting. This pre-adoption info can help you find the very best fit for your family and lifestyle.",
+                                  style: TextStyle(
+                                    height: 1.5,
+                                    fontSize: 12,
+                                    fontFamily: 'Comfortaa-VariableFont_wght',
+                                    letterSpacing: 0,
+                                  ),
+                                ),
+                                Container(height: height / 55),
+                                Text(
+                                  ' How to find a young or adult Dog  to suit your home:',
                                   style: TextStyle(
                                     fontSize: 15,
                                     fontFamily: 'Comfortaa-VariableFont_wght',
@@ -175,105 +234,30 @@ class _DogAdoState extends State<DogAdo> with TickerProviderStateMixin {
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
-                              ),
-                            )),
-                        Positioned(
-                            left: width / 10,
-                            top: 16.5 * height / 45,
-                            width: width - (width / 5),
-                            child: Align(
-                              alignment: Alignment.topLeft,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Before finalizing your decision on a breed, there are lots of questions to ask yourself:',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                    ),
+                                Container(height: height / 55),
+                                Text(
+                                  'When adopting an adult Dog , you can specifically look for one whose story matches your needs, such as being friendly with other Dog s, being good with children, and other past history that the rescue or shelter may already have. Having more history on a Dog  will mean fewer surprises for you as an adopter.',
+                                  style: TextStyle(
+                                    height: 1.5,
+                                    fontSize: 12,
+                                    fontFamily: 'Comfortaa-VariableFont_wght',
                                   ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    '- Do you have kids? If so, how old are they and how dog-savvy are they?',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                                ),
+                                Container(height: height / 55),
+                                Text(
+                                  '',
+                                  style: TextStyle(
+                                    height: 1.5,
+                                    fontSize: 12,
+                                    fontFamily: 'Comfortaa-VariableFont_wght',
                                   ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    '- How many hours a day are you out of the house?',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    '- Do you have assistance if you are gone for long workdays?',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                      letterSpacing: 0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    '- What kind of energy level are you looking for in a dog?',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                      letterSpacing: 0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    "Once you’ve answered these basic questions, you’ll have a better picture of what characteristics you’re looking for in a dog. This will help to narrow your search as you research breeds based on your answers.You can learn more about each unique dog breed by searching our Petfinder breed guide by name, collection (largest, smartest, and even hairless!), or just browse them all right here. It’s fascinating to discover the history behind each of the countless dog breeds. From small to large, each has a unique story.Even if you have your heart set on a particular breed, there’s an additional factor to keep in mind: Every dog—even a purebred–is distinct and individual.Despite what is considered typical of a breed, you’ll need to remember that every dog in the world has their own unique personality (that’s why we love dogs!) and some may have characteristics that aren’t commonly found within their breed. Luckily, when dogs arrive with an adoption group, the shelter or rescue will often do a behavioral assessment that can give you more insight about an individual dog before you make a decision about adopting. This pre-adoption info can help you find the very best fit for your family and lifestyle.",
-                                    style: TextStyle(
-                                      height: 1.5,
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                      letterSpacing: 0,
-                                    ),
-                                  ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    ' How to find a young or adult dog to suit your home:',
-                                    style: TextStyle(
-                                      fontSize: 15,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                      letterSpacing: 1,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    'When adopting an adult dog, you can specifically look for one whose story matches your needs, such as being friendly with other dogs, being good with children, and other past history that the rescue or shelter may already have. Having more history on a dog will mean fewer surprises for you as an adopter.',
-                                    style: TextStyle(
-                                      height: 1.5,
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                    ),
-                                  ),
-                                  Container(height: height / 55),
-                                  Text(
-                                    '',
-                                    style: TextStyle(
-                                      height: 1.5,
-                                      fontSize: 12,
-                                      fontFamily: 'Comfortaa-VariableFont_wght',
-                                    ),
-                                  ),
-                                  Container(height: height / 5),
-                                ],
-                              ),
-                            )),
-                      ]))
-                ]))));
+                                ),
+                                Container(height: height / 5),
+                              ],
+                            ),
+                          )),
+                    ]))
+              ]))),
+    );
   }
 }

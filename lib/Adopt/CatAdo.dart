@@ -119,7 +119,7 @@ class _catadoState extends State<catado> with TickerProviderStateMixin {
                             alignment: Alignment.center,
                             child: Center(
                               child: Text(
-                                'What Questions Should You Ask ',
+                                'What Questions Should You Ask A Cat Breeder ?',
                                 style: TextStyle(
                                   fontSize: 20,
                                   fontFamily: 'Comfortaa-VariableFont_wght',
@@ -131,36 +131,17 @@ class _catadoState extends State<catado> with TickerProviderStateMixin {
                           )),
                       Positioned(
                           left: width / 10,
-                          top: 3 * height / 45,
-                          height: 4 * height / 45,
-                          width: width - (width / 5),
-                          child: Align(
-                            alignment: Alignment.center,
-                            child: Center(
-                              child: Text(
-                                ' A Cat Breeder?',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontFamily: 'Comfortaa-VariableFont_wght',
-                                  letterSpacing: 1,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          )),
-                      Positioned(
-                          left: width / 10,
-                          top: 8 * height / 45,
-                          height: 6 * height / 45,
+                          top: 7 * height / 45,
+                          height: 10 * height / 45,
                           width: width - (width / 5),
                           child: DecoratedBox(
                               decoration: BoxDecoration(
                                   image: DecorationImage(
                                       image: AssetImage('images/cado.jfif'),
-                                      fit: BoxFit.cover)))),
+                                      fit: BoxFit.contain)))),
                       Positioned(
                           left: width / 10,
-                          top: 13 * height / 45,
+                          top: 8 * height / 45 + 10 * height / 45,
                           height: 2.5 * height / 45,
                           width: width - (width / 5),
                           child: Align(
@@ -179,7 +160,9 @@ class _catadoState extends State<catado> with TickerProviderStateMixin {
                           )),
                       Positioned(
                           left: width / 10,
-                          top: 16.5 * height / 45,
+                          top: 9 * height / 45 +
+                              10 * height / 45 +
+                              2.5 * height / 45,
                           width: width - (width / 5),
                           child: Align(
                             alignment: Alignment.topLeft,

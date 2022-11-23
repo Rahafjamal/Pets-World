@@ -62,7 +62,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                   height: 15,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15, top: 10),
+                  padding: const EdgeInsets.only(left: 30, top: 10),
                   child: ListTile(
                     onTap: () {
                       setState(() {
@@ -79,7 +79,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                     title: const Text(
                       "Home",
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           color: Colors.black,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.8),
@@ -90,7 +90,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                   height: 15,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: const EdgeInsets.only(left: 30),
                   child: ListTile(
                     onTap: () {
                       setState(() {
@@ -107,7 +107,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                     title: const Text(
                       "Log in",
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           color: Colors.black,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.8),
@@ -115,7 +115,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: const EdgeInsets.only(left: 30),
                   child: ListTile(
                     onTap: () {
                       FirebaseAuth.instance.signOut();
@@ -133,18 +133,18 @@ class _Drawer_screenState extends State<Drawer_screen> {
                     title: const Text(
                       "Log out",
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           color: Colors.black,
                           fontWeight: FontWeight.w400,
                           letterSpacing: 0.8),
                     ),
                   ),
                 ),
-              const SizedBox(
+                const SizedBox(
                   height: 15,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: const EdgeInsets.only(left: 30),
                   child: ListTile(
                       onTap: () {
                         exit(0);
@@ -156,7 +156,7 @@ class _Drawer_screenState extends State<Drawer_screen> {
                       title: const Text(
                         "Exit app",
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             color: Colors.black,
                             fontWeight: FontWeight.w400,
                             letterSpacing: 0.8),
