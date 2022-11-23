@@ -26,17 +26,32 @@ class ProductImage extends StatelessWidget {
             height: size.width * 0.7,
             width: size.width * 0.7,
             decoration: BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(40),
+                topRight: Radius.circular(40),
+              ),
               color: Colors.white,
               shape: BoxShape.circle,
             ),
           ),
           Hero(
               tag: "$Tag",
-              child: Image.network(
-                image,
-                height: size.width * 0.75,
-                width: size.width * 0.75,
-                fit: BoxFit.cover,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: kBackgroundColor,
+                  borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(75),
+                    topRight: Radius.circular(75),
+                    bottomLeft: Radius.circular(75),
+                    bottomRight: Radius.circular(75),
+                  ),
+                ),
+                child: Image.network(
+                  image,
+                  height: size.width * 0.75,
+                  width: size.width * 0.75,
+                  fit: BoxFit.cover,
+                ),
               ))
         ],
       ),

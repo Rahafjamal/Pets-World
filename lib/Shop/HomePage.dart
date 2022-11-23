@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
             .doc(user.uid)
             .get()
             .then((value) {
-          if(value["isAdmin"] == true){
+          if (value["isAdmin"] == true) {
             setState(() {
               admin = true;
             });
@@ -40,13 +40,13 @@ class _HomeScreenState extends State<HomeScreen> {
     });
     super.initState();
   }
+
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
-      floatingActionButton: 
-      Row(
+      floatingActionButton: Row(
         mainAxisAlignment: MainAxisAlignment.end,
-      crossAxisAlignment: CrossAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           admin
               ? FloatingActionButton(
@@ -55,13 +55,12 @@ class _HomeScreenState extends State<HomeScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => CreateNewFile(
-                          type: widget.type,
-                        )));
+                                  type: widget.type,
+                                )));
                   },
                   child: const Icon(Icons.add),
                 )
               : Container(),
-          
           FloatingActionButton(
             onPressed: () {
               Navigator.push(
@@ -88,8 +87,10 @@ class _HomeScreenState extends State<HomeScreen> {
       elevation: 0,
       title: Text(
         "Welcome to Pets store",
-        style: GoogleFonts.getFont("Roboto",
-            fontWeight: FontWeight.bold, fontSize: 20),
+        style: TextStyle(
+            fontFamily: 'Comfortaa-VariableFont_wght',
+            fontWeight: FontWeight.bold,
+            fontSize: 20),
       ),
       centerTitle: false,
     );
