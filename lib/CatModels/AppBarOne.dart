@@ -21,6 +21,12 @@ class CatAppBar extends StatelessWidget with PreferredSizeWidget {
           ),
         ),
       ),
+      actions: [
+        Image.asset(
+          "images/user2.png",
+          scale: 1,
+        )
+      ],
     );
   }
 

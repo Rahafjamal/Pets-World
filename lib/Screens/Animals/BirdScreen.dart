@@ -194,7 +194,7 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                                               'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Cat03.jpg/1200px-Cat03.jpg');
                                     }));
                                   },
-                                  name: 'Typs'),
+                                  imagepath: 'images/type.png'),
                             ),
                             SizedBox(width: 15),
                             Padding(
@@ -206,7 +206,7 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                                       return Birdado();
                                     }));
                                   },
-                                  name: 'Are YOU Redy for adopt !'),
+                                  imagepath: 'images/adop.png'),
                             ),
                           ],
                         ),
@@ -228,7 +228,7 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                                       return URLclass(myfunction: birdUrl);
                                     }));
                                   },
-                                  name: 'Vacination schedule'),
+                                  imagepath: 'images/vac.png'),
                             ),
                             SizedBox(width: 15),
                             Padding(
@@ -242,37 +242,11 @@ class _BirdScreenState extends State<BirdScreen> with TickerProviderStateMixin {
                                       );
                                     }));
                                   },
-                                  name: ' '),
+                                  imagepath: 'images/shop.png'),
                             ),
                           ],
                         ),
                       ),
-                      Positioned(
-                          left: width / 1.925,
-                          width: width / 3.5,
-                          height: height / 3.7,
-                          top: 4 * height / 45 +
-                              1.5 * height / 7 +
-                              height / 7 +
-                              2 * height / 14,
-                          child: GestureDetector(
-                            onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) {
-                                return HomeScreen(
-                                  type: type,
-                                );
-                              }));
-                            },
-                            child: Padding(
-                              padding: const EdgeInsets.all(0),
-                              child: SizedBox(
-                                  width: width / 4,
-                                  height: height / 4,
-                                  child: Image(
-                                      image: AssetImage('images/shop.png'))),
-                            ),
-                          )),
                     ])),
               ]),
             )));

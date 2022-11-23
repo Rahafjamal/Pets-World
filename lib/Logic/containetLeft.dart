@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class containerN extends StatelessWidget {
-  containerN({this.imagepath, required this.OnTapping, required this.name});
+  containerN({this.imagepath, required this.OnTapping});
   String? imagepath;
-  String? name;
 
   Function() OnTapping;
   var size, height, width;
@@ -19,7 +18,7 @@ class containerN extends StatelessWidget {
         Container(
           width: width / 3.5,
           height: height / 3.7,
-          padding: EdgeInsets.all(20),
+          padding: EdgeInsets.all(1),
           decoration: BoxDecoration(
             color: Colors.white,
             boxShadow: [
@@ -36,15 +35,17 @@ class containerN extends StatelessWidget {
               alignment: Alignment.center,
               width: width / 4,
               height: height / 5,
-              child: Text(
-                '${name}',
-                style: TextStyle(
-                  fontSize: 15,
-                  fontFamily: 'Comfortaa-VariableFont_wght',
-                  letterSpacing: 1,
-                  fontWeight: FontWeight.w500,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(bottom: 0),
+                  child: Image.asset(
+                    "$imagepath",
+                    width: width / 4,
+                    height: height / 5,
+                    alignment: Alignment.center,
+                    fit: BoxFit.cover,
+                  ),
                 ),
-                textAlign: TextAlign.center,
               ),
             ),
           ),

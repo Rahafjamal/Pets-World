@@ -26,7 +26,7 @@ final slideList = [
         "You can test your knowledge in pets,       read, shop, and look for soulotions.",
   ),
   Slide(
-    imageUrl: 'images/sp2.jpg',
+    imageUrl: 'images/sp3.jpg',
     title: "It's Just the Beginning",
     description: 'We will keep improving our application.',
   ),
