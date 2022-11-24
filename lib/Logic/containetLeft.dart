@@ -43,7 +43,7 @@ class containerN extends StatelessWidget {
                     width: width / 4,
                     height: height / 5,
                     alignment: Alignment.center,
-                    fit: BoxFit.cover,
+                    fit: BoxFit.contain,
                   ),
                 ),
               ),

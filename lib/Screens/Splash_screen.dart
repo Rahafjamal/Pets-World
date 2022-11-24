@@ -94,7 +94,7 @@ class _Splash_screenState extends State<Splash_screen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 275),
+                  padding: const EdgeInsets.only(left: 260),
                   child: TextButton(
                     child: const Text(
                       'Skip',

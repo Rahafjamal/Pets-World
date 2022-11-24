@@ -25,14 +25,14 @@ class ProductImage extends StatelessWidget {
           Container(
             height: size.width * 0.7,
             width: size.width * 0.7,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40),
-                topRight: Radius.circular(40),
-              ),
-              color: Colors.white,
-              shape: BoxShape.circle,
-            ),
+            // decoration: BoxDecoration(
+            //   borderRadius: BorderRadius.only(
+            //     topLeft: Radius.circular(40),
+            //     topRight: Radius.circular(40),
+            //   ),
+            //   color: Colors.white,
+            //   shape: BoxShape.circle,
+            // ),
           ),
           Hero(
               tag: "$Tag",
@@ -53,6 +53,7 @@ class ProductImage extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ))
+              
         ],
       ),
     );
